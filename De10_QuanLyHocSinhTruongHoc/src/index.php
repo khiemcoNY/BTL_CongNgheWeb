@@ -62,22 +62,7 @@
         </div>
         <div class="row">
             <div class="col-md-12">
-                <table>
-                    <tr>
-                        <th>Mã Học Sinh</th>
-                        <th>Tên Học Sinh</th>
-                        <th>Giới Tính</th>
-                        <th>Tên Lớp</th>
-                        <th>Điểm Toán</th>
-                        <th>Điểm Văn</th>
-                        <th>Điểm Anh</th>
-                        <th>Điểm Lý</th>
-                        <th>Điểm Hóa</th>
-                        <th>Điểm Sinh</th>
 
-                    </tr>
-                   
-                </table>
                 <?php
                 //Mở kết nối
                 include('connect.php');

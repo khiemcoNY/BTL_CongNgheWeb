@@ -2,7 +2,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$db="btl_cnw"
+$db="BTL_CNW";
 // Create connection
 $conn = mysqli_connect($servername, $username, $password,$db);
 
