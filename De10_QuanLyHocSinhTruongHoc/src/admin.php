@@ -8,17 +8,75 @@
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.0/font/bootstrap-icons.css" integrity="sha384-7ynz3n3tAGNUYFZD3cWe5PDcE36xj85vyFkawcF6tIwxvIecqKvfwLiaFdizhPpN" crossorigin="anonymous">
     <title>admin</title>
 </head>
 
 <body>
     <div class="container">
+        <h1>Admin </h1>
+        <h3>Hi, <?php echo "admin" ?></h3>
         <div class="row">
             <div class="col-md-12">
 
+                <div class="giaovien">
+                    <h4>Thông Tin Giáo Viên</h4>
+                    <a href=""><i class="bi bi-person-plus-fill"></i>Thêm Giáo Viên</a>
+                    <div class="table-responsive" id="employee_table">
+                        <table class="table table-bordered">
+
+                            <tr>
+                                <th width="">STT</th>
+                                <th width="">MaGV</th>
+                                <th width="">TenGV</th>
+                                <th width="">GioiTinh</th>
+                                <th width="">NgaySinh</th>
+                                <th width="">DiaChi</th>
+                                <th width="">SDT</th>
+                                <th width="">Sửa Thông Tin</th>
+                                <th width="">Xóa Thông Tin</th>
+
+
+
+                            </tr>
+                            <?php
+                            include('connect.php');
+                            $sql = "SELECT * FROM GIAOVIEN";
+                            $result = mysqli_query($conn, $sql);
+
+                            while ($row = mysqli_fetch_array($result)) {
+                            ?>
+                                <tr>
+                                    <td><?php echo $row["STT"]; ?></td>
+                                    <td><?php echo $row["MaGV"]; ?></td>
+                                    <td><?php echo $row["TenGV"]; ?></td>
+                                    <td><?php echo $row["GioiTinh"]; ?></td>
+                                    <td><?php echo $row["NgaySinh"]; ?></td>
+                                    <td><?php echo $row["DiaChi"]; ?></td>
+                                    <td><?php echo $row["SDT"]; ?></td>
+                                    <td><a href=""><i class="bi bi-gear-wide-connected"></i>Sửa</a></td>
+                                    <td><a href=""><i class="bi bi-trash-fill"></i>Xóa</a></td>
+
+
+                                </tr>
+                            <?php
+                            }
+                            mysqli_close($conn);
+                            ?>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="phuhuynh">
+
+                </div>
+                <div class="ketqua">
+
+                </div>
+
             </div>
         </div>
+        
     </div>
 
     <!-- Optional JavaScript; choose one of the two! -->
