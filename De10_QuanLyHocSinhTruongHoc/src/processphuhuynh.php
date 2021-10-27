@@ -36,7 +36,7 @@ if(isset($_POST['btnUpPH']))
     $Up_TenMe=$_POST['Up_TenMe'];
     $Up_Email=$_POST['Up_Email'];
     $Up_SDT=$_POST['Up_SDT'];
-    $Up_Diachi=$_POST['Up_DiaChi'];
+    $Up_DiaChi=$_POST['Up_DiaChi'];
     include('connect.php');
     
     $sql = "UPDATE PHUHUYNH SET 
@@ -46,7 +46,7 @@ if(isset($_POST['btnUpPH']))
 
     if (mysqli_query($conn, $sql)) 
     {
-        header("Location:addPhuHuynh.php");
+        // header("Location:addPhuHuynh.php");
     echo "New record created successfully";
     }
     else {

@@ -32,24 +32,24 @@
                     </div>
                     <div class="form-group">
                         <label for="exampleInputGioiTinh">Tên Lớp</label>
-                        <input type="text" name ="Up_tenlop" class="form-control" id="exampleInputGioiTinh" aria-describedby=""
+                        <input type="text" name ="Up_TenLop" class="form-control" id="exampleInputGioiTinh" aria-describedby=""
                             >
                         
                     </div>
                     <div class="form-group">
                         <label for="exampleInputTenLop">Tên Bố </label>
-                        <input type="Text" name ="Up_Tenbo" class="form-control" id="exampleInputTenLop" aria-describedby=""
+                        <input type="Text" name ="Up_TenBo" class="form-control" id="exampleInputTenLop" aria-describedby=""
                            >
                        
                     </div>
                     <div class="form-group">
                         <label for="exampleInputNgaySinh">Tên Mẹ</label>
-                        <input type="Text" name ="Up_tenme" class="form-control" id="exampleInputNgaySinh" aria-describedby=""
+                        <input type="Text" name ="Up_TenMe" class="form-control" id="exampleInputNgaySinh" aria-describedby=""
                         >
                     </div>
                     <div class="form-group">
                         <label for="exampleInputDiaChi">Email</label>
-                        <input type="Text" name ="Up_email" class="form-control" id="exampleInputDiaChi" aria-describedby=""
+                        <input type="Text" name ="Up_Email" class="form-control" id="exampleInputDiaChi" aria-describedby=""
                            >
                     </div>
                     <div class="form-group">
@@ -59,7 +59,7 @@
                     </div>
                     <div class="form-group">
                         <label for="exampleInputSDT">Địa Chỉ</label>
-                        <input type="text" name ="Up_diachi" class="form-control" id="exampleInputSDT" aria-describedby=""
+                        <input type="text" name ="Up_DiaChi" class="form-control" id="exampleInputSDT" aria-describedby=""
                             >
                     </div>
                     <button type="submit" name ="btnUpPH"class="btn btn-primary">Cập Nhật Thông Tin</button>
