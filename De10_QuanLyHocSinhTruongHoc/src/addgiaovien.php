@@ -10,7 +10,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <title>Hello, world!</title>
+    <title>Addgiaovien</title>
 </head>
 
 <body>
@@ -37,7 +37,7 @@
                     <div style="clear:both"></div>
                 </form>
                 <br /><br /><br />
-                <form>
+                <form action="processgiaovien.php" method="POST">
                     <div class="mb-3">
                         <label for="exampleInputMaGV" >Mã giáo viên</label>
                         <input type="text" name="MaGV" class="form-control" id="exampleInputMaGV" aria-describedby=""  placeholder="Nhập vào Mã giáo viên" >
@@ -62,7 +62,7 @@
                         <label for="exampleInputSDT" >Số điện thoại</label>
                         <input type="text" name="SDT" class="form-control" id="exampleInputSDT" aria-describedby="" placeholder="Nhập vào số điện thoại" >
                     </div>
-                    <button type="submit" name="btn-giaovien" class="btn btn-primary">Thêm giáo viên</button>
+                    <button type="submit" name="btngiaovien" class="btn btn-primary">Thêm giáo viên</button>
                 </form>
                 <br /><br /><br />
                 <div class="table-responsive" id="employee_table">
