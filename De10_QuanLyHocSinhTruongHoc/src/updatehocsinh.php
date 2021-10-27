@@ -20,7 +20,7 @@
                 <form action="processhocsinh.php" method="POST">
                     <div class="form-group">
                         <label for="exampleInputMaHS">MaHS </label>
-                        <input type="text" name ="MaHS" class="form-control" id="exampleInputMaHS" aria-describedby=""
+                        <input type="text" name ="Up_MaHS" class="form-control" id="exampleInputMaHS" aria-describedby=""
                             placeholder="Enter MaHS">
                         
                     </div>

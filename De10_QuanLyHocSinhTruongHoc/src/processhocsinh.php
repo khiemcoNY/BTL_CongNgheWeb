@@ -1,4 +1,5 @@
 <?php
+// xử lý thêm
 if(isset($_POST['btnHocSinh']))
 {
     $MaHS=$_POST['MaHS'];
@@ -24,6 +25,35 @@ if(isset($_POST['btnHocSinh']))
     echo "Error: " . $sql . "<br>" . mysqli_error($conn);
     }
     header("Location:addhocsinh.php");
+    mysqli_close($conn);
+}
+//xử lý update
+if(isset($_POST['btnUpHS']))
+{
+    $Up_MaHS=$_POST['Up_MaHS'];
+    $Up_TenHS=$_POST['Up_TenHS'];
+    $Up_GioiTinh=$_POST['Up_GioiTinh'];
+    $Up_TenLop=$_POST['Up_TenLop'];
+    $Up_NgaySinh=$_POST['Up_NgaySinh'];
+    $Up_DiaChi=$_POST['Up_DiaChi'];
+    $Up_SDT=$_POST['Up_SDT'];
+   
+    include('connect.php');
+    
+    $sql = "UPDATE HOCSINH SET 
+    TenHS='$Up_TenHS',GioiTinh='$Up_GioiTinh',TenLop='$Up_TenLop',
+    NgaySinh='$Up_NgaySinh',DiaChi='$Up_DiaChi',SDT='$Up_SDT' WHERE MaHS='$Up_MaHS';";
+
+
+    if (mysqli_query($conn, $sql)) 
+    {
+        header("Location:addhocsinh.php");
+    echo "New record created successfully";
+    }
+    else {
+    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+    }
+    
     mysqli_close($conn);
 }
 ?>
