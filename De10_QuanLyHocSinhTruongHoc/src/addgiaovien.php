@@ -56,7 +56,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="exampleInputDiaChi" >Địa chỉ</label>
-                        <input type="text" name="DiaChi" class="form-control" id="exampleInputDiaChi" aria-describedby=""  placeholder="nhập vào địa chỉ">
+                        <input type="text" name="DiaChi" class="form-control" id="exampleInputDiaChi" aria-describedby=""  placeholder="Nhập vào địa chỉ">
                     </div>
                     <div class="mb-3">
                         <label for="exampleInputSDT" >Số điện thoại</label>

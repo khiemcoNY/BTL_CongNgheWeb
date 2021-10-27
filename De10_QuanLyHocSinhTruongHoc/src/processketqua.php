@@ -26,6 +26,7 @@ if(isset($_POST['btnKetQua'])){
     }
     mysqli_close($conn);
 }
+<<<<<<< HEAD
 <?php
 if(isset($_POST['btnUpKQ']))
 {
@@ -53,3 +54,6 @@ if(isset($_POST['btnUpKQ']))
 }
 
 ?>
+=======
+?>
+>>>>>>> 5c4b396c224a6beb3d096dc19abd0bf02d7fae36
