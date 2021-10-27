@@ -36,7 +36,7 @@
                 </form>
 
                 <br /><br /><br />
-                <form>
+                <form action="processketqua.php" method="POST">
                     <div class="form-group">
                         <label for="exampleInputMaHS">Ma Học Sinh</label>
                         <input type="text" name="MaHS" class="form-control" id="exampleInputMaHS" aria-describedby="" placeholder="Enter Mã Học Sinh">
