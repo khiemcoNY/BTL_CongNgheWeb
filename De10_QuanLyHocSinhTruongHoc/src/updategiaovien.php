@@ -17,7 +17,7 @@
         <div class="row">
             <div class="col-md-12">
             <h2 align="center">Update Giáo Viên</h2>
-            <form action="" method="POST">
+            <form action="processgiaovien.php" method="POST">
                     <div class="mb-3">
                         <label for="exampleInputMaGV" >Mã giáo viên</label>
                         <input type="text" name="Up_MaGV" class="form-control" id="exampleInputMaGV" aria-describedby=""  placeholder="Nhập vào Mã giáo viên" >
