@@ -90,7 +90,7 @@
                             <th width="">TenLop</th>
                             <th width="">Ngaysinh</th>
                             <th width="">DiaChi</th>
-                            <th width="">sdt</th>
+                            <th width="">SDT</th>
                         </tr>
                         <?php
                             include('connect.php');

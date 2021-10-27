@@ -5,8 +5,8 @@ if(isset($_POST['btnKetQua'])){
     $TenHS=$_POST['TenHS'];
     $GioiTinh=$_POST['GioiTinh'];
     $TenLop=$_POST['TenLop'];
-    $DiemVan=$_POST['DiemToan'];
-    $DiemToan=$_POST['MaHS'];
+    $DiemVan=$_POST['DiemVan'];
+    $DiemToan=$_POST['DiemToan'];
     $DiemAnh=$_POST['DiemAnh'];
     $DiemLy=$_POST['DiemLy'];
     $DiemHoa=$_POST['DiemHoa'];
