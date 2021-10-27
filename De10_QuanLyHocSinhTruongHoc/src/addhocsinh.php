@@ -37,7 +37,7 @@
                     <div style="clear:both"></div>
                 </form>
                 <br /><br /><br />
-                <form>
+                <form action="processhocsinh.php" method="POST">
                     <div class="form-group">
                         <label for="exampleInputMaHS">MaHS </label>
                         <input type="text" name ="MaHS" class="form-control" id="exampleInputMaHS" aria-describedby=""
@@ -98,19 +98,6 @@
                             $result = mysqli_query($conn, $sql);
                             while ($row = mysqli_fetch_array($result)) {
                             ?>
-<<<<<<< HEAD
-                                <tr>
-                                <td><?php echo $row["STT"]; ?></td>
-                                <td><?php echo $row["MaHS"]; ?></td>
-                                <td><?php echo $row["TenHS"]; ?></td>
-                                <td><?php echo $row["GioiTinh"]; ?></td>
-                                <td><?php echo $row["TenLop"]; ?></td>
-                                <td><?php echo $row["NgaySinh"]; ?></td>
-                                <td><?php echo $row["DiaChi"]; ?></td>
-                                <td><?php echo $row["SDT"]; ?></td>
-                                </tr>
-                            <?php
-=======
                         <tr>
                             <td><?php echo $row["STT"]; ?></td>
                             <td><?php echo $row["MaHS"]; ?></td>
@@ -123,7 +110,6 @@
 
                         </tr>
                         <?php
->>>>>>> f1ab9cc2510b3bbde75b4f4d88ef08eaf0dab7ea
                             }
                             ?>
                     </table>
