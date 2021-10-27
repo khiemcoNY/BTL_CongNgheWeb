@@ -105,7 +105,7 @@
                                     <td><?php echo $row["DiaChi"]; ?></td>
                                     <td><?php echo $row["SDT"]; ?></td>
                                     <td><a href=""><i class="bi bi-gear-wide-connected"></i>Sửa</a></td>
-                                    <td><a href=""><i class="bi bi-trash-fill"></i>Xóa</a></td>
+                                    <td><a href="processgiaovien.php?id=<?php echo $row["MaGV"]; ?>"><i class="bi bi-trash-fill"></i>Xóa</a></td>
 
 
                                 </tr>

@@ -44,4 +44,20 @@ if(isset($_POST['btnUpGV']))
     
     mysqli_close($conn);
 }
+// Xử lý xóa giáo viên
+if (isset($_GET['id'])) {
+    include('connect.php');
+    $DelMaGV=$_GET['id'];
+    $sql = "DELETE FROM GIAOVIEN WHERE MaGV='$DelMaGV'";
+
+    if (mysqli_query($conn, $sql)) {
+        echo "Record deleted successfully";
+    } else {
+        echo "Error deleting record: " . mysqli_error($conn);
+    }
+    header("Location:admin.php");
+
+
+    mysqli_close($conn);
+}
 ?>

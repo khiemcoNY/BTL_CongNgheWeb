@@ -40,4 +40,20 @@ if(isset($_POST['btnUpAD']))
   
     mysqli_close($conn);
 }
+// Xử lý xóa Admin
+if (isset($_GET['id'])) {
+  include('connect.php');
+  $DelA_Email=$_GET['id'];
+  $sql = "DELETE FROM ADMIN WHERE A_Email='$DelA_Email'";
+
+  if (mysqli_query($conn, $sql)) {
+      echo "Record deleted successfully";
+  } else {
+      echo "Error deleting record: " . mysqli_error($conn);
+  }
+  header("Location:admin.php");
+
+
+  mysqli_close($conn);
+}
 ?>
