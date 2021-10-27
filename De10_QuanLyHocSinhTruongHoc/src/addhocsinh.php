@@ -54,7 +54,6 @@
                             while ($row = mysqli_fetch_array($result)) {
                             ?>
                                 <tr>
-                                
                                 <td><?php echo $row["MaHS"]; ?></td>
                                 <td><?php echo $row["TenHS"]; ?></td>
                                 <td><?php echo $row["GioiTinh"]; ?></td>
@@ -62,7 +61,6 @@
                                 <td><?php echo $row["NgaySinh"]; ?></td>
                                 <td><?php echo $row["DiaChi"]; ?></td>
                                 <td><?php echo $row["SDT"]; ?></td>
-
                                 </tr>
                             <?php
                             }
