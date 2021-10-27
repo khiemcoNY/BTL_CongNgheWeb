@@ -32,7 +32,7 @@
                 <table class="table table-bordered">  
                      <tr>  
 
-                            
+                         <th width="">STT</th>
                             <th width="">MaHS</th> 
                            <th width="">TenHs</th>  
                            <th width="">GioiTinh</th>  
@@ -46,7 +46,7 @@
            {  
                 $output .= '  
                      <tr>  
-                    
+                     <td>'.$row["STT"].'</td>
                           <td>'.$row["MaHS"].'</td>  
                           <td>'.$row["TenHS"].'</td>  
                           <td>'.$row["GioiTinh"].'</td>  
@@ -68,5 +68,4 @@
  else  
  {  
       echo "Error2";  
- }  
- ?>  
+ }

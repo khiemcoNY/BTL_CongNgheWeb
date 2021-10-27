@@ -38,7 +38,7 @@
                     <div class="table-responsive" id="employee_table">
                         <table class="table table-bordered">
                             <tr>
-                           
+                                <th width="">STT</th>
                                 <th width="">MaHS</th>
                                 <th width="">TenHs</th>
                                 <th width="">GioiTinh</th>
@@ -49,11 +49,12 @@
                             </tr>
                             <?php
                             include('connect.php');
-                            $sql = "SELECT * FROM KETQUA";
+                            $sql = "SELECT * FROM HOCSINH";
                             $result = mysqli_query($conn, $sql);
                             while ($row = mysqli_fetch_array($result)) {
                             ?>
                                 <tr>
+                                <td><?php echo $row["STT"]; ?></td>
                                 <td><?php echo $row["MaHS"]; ?></td>
                                 <td><?php echo $row["TenHS"]; ?></td>
                                 <td><?php echo $row["GioiTinh"]; ?></td>
