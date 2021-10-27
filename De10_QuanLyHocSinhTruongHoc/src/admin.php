@@ -19,6 +19,56 @@
         <div class="row">
             <div class="col-md-12">
 
+                <div class="Admin">
+                    <h4>Thông Tin Admin</h4>
+                    <a href=""><i class="bi bi-person-plus-fill"></i>Thêm admin</a>
+                    <div class="table-responsive" id="employee_table">
+                        <table class="table table-bordered">
+
+                            <tr>
+                                <th width="">A_STT</th>
+                                <th width="">A_Name</th>
+                                <th width="">A_Email</th>
+                                <th width="">A_PASS</th>
+                                <th width="">A_Date</th>
+                                <th width="">Sửa Thông Tin</th>
+                                <th width="">Xóa Thông Tin</th>
+                            </tr>
+                            <?php
+                            include('connect.php');
+                            $sql = "SELECT * FROM ADMIN";
+                            $result = mysqli_query($conn, $sql);
+
+                            while ($row = mysqli_fetch_array($result)) {
+                            ?>
+                                <tr>
+                                    <td><?php echo $row["A_STT"]; ?></td>
+                                    <td><?php echo $row["A_Name"]; ?></td>
+                                    <td><?php echo $row["A_Email"]; ?></td>
+                                    <td><?php echo $row["A_PASS"]; ?></td>
+                                    <td><?php echo $row["A_Date"]; ?></td>
+                                   
+                                    <td><a href=""><i class="bi bi-gear-wide-connected"></i>Sửa</a></td>
+                                    <td><a href=""><i class="bi bi-trash-fill"></i>Xóa</a></td>
+
+
+                                </tr>
+                            <?php
+                            }
+                            mysqli_close($conn);
+                            ?>
+                        </table>
+                    </div>
+                </div>
+
+
+
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+
                 <div class="giaovien">
                     <h4>Thông Tin Giáo Viên</h4>
                     <a href=""><i class="bi bi-person-plus-fill"></i>Thêm Giáo Viên</a>
