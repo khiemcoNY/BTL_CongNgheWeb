@@ -12,7 +12,7 @@
            while($row = fgetcsv($file_data))  
            {  
                $MaHS = mysqli_real_escape_string($conn, $row[0]);  
-                $TénH = mysqli_real_escape_string($conn, $row[1]);  
+                $TenHS = mysqli_real_escape_string($conn, $row[1]);  
                 $TenLop = mysqli_real_escape_string($conn, $row[2]);  
                 $TenBo = mysqli_real_escape_string($conn, $row[3]);  
                 $TenMe = mysqli_real_escape_string($conn, $row[4]);  
@@ -24,7 +24,7 @@
                 $query = "  
                 INSERT INTO PHUHUYNH 
                      (MaHS, TenHS, TenLop, TenBo, TenMe, Email, SDT, DiaChi)  
-                     VALUES ('$MaHS', '$TénH', '$TenLop', '$TenBo', '$TenMe', '$Email', '$SDT','$DiaChi')  
+                     VALUES ('$MaHS', '$TenHS', '$TenLop', '$TenBo', '$TenMe', '$Email', '$SDT','$DiaChi')  
                 ";
                 mysqli_query($conn, $query);  
            }  
