@@ -76,7 +76,51 @@
 
             </div>
         </div>
-        
+        <div class="row">
+            <div class="col-md-12">
+                <div class="hocsinh">
+                    <h4>Thông Tin Hoc Sinh</h4>
+                    <a href=""><i class="bi bi-person-plus-fill"></i>Thêm Hoc Sinh</a>
+                    <table class="table table-bordered">
+                        <tr>
+                            <th width="">STT</th>
+                            <th width="">MaHS</th>
+                            <th width="">TenHs</th>
+                            <th width="">GioiTinh</th>
+                            <th width="">TenLop</th>
+                            <th width="">Ngaysinh</th>
+                            <th width="">DiaChi</th>
+                            <th width="">sdt</th>
+                            <th width="">Sửa Thông Tin</th>
+                            <th width="">Xóa Thông Tin</th>
+                        </tr>
+                        <?php
+                        include('connect.php');
+                        $sql = "SELECT * FROM HOCSINH";
+                        $result = mysqli_query($conn, $sql);
+                        while ($row = mysqli_fetch_array($result)) {
+                        ?>
+                            <tr>
+                                <td><?php echo $row["STT"]; ?></td>
+                                <td><?php echo $row["MaHS"]; ?></td>
+                                <td><?php echo $row["TenHS"]; ?></td>
+                                <td><?php echo $row["GioiTinh"]; ?></td>
+                                <td><?php echo $row["TenLop"]; ?></td>
+                                <td><?php echo $row["NgaySinh"]; ?></td>
+                                <td><?php echo $row["DiaChi"]; ?></td>
+                                <td><?php echo $row["SDT"]; ?></td>
+                                <td><a href=""><i class="bi bi-gear-wide-connected"></i>Sửa</a></td>
+                                <td><a href=""><i class="bi bi-trash-fill"></i>Xóa</a></td>
+                                
+
+                            </tr>
+                        <?php
+                        }
+                        ?>
+                    </table>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- Optional JavaScript; choose one of the two! -->
