@@ -62,7 +62,7 @@
                         <label for="exampleInputSDT" >Số điện thoại</label>
                         <input type="text" name="SDT" class="form-control" id="exampleInputSDT" aria-describedby="" placeholder="Nhập vào số điện thoại" >
                     </div>
-                    <button type="submit" name="nutthem" class="btn btn-giaovien">Thêm giáo viên</button>
+                    <button type="submit" name="btn-giaovien" class="btn btn-primary">Thêm giáo viên</button>
                 </form>
                 <br /><br /><br />
                 <div class="table-responsive" id="employee_table">
