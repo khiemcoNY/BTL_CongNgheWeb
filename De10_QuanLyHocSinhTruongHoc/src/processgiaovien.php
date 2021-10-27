@@ -22,8 +22,6 @@ if(isset($_POST['btngiaovien']))
      header("Location:addgiaovien.php");
      mysqli_close($conn);
 }
-?>
-<?php
 //Xử lý cập nhật giáo viên
 if(isset($_POST['btnUpGV']))
 {
@@ -39,11 +37,11 @@ if(isset($_POST['btnUpGV']))
 
     if (mysqli_query($conn, $sql)) {
       echo "Record updated successfully";
+      header("Location:admin.php");
     } else {
       echo "Error updating record: " . mysqli_error($conn);
     }
     
     mysqli_close($conn);
 }
-
 ?>

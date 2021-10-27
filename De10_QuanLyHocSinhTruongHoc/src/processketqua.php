@@ -28,3 +28,4 @@ if(isset($_POST['btnKetQua'])){
     mysqli_close($conn);
 }
 ?>
+
