@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
                 <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -47,30 +47,91 @@
                                     <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
                                 </li>
                             </ul>
-                            <form class="d-flex">
-                                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                                <button class="btn btn-outline-success" type="submit">Search</button>
-                            </form>
+                            <a href="">Đăng Nhập</a><a href="">Đăng Ký</a>
+
                         </div>
                     </div>
                 </nav>
             </div>
-            <div class="col-md-12">
+
+           <div class="col-md-12">
                 <h1>Tra Cứu Thông Tin</h1>
             </div>
+        </div>
+        <div class="row">
+            
+            <div class="col-md"></div>
+            <div class="col-md-8">
+
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+
+            </div>
+            <div class="col-md"></div>
+            
 
         </div>
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-2">
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                        Dropdown button
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-10">
+            <div class="table-responsive" id="employee_table">
+                        <table class="table table-bordered">
+                            <tr>
+                                <th width="">STT</th>
+                                <th width="">MaHS</th>
+                                <th width="">TenHS</th>
+                                <th width="">Gioi Tinh</th>
+                                <th width="">Ten Lop</th>
+                                <th width="">Diem Van</th>
+                                <th width="">Diem Toan</th>
+                                <th width="">Diem Anh</th>
+                                <th width="">Diem Ly</th>
+                                <th width="">Diem Hoa</th>
+                                <th width="">Diem Sinh</th>
 
-                <?php
-                //Mở kết nối
-                include('connect.php');
-                ?>
+                            </tr>
+                            <?php
+                            include('connect.php');
+                            $sql = "SELECT * FROM KETQUA";
+                            $result = mysqli_query($conn, $sql);
+                            while ($row = mysqli_fetch_array($result)) {
+                            ?>
+                                <tr>
+                                    <td><?php echo $row["STT"]; ?></td>
+                                    <td><?php echo $row["MaHS"]; ?></td>
+                                    <td><?php echo $row["TenHS"]; ?></td>
+                                    <td><?php echo $row["GioiTinh"]; ?></td>
+                                    <td><?php echo $row["TenLop"]; ?></td>
+                                    <td><?php echo $row["DiemVan"]; ?></td>
+                                    <td><?php echo $row["DiemToan"]; ?></td>
+                                    <td><?php echo $row["DiemAnh"]; ?></td>
+                                    <td><?php echo $row["DiemLy"]; ?></td>
+                                    <td><?php echo $row["DiemHoa"]; ?></td>
+                                    <td><?php echo $row["DiemSinh"]; ?></td>
 
+                                </tr>
+                            <?php
+                            }
+                            ?>
+                        </table>
+                    </div>
             </div>
         </div>
     </div>
+    <div class="container-fluid"></div>
 
     <!-- Optional JavaScript; choose one of the two! -->
 
