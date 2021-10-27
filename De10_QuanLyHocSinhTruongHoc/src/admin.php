@@ -67,12 +67,8 @@
                     </div>
                 </div>
 
-                <div class="phuhuynh">
 
-                </div>
-                <div class="ketqua">
 
-                </div>
 
             </div>
         </div>
@@ -90,7 +86,7 @@
                             <th width="">TenLop</th>
                             <th width="">Ngaysinh</th>
                             <th width="">DiaChi</th>
-                            <th width="">sdt</th>
+                            <th width="">SDT</th>
                             <th width="">Sửa Thông Tin</th>
                             <th width="">Xóa Thông Tin</th>
                         </tr>
@@ -111,13 +107,110 @@
                                 <td><?php echo $row["SDT"]; ?></td>
                                 <td><a href=""><i class="bi bi-gear-wide-connected"></i>Sửa</a></td>
                                 <td><a href=""><i class="bi bi-trash-fill"></i>Xóa</a></td>
-                                
+
 
                             </tr>
                         <?php
                         }
                         ?>
                     </table>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h4>Thông Tin Ket Qua Hoc Sinh</h4>
+                <a href=""><i class="bi bi-person-plus-fill"></i>Thêm Kết Quả Hoc Sinh</a>
+                <div class="ketqua">
+                    <div class="table-responsive" id="employee_table">
+                        <table class="table table-bordered">
+                            <tr>
+                                <th width="">STT</th>
+                                <th width="">MaHS</th>
+                                <th width="">TenHS</th>
+                                <th width="">Gioi Tinh</th>
+                                <th width="">Ten Lop</th>
+                                <th width="">Diem Van</th>
+                                <th width="">Diem Toan</th>
+                                <th width="">Diem Anh</th>
+                                <th width="">Diem Ly</th>
+                                <th width="">Diem Hoa</th>
+                                <th width="">Diem Sinh</th>
+
+                            </tr>
+                            <?php
+                            include('connect.php');
+                            $sql = "SELECT * FROM KETQUA";
+                            $result = mysqli_query($conn, $sql);
+                            while ($row = mysqli_fetch_array($result)) {
+                            ?>
+                                <tr>
+                                    <td><?php echo $row["STT"]; ?></td>
+                                    <td><?php echo $row["MaHS"]; ?></td>
+                                    <td><?php echo $row["TenHS"]; ?></td>
+                                    <td><?php echo $row["GioiTinh"]; ?></td>
+                                    <td><?php echo $row["TenLop"]; ?></td>
+                                    <td><?php echo $row["DiemVan"]; ?></td>
+                                    <td><?php echo $row["DiemToan"]; ?></td>
+                                    <td><?php echo $row["DiemAnh"]; ?></td>
+                                    <td><?php echo $row["DiemLy"]; ?></td>
+                                    <td><?php echo $row["DiemHoa"]; ?></td>
+                                    <td><?php echo $row["DiemSinh"]; ?></td>
+
+                                </tr>
+                            <?php
+                            }
+                            ?>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h4>Thông Tin Phụ Huynh Hoc Sinh</h4>
+                <a href=""><i class="bi bi-person-plus-fill"></i>Thêm Phụ Huynh Hoc Sinh</a>
+                <div class="phuhuynh">
+                    <div class="table-responsive" id="employee_table">
+                        <table class="table table-bordered">
+                            <tr>
+                                <th width="">STT</th>
+                                <th width="">MaHS</th>
+                                <th width="">TenHs</th>
+                                <th width="">TenLop</th>
+                                <th width="">TenBo</th>
+                                <th width="">TenMe</th>
+                                <th width="">Email</th>
+                                <th width="">SDT</th>
+                                <th width="">DiaChi</th>
+
+                            </tr>
+                            <?php
+                            include('connect.php');
+                            $sql = "SELECT * FROM PHUHUYNH";
+                            $result = mysqli_query($conn, $sql);
+                            while ($row = mysqli_fetch_array($result)) {
+                            ?>
+                                <tr>
+                                    <td><?php echo $row["STT"]; ?></td>
+                                    <td><?php echo $row["MaHS"]; ?></td>
+                                    <td><?php echo $row["TenHS"]; ?></td>
+                                    <td><?php echo $row["TenLop"]; ?></td>
+                                    <td><?php echo $row["TenBo"]; ?></td>
+                                    <td><?php echo $row["TenMe"]; ?></td>
+                                    <td><?php echo $row["Email"]; ?></td>
+                                    <td><?php echo $row["SDT"]; ?></td>
+                                    <td><?php echo $row["DiaChi"]; ?></td>
+
+
+                                </tr>
+                            <?php
+                            }
+                            ?>
+                        </table>
+                    </div>
+
                 </div>
             </div>
         </div>

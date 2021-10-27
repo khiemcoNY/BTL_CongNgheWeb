@@ -1,3 +1,4 @@
+<?php 
 
 if(isset($_POST['btnKetQua'])){
    
@@ -5,8 +6,8 @@ if(isset($_POST['btnKetQua'])){
     $TenHS=$_POST['TenHS'];
     $GioiTinh=$_POST['GioiTinh'];
     $TenLop=$_POST['TenLop'];
-    $DiemVan=$_POST['DiemToan'];
-    $DiemToan=$_POST['MaHS'];
+    $DiemVan=$_POST['DiemVan'];
+    $DiemToan=$_POST['DiemToan'];
     $DiemAnh=$_POST['DiemAnh'];
     $DiemLy=$_POST['DiemLy'];
     $DiemHoa=$_POST['DiemHoa'];
@@ -26,12 +27,7 @@ if(isset($_POST['btnKetQua'])){
     }
     mysqli_close($conn);
 }
-<<<<<<< HEAD
-?>
 
-=======
-<<<<<<< HEAD
-<?php
 if(isset($_POST['btnUpKQ']))
 {
     $Up_MaHS=$_POST['Up_MaHS'];
@@ -56,9 +52,5 @@ if(isset($_POST['btnUpKQ']))
     
     mysqli_close($conn);
 }
+?>
 
-?>
-=======
-?>
->>>>>>> 5c4b396c224a6beb3d096dc19abd0bf02d7fae36
->>>>>>> c814ea27067a8957909a9bde02ded8c5b23e2ec9
