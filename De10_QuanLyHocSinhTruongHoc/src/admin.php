@@ -23,7 +23,7 @@
 
                 <div class="Admin">
                     <h4>Thông Tin Admin</h4>
-                    <a href=""><i class="bi bi-person-plus-fill"></i>Thêm admin</a>
+                    <a href="addadmin.php"><i class="bi bi-person-plus-fill"></i>Thêm admin</a>
                     <div class="table-responsive" id="employee_table">
                         <table class="table table-bordered">
 
@@ -74,7 +74,7 @@
 
                 <div class="giaovien">
                     <h4>Thông Tin Giáo Viên</h4>
-                    <a href=""><i class="bi bi-person-plus-fill"></i>Thêm Giáo Viên</a>
+                    <a href="addgiaovien.php"><i class="bi bi-person-plus-fill"></i>Thêm Giáo Viên</a>
                     <div class="table-responsive" id="employee_table">
                         <table class="table table-bordered">
 
@@ -129,7 +129,7 @@
             <div class="col-md-12">
                 <div class="hocsinh">
                     <h4>Thông Tin Hoc Sinh</h4>
-                    <a href=""><i class="bi bi-person-plus-fill"></i>Thêm Hoc Sinh</a>
+                    <a href="addhocsinh.php"><i class="bi bi-person-plus-fill"></i>Thêm Hoc Sinh</a>
                     <table class="table table-bordered">
                         <tr>
                             <th width="">STT</th>
@@ -173,7 +173,7 @@
         <div class="row">
             <div class="col-md-12">
                 <h4>Thông Tin Ket Qua Hoc Sinh</h4>
-                <a href=""><i class="bi bi-person-plus-fill"></i>Thêm Kết Quả Hoc Sinh</a>
+                <a href="addketqua.php"><i class="bi bi-person-plus-fill"></i>Thêm Kết Quả Hoc Sinh</a>
                 <div class="ketqua">
                     <div class="table-responsive" id="employee_table">
                         <table class="table table-bordered">
@@ -230,7 +230,7 @@
         <div class="row">
             <div class="col-md-12">
                 <h4>Thông Tin Phụ Huynh Hoc Sinh</h4>
-                <a href=""><i class="bi bi-person-plus-fill"></i>Thêm Phụ Huynh Hoc Sinh</a>
+                <a href="addphuhuynh.php"><i class="bi bi-person-plus-fill"></i>Thêm Phụ Huynh Hoc Sinh</a>
                 <div class="phuhuynh">
                     <div class="table-responsive" id="employee_table">
                         <table class="table table-bordered">
