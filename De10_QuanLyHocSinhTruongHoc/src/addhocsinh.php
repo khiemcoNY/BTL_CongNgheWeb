@@ -37,7 +37,7 @@
                     <div style="clear:both"></div>
                 </form>
                 <br /><br /><br />
-                <form>
+                <form action="processhocsinh.php" method="POST">
                     <div class="form-group">
                         <label for="exampleInputMaHS">MaHS </label>
                         <input type="text" name ="MaHS" class="form-control" id="exampleInputMaHS" aria-describedby=""
@@ -74,10 +74,10 @@
                     </div>
                     <div class="form-group">
                         <label for="exampleInputSDT">SDT</label>
-                        <input type="SDT" name ="SDT" class="form-control" id="exampleInputSDT" aria-describedby=""
+                        <input type="text" name ="SDT" class="form-control" id="exampleInputSDT" aria-describedby=""
                             placeholder="Enter SDT">
                     </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" name ="btnHocSinh"class="btn btn-primary">Submit</button>
                 </form>
                 <br /><br /><br />
                 <div class="table-responsive" id="employee_table">
