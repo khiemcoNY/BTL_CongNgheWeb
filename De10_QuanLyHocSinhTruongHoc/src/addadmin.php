@@ -23,7 +23,7 @@
 
                 <h2 align="center">Add Admin</h2>
                 <br /><br /><br />
-                <form action="process" method="POST">
+                <form action="processadmin.php" method="POST">
                     <div class="mb-3">
                         <label for="exampleInputMaGV" >A_Name</label>
                         <input type="text" name="A_Name" class="form-control" id="exampleInputA_Name" aria-describedby=""  placeholder="Enter A_Name" >

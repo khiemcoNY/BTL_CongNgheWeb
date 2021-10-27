@@ -17,7 +17,7 @@
         <div class="row">
             <div class="col-md-12">
             <h2 align="center">Update ADMIN</h2>
-            <form action="processgiaovien.php" method="POST">
+            <form action="processadmin.php" method="POST">
                     <div class="mb-3">
                         <label for="exampleInputMaGV" >Email</label>
                         <input type="text" name="Up_A_Email" class="form-control" id="exampleInputA_Email" aria-describedby=""  placeholder="Nhập vào A_Email" >
