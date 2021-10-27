@@ -9,11 +9,12 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>Hello, world!</title>
 </head>
 
 <body>
+
     <div class="container">
 
         <div class="row">
@@ -36,20 +37,48 @@
                     <div style="clear:both"></div>
                 </form>
                 <br /><br /><br />
+                <form>
+                    <div class="mb-3">
+                        <label for="exampleInputMaGV" >Mã giáo viên</label>
+                        <input type="text" name="MaGV" class="form-control" id="exampleInputMaGV" aria-describedby=""  placeholder="Nhập vào Mã giáo viên" >
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputTenGV" >Tên giáo viên</label>
+                        <input type="text" name="TenGV" class="form-control" id="exampleInputTenGV" aria-describedby=""  placeholder="Nhập vào tên giáo viên">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputGioiTinh" >Giới tính</label>
+                        <input type="text" name="GioiTinh" class="form-control" id="exampleInputGioiTinh" aria-describedby=""  placeholder="Nhập vào giới tính">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputNgaySinh" >Ngày sinh</label>
+                        <input type="text" name="NgaySinh" class="form-control" id="exampleInputNgaySinh" aria-describedby=""  placeholder="Nhập vào ngày sinh">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputDiaChi" >Địa chỉ</label>
+                        <input type="text" name="DiaChi" class="form-control" id="exampleInputDiaChi" aria-describedby=""  placeholder="nhập vào địa chỉ">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputSDT" >Số điện thoại</label>
+                        <input type="text" name="SDT" class="form-control" id="exampleInputSDT" aria-describedby="" placeholder="Nhập vào số điện thoại" >
+                    </div>
+                    <button type="submit" name="SDT" class="btn btn-primary">Thêm giáo viên</button>
+                </form>
+                <br /><br /><br />
                 <div class="table-responsive" id="employee_table">
                     <table class="table table-bordered">
-                  
-                            <tr>
-                                <th width="">STT</th>
-                                <th width="">MaGV</th>
-                                <th width="">TenGV</th>
-                                <th width="">GioiTinh</th>
-                                <th width="">NgaySinh</th>
-                                <th width="">DiaChi</th>
-                                <th width="">SDT</th>
 
-                            </tr>
-                            <?php  
+                        <tr>
+                            <th width="">STT</th>
+                            <th width="">MaGV</th>
+                            <th width="">TenGV</th>
+                            <th width="">GioiTinh</th>
+                            <th width="">NgaySinh</th>
+                            <th width="">DiaChi</th>
+                            <th width="">SDT</th>
+
+                        </tr>
+                        <?php  
                                 include('connect.php');
                                 $sql = "SELECT * FROM GIAOVIEN";
                                 $result = mysqli_query($conn, $sql);
@@ -57,19 +86,19 @@
                           while($row = mysqli_fetch_array($result))  
                           {  
                           ?>
-                            <tr>
-                                <td><?php echo $row["STT"]; ?></td>
-                                <td><?php echo $row["MaGV"]; ?></td>
-                                <td><?php echo $row["TenGV"]; ?></td>
-                                <td><?php echo $row["GioiTinh"]; ?></td>
-                                <td><?php echo $row["NgaySinh"]; ?></td>
-                                <td><?php echo $row["DiaChi"]; ?></td>
-                                <td><?php echo $row["SDT"]; ?></td>
-                            </tr>
-                            <?php  
+                        <tr>
+                            <td><?php echo $row["STT"]; ?></td>
+                            <td><?php echo $row["MaGV"]; ?></td>
+                            <td><?php echo $row["TenGV"]; ?></td>
+                            <td><?php echo $row["GioiTinh"]; ?></td>
+                            <td><?php echo $row["NgaySinh"]; ?></td>
+                            <td><?php echo $row["DiaChi"]; ?></td>
+                            <td><?php echo $row["SDT"]; ?></td>
+                        </tr>
+                        <?php  
                           }  
                           ?>
-                        </table>
+                    </table>
                 </div>
 
 
