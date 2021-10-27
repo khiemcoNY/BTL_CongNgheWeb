@@ -49,7 +49,7 @@
                                     <td><?php echo $row["A_Date"]; ?></td>
                                    
                                     <td><a href=""><i class="bi bi-gear-wide-connected"></i>Sửa</a></td>
-                                    <td><a href=""><i class="bi bi-trash-fill"></i>Xóa</a></td>
+                                    <td><a href="processadmin.php?id=<?php echo $row["A_Email"]; ?>"><i class="bi bi-trash-fill"></i>Xóa</a></td>
 
 
                                 </tr>

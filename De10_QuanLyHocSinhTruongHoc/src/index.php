@@ -54,12 +54,12 @@
                 </nav>
             </div>
 
-           <div class="col-md-12">
+            <div class="col-md-12">
                 <h1>Tra Cứu Thông Tin</h1>
             </div>
         </div>
         <div class="row">
-            
+
             <div class="col-md"></div>
             <div class="col-md-8">
 
@@ -70,7 +70,7 @@
 
             </div>
             <div class="col-md"></div>
-            
+
 
         </div>
         <div class="row">
@@ -87,51 +87,226 @@
                 </div>
             </div>
             <div class="col-md-10">
-            <div class="table-responsive" id="employee_table">
-                        <table class="table table-bordered">
+                <div class="table-responsive" id="employee_table">
+                    <table class="table table-bordered">
+                        <tr>
+                            <th width="">STT</th>
+                            <th width="">MaHS</th>
+                            <th width="">TenHS</th>
+                            <th width="">Gioi Tinh</th>
+                            <th width="">Ten Lop</th>
+                            <th width="">Diem Van</th>
+                            <th width="">Diem Toan</th>
+                            <th width="">Diem Anh</th>
+                            <th width="">Diem Ly</th>
+                            <th width="">Diem Hoa</th>
+                            <th width="">Diem Sinh</th>
+
+                        </tr>
+                        <?php
+                        include('connect.php');
+                        $sql = "SELECT * FROM KETQUA";
+                        $result = mysqli_query($conn, $sql);
+                        while ($row = mysqli_fetch_array($result)) {
+                        ?>
                             <tr>
-                                <th width="">STT</th>
-                                <th width="">MaHS</th>
-                                <th width="">TenHS</th>
-                                <th width="">Gioi Tinh</th>
-                                <th width="">Ten Lop</th>
-                                <th width="">Diem Van</th>
-                                <th width="">Diem Toan</th>
-                                <th width="">Diem Anh</th>
-                                <th width="">Diem Ly</th>
-                                <th width="">Diem Hoa</th>
-                                <th width="">Diem Sinh</th>
+                                <td><?php echo $row["STT"]; ?></td>
+                                <td><?php echo $row["MaHS"]; ?></td>
+                                <td><?php echo $row["TenHS"]; ?></td>
+                                <td><?php echo $row["GioiTinh"]; ?></td>
+                                <td><?php echo $row["TenLop"]; ?></td>
+                                <td><?php echo $row["DiemVan"]; ?></td>
+                                <td><?php echo $row["DiemToan"]; ?></td>
+                                <td><?php echo $row["DiemAnh"]; ?></td>
+                                <td><?php echo $row["DiemLy"]; ?></td>
+                                <td><?php echo $row["DiemHoa"]; ?></td>
+                                <td><?php echo $row["DiemSinh"]; ?></td>
 
                             </tr>
-                            <?php
-                            include('connect.php');
-                            $sql = "SELECT * FROM KETQUA";
-                            $result = mysqli_query($conn, $sql);
-                            while ($row = mysqli_fetch_array($result)) {
-                            ?>
-                                <tr>
-                                    <td><?php echo $row["STT"]; ?></td>
-                                    <td><?php echo $row["MaHS"]; ?></td>
-                                    <td><?php echo $row["TenHS"]; ?></td>
-                                    <td><?php echo $row["GioiTinh"]; ?></td>
-                                    <td><?php echo $row["TenLop"]; ?></td>
-                                    <td><?php echo $row["DiemVan"]; ?></td>
-                                    <td><?php echo $row["DiemToan"]; ?></td>
-                                    <td><?php echo $row["DiemAnh"]; ?></td>
-                                    <td><?php echo $row["DiemLy"]; ?></td>
-                                    <td><?php echo $row["DiemHoa"]; ?></td>
-                                    <td><?php echo $row["DiemSinh"]; ?></td>
-
-                                </tr>
-                            <?php
-                            }
-                            ?>
-                        </table>
-                    </div>
+                        <?php
+                        }
+                        ?>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
-    <div class="container-fluid"></div>
+    <div class="container-fluid">
+        <div class="bg-dark text-center text-white">
+            <!-- Grid container -->
+            <div class="container p-4">
+                <!-- Section: Social media -->
+                <section class="mb-4">
+                    <!-- Facebook -->
+                    <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-facebook-f"></i></a>
+
+                    <!-- Twitter -->
+                    <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-twitter"></i></a>
+
+                    <!-- Google -->
+                    <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-google"></i></a>
+
+                    <!-- Instagram -->
+                    <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-instagram"></i></a>
+
+                    <!-- Linkedin -->
+                    <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-linkedin-in"></i></a>
+
+                    <!-- Github -->
+                    <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-github"></i></a>
+                </section>
+                <!-- Section: Social media -->
+
+                <!-- Section: Form -->
+                <section class="">
+                    <form action="">
+                        <!--Grid row-->
+                        <div class="row d-flex justify-content-center">
+                            <!--Grid column-->
+                            <div class="col-auto">
+                                <p class="pt-2">
+                                    <strong>Sign up for our newsletter</strong>
+                                </p>
+                            </div>
+                            <!--Grid column-->
+
+                            <!--Grid column-->
+                            <div class="col-md-5 col-12">
+                                <!-- Email input -->
+                                <div class="form-outline form-white mb-4">
+                                    <input type="email" id="form5Example21" class="form-control" />
+                                    <label class="form-label" for="form5Example21">Email address</label>
+                                </div>
+                            </div>
+                            <!--Grid column-->
+
+                            <!--Grid column-->
+                            <div class="col-auto">
+                                <!-- Submit button -->
+                                <button type="submit" class="btn btn-outline-light mb-4">
+                                    Subscribe
+                                </button>
+                            </div>
+                            <!--Grid column-->
+                        </div>
+                        <!--Grid row-->
+                    </form>
+                </section>
+                <!-- Section: Form -->
+
+                <!-- Section: Text -->
+                <section class="mb-4">
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt distinctio earum
+                        repellat quaerat voluptatibus placeat nam, commodi optio pariatur est quia magnam
+                        eum harum corrupti dicta, aliquam sequi voluptate quas.
+                    </p>
+                </section>
+                <!-- Section: Text -->
+
+                <!-- Section: Links -->
+                <section class="">
+                    <!--Grid row-->
+                    <div class="row">
+                        <!--Grid column-->
+                        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                            <h5 class="text-uppercase">Links</h5>
+
+                            <ul class="list-unstyled mb-0">
+                                <li>
+                                    <a href="#!" class="text-white">Link 1</a>
+                                </li>
+                                <li>
+                                    <a href="#!" class="text-white">Link 2</a>
+                                </li>
+                                <li>
+                                    <a href="#!" class="text-white">Link 3</a>
+                                </li>
+                                <li>
+                                    <a href="#!" class="text-white">Link 4</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!--Grid column-->
+
+                        <!--Grid column-->
+                        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                            <h5 class="text-uppercase">Links</h5>
+
+                            <ul class="list-unstyled mb-0">
+                                <li>
+                                    <a href="#!" class="text-white">Link 1</a>
+                                </li>
+                                <li>
+                                    <a href="#!" class="text-white">Link 2</a>
+                                </li>
+                                <li>
+                                    <a href="#!" class="text-white">Link 3</a>
+                                </li>
+                                <li>
+                                    <a href="#!" class="text-white">Link 4</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!--Grid column-->
+
+                        <!--Grid column-->
+                        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                            <h5 class="text-uppercase">Links</h5>
+
+                            <ul class="list-unstyled mb-0">
+                                <li>
+                                    <a href="#!" class="text-white">Link 1</a>
+                                </li>
+                                <li>
+                                    <a href="#!" class="text-white">Link 2</a>
+                                </li>
+                                <li>
+                                    <a href="#!" class="text-white">Link 3</a>
+                                </li>
+                                <li>
+                                    <a href="#!" class="text-white">Link 4</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!--Grid column-->
+
+                        <!--Grid column-->
+                        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                            <h5 class="text-uppercase">Links</h5>
+
+                            <ul class="list-unstyled mb-0">
+                                <li>
+                                    <a href="#!" class="text-white">Link 1</a>
+                                </li>
+                                <li>
+                                    <a href="#!" class="text-white">Link 2</a>
+                                </li>
+                                <li>
+                                    <a href="#!" class="text-white">Link 3</a>
+                                </li>
+                                <li>
+                                    <a href="#!" class="text-white">Link 4</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!--Grid column-->
+                    </div>
+                    <!--Grid row-->
+                </section>
+                <!-- Section: Links -->
+            </div>
+            <!-- Grid container -->
+
+            <!-- Copyright -->
+            <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+                © 2020 Copyright:
+                <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+            </div>
+            <!-- Copyright -->
+        </div>
+        <!-- Footer -->
+    </div>
 
     <!-- Optional JavaScript; choose one of the two! -->
 
