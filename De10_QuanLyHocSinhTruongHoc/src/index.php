@@ -95,7 +95,7 @@
             <div class="col-md-8">
 
                 <form action ="index.php"class="d-flex" method="POST">
-                    <input name="MaHS" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <input name="MaHS" class="form-control me-2" type="search" placeholder="Mã Học Sinh" aria-label="Search">
                     <button name="search" class="btn btn-outline-success" type="submit">Search</button>
                 </form>
 
@@ -148,55 +148,46 @@
                 </div>
             </div>
             <div class="col-md-10">
-                <div class="table-responsive" id="employee_table" style="margin:25px 0">
+                <div class="table-responsive" id="employee_table" style="margin:25px 25px 25px 0">
                     <table class="table table-bordered">
-                        <tr>
-                            <th width="">STT</th>
-                            <th width="">MaHS</th>
-                            <th width="">TenHS</th>
-                            <th width="">Gioi Tinh</th>
-                            <th width="">Ten Lop</th>
-                            <th width="">Diem Van</th>
-                            <th width="">Diem Toan</th>
-                            <th width="">Diem Anh</th>
-                            <th width="">Diem Ly</th>
-                            <th width="">Diem Hoa</th>
-                            <th width="">Diem Sinh</th>
+                    <?php 
+                       echo "<tr>";
+                       echo "<th>STT</th>";
+                       echo "<th>MaHS</th>";
+                       echo "<th>TenHS</th>";
+                       echo "<th>Gioi Tinh</th>";
+                       echo "<th>Ten Lop</th>";
+                       echo "<th>Diem Van</th>";
+                       echo "<th>Diem Toan</th>";
+                       echo "<th>Diem Anh</th>";
+                       echo "<th>Diem Ly</th>";
+                       echo "<th>Diem Hoa</th>";
+                       echo "<th>Diem Sinh</th>";
 
-                        </tr>
-                        <?php
-                            include('connect.php');
-                            $sql = "SELECT * FROM KETQUA";
+                       echo "</tr>";
+                        
+                            
+                            
                             if(isset($_POST["search"])){
                                 $MaHS=$_POST["MaHS"];
-                                $sql="SELECT * FROM KET QUA WHERE MaHS='$MaHS'";
+                                
+                                $sql="SELECT * FROM KETQUA WHERE MaHS='$MaHS'";
+                                include('process-Search.php');
+                                
                             }
                             elseif(isset($_GET["TenLop"])){
                                 $TenLop=$_GET["TenLop"];
-                                $sql="SELECT * FROM KET QUA WHERE TenLop='$TenLop'";
+                                $sql="SELECT * FROM KETQUA WHERE TenLop='$TenLop'";
+                                include('process-Search.php');
                             }
-                            
-                            $result = mysqli_query($conn, $sql);
-                            while ($row = mysqli_fetch_array($result)) {
+                            else{
+                                
+                                $sql = "SELECT * FROM KETQUA";
+                                include('process-Search.php');
+                            }
+                        echo "</table>";
                         ?>
-                            <tr>
-                                <td><?php echo $row["STT"]; ?></td>
-                                <td><?php echo $row["MaHS"]; ?></td>
-                                <td><?php echo $row["TenHS"]; ?></td>
-                                <td><?php echo $row["GioiTinh"]; ?></td>
-                                <td><?php echo $row["TenLop"]; ?></td>
-                                <td><?php echo $row["DiemVan"]; ?></td>
-                                <td><?php echo $row["DiemToan"]; ?></td>
-                                <td><?php echo $row["DiemAnh"]; ?></td>
-                                <td><?php echo $row["DiemLy"]; ?></td>
-                                <td><?php echo $row["DiemHoa"]; ?></td>
-                                <td><?php echo $row["DiemSinh"]; ?></td>
-
-                            </tr>
-                        <?php
-                        }
-                        ?>
-                    </table>
+                    
                 </div>
             </div>
         </div>
