@@ -13,11 +13,22 @@
 </head>
 
 <body>
+    <?php
+    include('connect.php');
+    $e= $_GET['idsua'];
+    $sql = "SELECT * FROM ADMIN where Email='$e'";
+    $result = mysqli_query($conn, $sql);
+    echo $result;
+    // $row = mysqli_fetch_assoc($result);
+    // $name= $row["A_Name"];
+    // echo $name;
+    ?>
     <div class="container">
         <div class="row">
             <div class="col-md-12">
             <h2 align="center">Update ADMIN</h2>
             <form action="processadmin.php" method="POST">
+                
                     <div class="mb-3">
                         <label for="exampleInputMaGV" >Email</label>
                         <input type="text" name="Up_A_Email" class="form-control" id="exampleInputA_Email"readonly aria-describedby="" 
@@ -25,7 +36,8 @@
                     </div>
                     <div class="mb-3">
                         <label for="exampleInputTenGV" >Name</label>
-                        <input type="text" name="Up_A_Name" class="form-control" id="exampleInputA_Name" aria-describedby=""  placeholder="Nhập vào A_Name">
+                        <input type="text" name="Up_A_Name" class="form-control" id="exampleInputA_Name"
+                         aria-describedby=""  placeholder="Nhập vào A_Name">
                     </div>
                     <div class="mb-3">
                         <label for="exampleInputGioiTinh" >PASS</label>
