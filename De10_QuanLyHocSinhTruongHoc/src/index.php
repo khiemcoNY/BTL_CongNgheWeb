@@ -56,7 +56,7 @@
 
         </div>
     </div>
-    <div class="container-fluid">
+    <div class="container">
         <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-indicators">
                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -68,10 +68,10 @@
                     <img src="../img/slide1.jpg" class="d-block w-100 " alt="...">
                 </div>
                 <div class="carousel-item slider">
-                    <img src="../img/slide5.jpg" class="d-block w-100 " alt="...">
+                    <img src="../img/slide2.jpg" class="d-block w-100 " alt="...">
                 </div>
                 <div class="carousel-item slider">
-                    <img src="../img/slide5.jpg" class="d-block w-100 " alt="...">
+                    <img src="../img/slide3.jpg" class="d-block w-100 " alt="...">
                 </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
