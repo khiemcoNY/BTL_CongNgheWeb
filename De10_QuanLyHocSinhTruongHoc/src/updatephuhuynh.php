@@ -20,8 +20,8 @@
                 <form action="processphuhuynh.php" method="POST">
                     <div class="form-group">
                         <label for="exampleInputMaHS">Mã Học Sinh </label>
-                        <input type="text" name ="Up_MaHS" class="form-control" id="exampleInputMaHS" aria-describedby=""
-                            >
+                        <input type="text" name ="Up_MaHS" class="form-control" id="exampleInputMaHS"  readonly aria-describedby=""
+                        value ="<?php echo $_GET["idsua"]; ?>">
                         
                     </div>
                     <div class="form-group">

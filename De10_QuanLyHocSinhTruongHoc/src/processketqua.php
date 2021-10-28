@@ -21,14 +21,14 @@ if(isset($_POST['btnKetQua'])){
     ";  
     if (mysqli_query($conn, $sql)) {
         echo "New record created successfully";
-        header('Location:addketqua.php');
+        header("Location:admin.php");
     } else {
         echo "Error: " . $sql . "<br>" . mysqli_error($conn);
     }
     mysqli_close($conn);
 }
 
-if(isset($_POST['btnUpKQ']))
+if(isset($_GET['idsua']))
 {
     $Up_MaHS=$_POST['Up_MaHS'];
     $Up_TenHS=$_POST['Up_TenHS'];
