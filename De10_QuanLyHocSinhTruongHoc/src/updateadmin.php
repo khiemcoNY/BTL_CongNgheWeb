@@ -13,6 +13,27 @@
 </head>
 
 <body>
+    <?php
+    $A_Name="";
+   
+    $A_PASS="";
+    if(isset($_GET['idsua'])){
+        echo "aa";
+        $E=$_GET['idsua'];
+        include('connect.php');
+        $sql="SELECT * FROM ADMIN WHERE A_Email='$E'";
+        $result = mysqli_query($conn, $sql);
+        if($result >0){
+            $row = mysqli_fetch_array($result);
+           
+            $A_Name=$row['A_Name'];
+            $A_PASS= $row['A_PASS'];
+        }
+        echo $A_Name;
+        
+
+    }
+    ?>
     <div class="container">
         <div class="row">
             <div class="col-md-12">
@@ -25,14 +46,14 @@
                     </div>
                     <div class="mb-3">
                         <label for="exampleInputTenGV" >Name</label>
-                        <input type="text" name="Up_A_Name" class="form-control" id="exampleInputA_Name" aria-describedby=""  placeholder="Nhập vào A_Name">
+                        <input type="text" name="Up_A_Name"  class="form-control" id="exampleInputA_Name" aria-describedby=""  placeholder="Nhập vào A_Name">
                     </div>
                     <div class="mb-3">
                         <label for="exampleInputGioiTinh" >PASS</label>
-                        <input type="text" name="Up_A_PASS" class="form-control" id="exampleInputA_PASS" aria-describedby=""  placeholder="Nhập vào A_PASS">
+                        <input  type="text" name="Up_A_PASS"  class="form-control" id="exampleInputA_PASS" aria-describedby=""  placeholder="Nhập vào A_PASS">
                     </div>
                     
-                    <button type="submit" name="btnUpAD" class="btn btn-primary">Cập nhật thông tin</button>
+                    <button type="submit" name="btnUpAD"  class="btn btn-primary">Cập nhật thông tin</button>
                 </form>
             </div>
         </div>
