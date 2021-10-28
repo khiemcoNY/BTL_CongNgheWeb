@@ -14,6 +14,7 @@
 </head>
 
 <body>
+    <!-- header -->
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
@@ -47,7 +48,7 @@
                                 </li>
 
                             </ul>
-                            <a href="">Đăng Nhập</a><a href="">Đăng Ký</a>
+                            <a href="">Đăng Nhập</a>
 
                         </div>
                     </div>
@@ -57,6 +58,7 @@
 
         </div>
     </div>
+    <!-- slideshow -->
     <div class="container">
         <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-indicators">
@@ -85,30 +87,32 @@
             </button>
         </div>
     </div>
-    <div class="container-fluid">
-        <div class="row">
-
+    <!-- main -->
+    <div class="container-fluid main">
+        <div class="row" style="margin:50px 0">
+            <h3 class="title">Tra Cứu Kết Quả Học Tập - Năm Học 2021</h3>
             <div class="col-md"></div>
             <div class="col-md-8">
 
-                <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
+                <form action ="index.php"class="d-flex" method="POST">
+                    <input name="MaHS" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button name="search" class="btn btn-outline-success" type="submit">Search</button>
                 </form>
 
             </div>
             <div class="col-md"></div>
 
-
         </div>
         <div class="row">
+
             <div class="col-md-2">
-                <p>Tra Cứu kết quả học tập</p>
-                <div class="dropdown">
+
+                <!-- dropdown class -->
+                <div class="dropdown" style="margin:20px 25px 50px ;">
                     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                         --Chọn Lớp--
                     </button>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                    <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton1">
                         <?php
                         include('connect.php');
                         $sql1 = "SELECT TenLop FROM LOP";
@@ -116,7 +120,7 @@
                         if (mysqli_num_rows($result1) > 0) {
                             // output data of each row
                             while ($row1 = mysqli_fetch_assoc($result1)) {
-                                echo ' <li><a class="dropdown-item" href="#">';
+                                echo ' <li><a class="dropdown-item" href="index.php?TenLop='.$row1["TenLop"].'">';
                                 echo $row1["TenLop"];
                                 echo '</a></li>';
                             }
@@ -128,9 +132,23 @@
 
                     </ul>
                 </div>
+                <!-- dropdown Hoc Kỳ -->
+                <div class="dropdown" style="margin:20px 25px 50px;">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+                        -- Học Kỳ --
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-dark HocKy" aria-labelledby="dropdownMenuButton2">
+                        <li><a class="dropdown-item active" href="#">Học Kỳ I</a></li>
+                        
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item " href="">Học Kỳ II</a></li>
+                    </ul>
+                </div>
             </div>
             <div class="col-md-10">
-                <div class="table-responsive" id="employee_table">
+                <div class="table-responsive" id="employee_table" style="margin:25px 0">
                     <table class="table table-bordered">
                         <tr>
                             <th width="">STT</th>
@@ -147,10 +165,19 @@
 
                         </tr>
                         <?php
-                        include('connect.php');
-                        $sql = "SELECT * FROM KETQUA";
-                        $result = mysqli_query($conn, $sql);
-                        while ($row = mysqli_fetch_array($result)) {
+                            include('connect.php');
+                            $sql = "SELECT * FROM KETQUA";
+                            if(isset($_POST["search"])){
+                                $MaHS=$_POST["MaHS"];
+                                $sql="SELECT * FROM KET QUA WHERE MaHS='$MaHS'";
+                            }
+                            elseif(isset($_GET["TenLop"])){
+                                $TenLop=$_GET["TenLop"];
+                                $sql="SELECT * FROM KET QUA WHERE TenLop='$TenLop'";
+                            }
+                            
+                            $result = mysqli_query($conn, $sql);
+                            while ($row = mysqli_fetch_array($result)) {
                         ?>
                             <tr>
                                 <td><?php echo $row["STT"]; ?></td>
@@ -175,6 +202,7 @@
         </div>
 
     </div>
+    <!-- footer -->
     <div class="container-fluid">
         <div class="bg-dark text-center text-white">
             <!-- Grid container -->
@@ -212,11 +240,14 @@
                         <div class="col-md-4">
                             <br>
                             <ul class="foot-link">
-                                
-                                <li><a href=""><i class="bi bi-geo-alt-fill"></i>  Tây Sơn,Đông Đa</a></li>
-                                <li><a href=""><i class="bi bi-telephone-fill"></i>  +84 39699879666</a></li>
-                                <li><a href=""><i class="bi bi-envelope-open-fill"></i>  ThLoi@gmail.com</a></li>
-                                <li><hr><hr></li>
+
+                                <li><a href=""><i class="bi bi-geo-alt-fill"></i> Tây Sơn,Đông Đa</a></li>
+                                <li><a href=""><i class="bi bi-telephone-fill"></i> +84 39699879666</a></li>
+                                <li><a href=""><i class="bi bi-envelope-open-fill"></i> ThLoi@gmail.com</a></li>
+                                <li>
+                                    <hr>
+                                    <hr>
+                                </li>
 
 
                             </ul>
@@ -224,15 +255,15 @@
                         <div class="col-md-4">
                             <br>
                             <p>
-                            VIỆN ĐÀO TẠO  MIỀN Bắc <br>
-                            Địa chỉ: Số 115 Trần Phú <br>
-                            Điện thoại: (0259) 3823027<br>
-                            <hr>
-                            <hr>
+                                VIỆN ĐÀO TẠO MIỀN Bắc <br>
+                                Địa chỉ: Số 115 Trần Phú <br>
+                                Điện thoại: (0259) 3823027<br>
+                                <hr>
+                                <hr>
                             </p>
                         </div>
 
-                        
+
 
                     </div>
                     <!--Grid row-->
