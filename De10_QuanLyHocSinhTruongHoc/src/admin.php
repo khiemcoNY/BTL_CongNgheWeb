@@ -7,8 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.0/font/bootstrap-icons.css" integrity="sha384-7ynz3n3tAGNUYFZD3cWe5PDcE36xj85vyFkawcF6tIwxvIecqKvfwLiaFdizhPpN" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.0/font/bootstrap-icons.css"
+        integrity="sha384-7ynz3n3tAGNUYFZD3cWe5PDcE36xj85vyFkawcF6tIwxvIecqKvfwLiaFdizhPpN" crossorigin="anonymous">
     <title>admin</title>
 </head>
 
@@ -21,7 +23,7 @@
 
                 <div class="Admin">
                     <h4>Thông Tin Admin</h4>
-                    <a href=""><i class="bi bi-person-plus-fill"></i>Thêm admin</a>
+                    <a href="addadmin.php"><i class="bi bi-person-plus-fill"></i>Thêm admin</a>
                     <div class="table-responsive" id="employee_table">
                         <table class="table table-bordered">
 
@@ -41,18 +43,19 @@
 
                             while ($row = mysqli_fetch_array($result)) {
                             ?>
-                                <tr>
-                                    <td><?php echo $row["A_STT"]; ?></td>
-                                    <td><?php echo $row["A_Name"]; ?></td>
-                                    <td><?php echo $row["A_Email"]; ?></td>
-                                    <td><?php echo $row["A_PASS"]; ?></td>
-                                    <td><?php echo $row["A_Date"]; ?></td>
-                                   
-                                    <td><a href=""><i class="bi bi-gear-wide-connected"></i>Sửa</a></td>
-                                    <td><a href="processadmin.php?id=<?php echo $row["A_Email"]; ?>"><i class="bi bi-trash-fill"></i>Xóa</a></td>
+                            <tr>
+                                <td><?php echo $row["A_STT"]; ?></td>
+                                <td><?php echo $row["A_Name"]; ?></td>
+                                <td><?php echo $row["A_Email"]; ?></td>
+                                <td><?php echo $row["A_PASS"]; ?></td>
+                                <td><?php echo $row["A_Date"]; ?></td>
+
+                                <td><a href=""><i class="bi bi-gear-wide-connected"></i>Sửa</a></td>
+                                <td><a href="processadmin.php?id=<?php echo $row["A_Email"]; ?>"><i
+                                            class="bi bi-trash-fill"></i>Xóa</a></td>
 
 
-                                </tr>
+                            </tr>
                             <?php
                             }
                             mysqli_close($conn);
@@ -71,7 +74,7 @@
 
                 <div class="giaovien">
                     <h4>Thông Tin Giáo Viên</h4>
-                    <a href=""><i class="bi bi-person-plus-fill"></i>Thêm Giáo Viên</a>
+                    <a href="addgiaovien.php"><i class="bi bi-person-plus-fill"></i>Thêm Giáo Viên</a>
                     <div class="table-responsive" id="employee_table">
                         <table class="table table-bordered">
 
@@ -96,19 +99,19 @@
 
                             while ($row = mysqli_fetch_array($result)) {
                             ?>
-                                <tr>
-                                    <td><?php echo $row["STT"]; ?></td>
-                                    <td><?php echo $row["MaGV"]; ?></td>
-                                    <td><?php echo $row["TenGV"]; ?></td>
-                                    <td><?php echo $row["GioiTinh"]; ?></td>
-                                    <td><?php echo $row["NgaySinh"]; ?></td>
-                                    <td><?php echo $row["DiaChi"]; ?></td>
-                                    <td><?php echo $row["SDT"]; ?></td>
-                                    <td><a href=""><i class="bi bi-gear-wide-connected"></i>Sửa</a></td>
-                                    <td><a href=""><i class="bi bi-trash-fill"></i>Xóa</a></td>
+                            <tr>
+                                <td><?php echo $row["STT"]; ?></td>
+                                <td><?php echo $row["MaGV"]; ?></td>
+                                <td><?php echo $row["TenGV"]; ?></td>
+                                <td><?php echo $row["GioiTinh"]; ?></td>
+                                <td><?php echo $row["NgaySinh"]; ?></td>
+                                <td><?php echo $row["DiaChi"]; ?></td>
+                                <td><?php echo $row["SDT"]; ?></td>
+                                <td><a href=""><i class="bi bi-gear-wide-connected"></i>Sửa</a></td>
+                                <td><a href=""><i class="bi bi-trash-fill"></i>Xóa</a></td>
 
 
-                                </tr>
+                            </tr>
                             <?php
                             }
                             mysqli_close($conn);
@@ -126,7 +129,7 @@
             <div class="col-md-12">
                 <div class="hocsinh">
                     <h4>Thông Tin Hoc Sinh</h4>
-                    <a href=""><i class="bi bi-person-plus-fill"></i>Thêm Hoc Sinh</a>
+                    <a href="addhocsinh.php"><i class="bi bi-person-plus-fill"></i>Thêm Hoc Sinh</a>
                     <table class="table table-bordered">
                         <tr>
                             <th width="">STT</th>
@@ -146,20 +149,20 @@
                         $result = mysqli_query($conn, $sql);
                         while ($row = mysqli_fetch_array($result)) {
                         ?>
-                            <tr>
-                                <td><?php echo $row["STT"]; ?></td>
-                                <td><?php echo $row["MaHS"]; ?></td>
-                                <td><?php echo $row["TenHS"]; ?></td>
-                                <td><?php echo $row["GioiTinh"]; ?></td>
-                                <td><?php echo $row["TenLop"]; ?></td>
-                                <td><?php echo $row["NgaySinh"]; ?></td>
-                                <td><?php echo $row["DiaChi"]; ?></td>
-                                <td><?php echo $row["SDT"]; ?></td>
-                                <td><a href=""><i class="bi bi-gear-wide-connected"></i>Sửa</a></td>
-                                <td><a href=""><i class="bi bi-trash-fill"></i>Xóa</a></td>
+                        <tr>
+                            <td><?php echo $row["STT"]; ?></td>
+                            <td><?php echo $row["MaHS"]; ?></td>
+                            <td><?php echo $row["TenHS"]; ?></td>
+                            <td><?php echo $row["GioiTinh"]; ?></td>
+                            <td><?php echo $row["TenLop"]; ?></td>
+                            <td><?php echo $row["NgaySinh"]; ?></td>
+                            <td><?php echo $row["DiaChi"]; ?></td>
+                            <td><?php echo $row["SDT"]; ?></td>
+                            <td><a href=""><i class="bi bi-gear-wide-connected"></i>Sửa</a></td>
+                            <td><a href="processhocsinh.php?id=<?php echo $row["MaHS"]; ?>"><i
+                                            class="bi bi-trash-fill"></i>Xóa</a></td>
 
-
-                            </tr>
+                        </tr>
                         <?php
                         }
                         ?>
@@ -170,7 +173,7 @@
         <div class="row">
             <div class="col-md-12">
                 <h4>Thông Tin Ket Qua Hoc Sinh</h4>
-                <a href=""><i class="bi bi-person-plus-fill"></i>Thêm Kết Quả Hoc Sinh</a>
+                <a href="addketqua.php"><i class="bi bi-person-plus-fill"></i>Thêm Kết Quả Hoc Sinh</a>
                 <div class="ketqua">
                     <div class="table-responsive" id="employee_table">
                         <table class="table table-bordered">
@@ -186,6 +189,8 @@
                                 <th width="">Diem Ly</th>
                                 <th width="">Diem Hoa</th>
                                 <th width="">Diem Sinh</th>
+                                <th width="">Sửa Thông Tin</th>
+                                <th width="">Xóa Thông Tin</th>
 
                             </tr>
                             <?php
@@ -194,20 +199,25 @@
                             $result = mysqli_query($conn, $sql);
                             while ($row = mysqli_fetch_array($result)) {
                             ?>
-                                <tr>
-                                    <td><?php echo $row["STT"]; ?></td>
-                                    <td><?php echo $row["MaHS"]; ?></td>
-                                    <td><?php echo $row["TenHS"]; ?></td>
-                                    <td><?php echo $row["GioiTinh"]; ?></td>
-                                    <td><?php echo $row["TenLop"]; ?></td>
-                                    <td><?php echo $row["DiemVan"]; ?></td>
-                                    <td><?php echo $row["DiemToan"]; ?></td>
-                                    <td><?php echo $row["DiemAnh"]; ?></td>
-                                    <td><?php echo $row["DiemLy"]; ?></td>
-                                    <td><?php echo $row["DiemHoa"]; ?></td>
-                                    <td><?php echo $row["DiemSinh"]; ?></td>
+                            <tr>
+                                <td><?php echo $row["STT"]; ?></td>
+                                <td><?php echo $row["MaHS"]; ?></td>
+                                <td><?php echo $row["TenHS"]; ?></td>
+                                <td><?php echo $row["GioiTinh"]; ?></td>
+                                <td><?php echo $row["TenLop"]; ?></td>
+                                <td><?php echo $row["DiemVan"]; ?></td>
+                                <td><?php echo $row["DiemToan"]; ?></td>
+                                <td><?php echo $row["DiemAnh"]; ?></td>
+                                <td><?php echo $row["DiemLy"]; ?></td>
+                                <td><?php echo $row["DiemHoa"]; ?></td>
+                                <td><?php echo $row["DiemSinh"]; ?></td>
+                                <td><a href=""><i class="bi bi-gear-wide-connected"></i>Sửa</a></td>
+                                <td><a href="processketqua.php?id=<?php echo $row["MaHS"]; ?>"><i
+                                            class="bi bi-trash-fill"></i>Xóa</a></td>
 
-                                </tr>
+
+
+                            </tr>
                             <?php
                             }
                             ?>
@@ -220,7 +230,7 @@
         <div class="row">
             <div class="col-md-12">
                 <h4>Thông Tin Phụ Huynh Hoc Sinh</h4>
-                <a href=""><i class="bi bi-person-plus-fill"></i>Thêm Phụ Huynh Hoc Sinh</a>
+                <a href="addphuhuynh.php"><i class="bi bi-person-plus-fill"></i>Thêm Phụ Huynh Hoc Sinh</a>
                 <div class="phuhuynh">
                     <div class="table-responsive" id="employee_table">
                         <table class="table table-bordered">
@@ -234,6 +244,8 @@
                                 <th width="">Email</th>
                                 <th width="">SDT</th>
                                 <th width="">DiaChi</th>
+                                <th width="">Sửa Thông Tin</th>
+                                <th width="">Xóa Thông Tin</th>
 
                             </tr>
                             <?php
@@ -242,19 +254,23 @@
                             $result = mysqli_query($conn, $sql);
                             while ($row = mysqli_fetch_array($result)) {
                             ?>
-                                <tr>
-                                    <td><?php echo $row["STT"]; ?></td>
-                                    <td><?php echo $row["MaHS"]; ?></td>
-                                    <td><?php echo $row["TenHS"]; ?></td>
-                                    <td><?php echo $row["TenLop"]; ?></td>
-                                    <td><?php echo $row["TenBo"]; ?></td>
-                                    <td><?php echo $row["TenMe"]; ?></td>
-                                    <td><?php echo $row["Email"]; ?></td>
-                                    <td><?php echo $row["SDT"]; ?></td>
-                                    <td><?php echo $row["DiaChi"]; ?></td>
+                            <tr>
+                                <td><?php echo $row["STT"]; ?></td>
+                                <td><?php echo $row["MaHS"]; ?></td>
+                                <td><?php echo $row["TenHS"]; ?></td>
+                                <td><?php echo $row["TenLop"]; ?></td>
+                                <td><?php echo $row["TenBo"]; ?></td>
+                                <td><?php echo $row["TenMe"]; ?></td>
+                                <td><?php echo $row["Email"]; ?></td>
+                                <td><?php echo $row["SDT"]; ?></td>
+                                <td><?php echo $row["DiaChi"]; ?></td>
+                                <td><a href=""><i class="bi bi-gear-wide-connected"></i>Sửa</a></td>
+                                <td><a href="processphuhuynh.php?id=<?php echo $row["MaHS"]; ?>"><i
+                                            class="bi bi-trash-fill"></i>Xóa</a></td>
 
 
-                                </tr>
+
+                            </tr>
                             <?php
                             }
                             ?>
@@ -269,7 +285,9 @@
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    </script>
 
     <!-- Option 2: Separate Popper and Bootstrap JS -->
     <!--

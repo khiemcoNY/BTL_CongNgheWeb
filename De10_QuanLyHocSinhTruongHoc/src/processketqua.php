@@ -52,5 +52,20 @@ if(isset($_POST['btnUpKQ']))
     
     mysqli_close($conn);
 }
+if (isset($_GET['id'])) {
+  include('connect.php');
+  $id=$_GET['id'];
+  $sql = "DELETE FROM KETQUA WHERE MaHS='$id'";
+
+  if (mysqli_query($conn, $sql)) {
+      echo "Record deleted successfully";
+  } else {
+      echo "Error deleting record: " . mysqli_error($conn);
+  }
+  header("Location:admin.php");
+
+
+  mysqli_close($conn);
+}
 ?>
 
