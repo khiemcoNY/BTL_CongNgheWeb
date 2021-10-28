@@ -8,7 +8,7 @@
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="style.css">
     <title>Tra Cứu!</title>
 </head>
 
@@ -18,7 +18,8 @@
             <div class="col-md-12">
                 <nav class="navbar navbar-expand-lg navbar-light bg-light">
                     <div class="container-fluid">
-                        <a class="navbar-brand" href="#">Navbar</a>
+                        <a class="navbar-brand" href="#"><img src="../img/logo.jpeg" class="logo" alt=""></a>
+
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                         </button>
@@ -28,24 +29,22 @@
                                     <a class="nav-link active" aria-current="page" href="#">Home</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">Link</a>
+                                    <a class="nav-link" href="#">Contact</a>
                                 </li>
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                        Dropdown
+                                        More
                                     </a>
                                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <li><a class="dropdown-item" href="#">Action</a></li>
-                                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                                        <li><a class="dropdown-item" href="http://www.tlu.edu.vn/gioi-thieu">Information</a></li>
+
                                         <li>
                                             <hr class="dropdown-divider">
                                         </li>
-                                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                        <li><a class="dropdown-item" href="http://www.tlu.edu.vn/Dao-tao">Educate</a></li>
                                     </ul>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                                </li>
+
                             </ul>
                             <a href="">Đăng Nhập</a><a href="">Đăng Ký</a>
 
@@ -54,10 +53,38 @@
                 </nav>
             </div>
 
-            <div class="col-md-12">
-                <h1>Tra Cứu Thông Tin</h1>
-            </div>
+
         </div>
+    </div>
+    <div class="container-fluid">
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active slider">
+                    <img src="../img/slide1.jpg" class="d-block w-100 " alt="...">
+                </div>
+                <div class="carousel-item slider">
+                    <img src="../img/slide5.jpg" class="d-block w-100 " alt="...">
+                </div>
+                <div class="carousel-item slider">
+                    <img src="../img/slide5.jpg" class="d-block w-100 " alt="...">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+    <div class="container-fluid">
         <div class="row">
 
             <div class="col-md"></div>
@@ -75,14 +102,29 @@
         </div>
         <div class="row">
             <div class="col-md-2">
+                <p>Tra Cứu kết quả học tập</p>
                 <div class="dropdown">
                     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                        Dropdown button
+                        --Chọn Lớp--
                     </button>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                        <li><a class="dropdown-item" href="#">Action</a></li>
-                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        <?php
+                        include('connect.php');
+                        $sql1 = "SELECT TenLop FROM LOP";
+                        $result1 = mysqli_query($conn, $sql1);
+                        if (mysqli_num_rows($result1) > 0) {
+                            // output data of each row
+                            while ($row1 = mysqli_fetch_assoc($result1)) {
+                                echo ' <li><a class="dropdown-item" href="#">';
+                                echo $row1["TenLop"];
+                                echo '</a></li>';
+                            }
+                        } else {
+                            echo "0 results";
+                        }
+                        mysqli_close($conn);
+                        ?>
+
                     </ul>
                 </div>
             </div>
@@ -130,6 +172,7 @@
                 </div>
             </div>
         </div>
+
     </div>
     <div class="container-fluid">
         <div class="bg-dark text-center text-white">
