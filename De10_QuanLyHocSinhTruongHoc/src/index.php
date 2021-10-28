@@ -15,8 +15,8 @@
 
 <body>
     <!-- header -->
-    <div class="container-fluid">
-        <div class="row">
+    <div class="container-fluid header">
+        <div class="row ">
             <div class="col-md-12">
                 <nav class="navbar navbar-expand-lg navbar-light bg-light">
                     <div class="container-fluid">
@@ -38,17 +38,19 @@
                                         More
                                     </a>
                                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <li><a class="dropdown-item" href="http://www.tlu.edu.vn/gioi-thieu">Information</a></li>
+                                        <li>Information</li>
 
                                         <li>
                                             <hr class="dropdown-divider">
                                         </li>
-                                        <li><a class="dropdown-item" href="http://www.tlu.edu.vn/Dao-tao">Educate</a></li>
+                                        <li>Educate</li>
                                     </ul>
                                 </li>
 
                             </ul>
-                            <a href="">Đăng Nhập</a>
+                           <div class="login"> 
+                               <a href="">Đăng Nhập</a>
+                            </div>
 
                         </div>
                     </div>
