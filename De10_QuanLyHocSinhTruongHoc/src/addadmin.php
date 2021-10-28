@@ -24,14 +24,15 @@
                 <h2 align="center">Add Admin</h2>
                 <br /><br /><br />
                 <form action="processadmin.php" method="POST">
+                <div class="mb-3">
+                        <label for="exampleInputTenGV" >A_Email</label>
+                        <input type="email" name="A_Email" class="form-control" id="exampleInputA_Email" aria-describedby=""  placeholder="Enter A_Email">
+                    </div>
                     <div class="mb-3">
                         <label for="exampleInputMaGV" >A_Name</label>
                         <input type="text" name="A_Name" class="form-control" id="exampleInputA_Name" aria-describedby=""  placeholder="Enter A_Name" >
                     </div>
-                    <div class="mb-3">
-                        <label for="exampleInputTenGV" >A_Email</label>
-                        <input type="text" name="A_Email" class="form-control" id="exampleInputA_Email" aria-describedby=""  placeholder="Enter A_Email">
-                    </div>
+                   
                     <div class="mb-3">
                         <label for="exampleInputGioiTinh" >A_PASS</label>
                         <input type="text" name="A_PASS" class="form-control" id="exampleInputA_PASS" aria-describedby=""  placeholder="Enter A_PASS">
