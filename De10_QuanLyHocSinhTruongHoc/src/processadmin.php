@@ -21,6 +21,7 @@ if(isset($_POST['btnadmin']))
      mysqli_close($conn);
 }
 //Xử lý cập nhật admin
+
 if(isset($_POST['btnUpAD']))
 {
     $Up_A_Name=$_POST['Up_A_Name'];

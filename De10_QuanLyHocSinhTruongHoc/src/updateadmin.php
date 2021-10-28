@@ -20,7 +20,8 @@
             <form action="processadmin.php" method="POST">
                     <div class="mb-3">
                         <label for="exampleInputMaGV" >Email</label>
-                        <input type="text" name="Up_A_Email" class="form-control" id="exampleInputA_Email" aria-describedby=""  placeholder="Nhập vào A_Email" >
+                        <input type="text" name="Up_A_Email" class="form-control" id="exampleInputA_Email" aria-describedby="" 
+                        value="<?php echo $_GET['idsua'] ?>"  placeholder="Nhập vào A_Email" >
                     </div>
                     <div class="mb-3">
                         <label for="exampleInputTenGV" >Name</label>
