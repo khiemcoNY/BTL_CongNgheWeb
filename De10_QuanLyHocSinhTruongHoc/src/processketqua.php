@@ -28,7 +28,7 @@ if(isset($_POST['btnKetQua'])){
     mysqli_close($conn);
 }
 
-if(isset($_GET['idsua']))
+if(isset($_POST['btnUpKQ']))
 {
     $Up_MaHS=$_POST['Up_MaHS'];
     $Up_TenHS=$_POST['Up_TenHS'];
@@ -42,14 +42,15 @@ if(isset($_GET['idsua']))
     $Up_DiemSinh=$_POST['Up_DiemSinh'];
 
     include('connect.php');
-    $sql = "UPDATE KETQUA SET TenHS='$Up_TenHS',GioiTinh='$Up_GioiTinh',TenLop='$Up_TenLop',DiemVan='$Up_DiemVan',DiemToan='$Up_DiemToan', DiemAnh='$Up_DiemAnh', DiemLy='$Up_DiemLy', DiemHoa='$Up_DiemHoa', DiemSinh='$Up_DiemSinh' WHERE MaHS='$Up_MaHS'";
+    $sql = "UPDATE KETQUA SET TenHS='$Up_TenHS',GioiTinh='$Up_GioiTinh',TenLop='$Up_TenLop',DiemVan='$Up_DiemVan',DiemToan='$Up_DiemToan', 
+    DiemAnh='$Up_DiemAnh', DiemLy='$Up_DiemLy', DiemHoa='$Up_DiemHoa', DiemSinh='$Up_DiemSinh' WHERE MaHS='$Up_MaHS'";
 
     if (mysqli_query($conn, $sql)) {
       echo "Record updated successfully";
     } else {
       echo "Error updating record: " . mysqli_error($conn);
     }
-    
+    header("Location:admin.php");
     mysqli_close($conn);
 }
 if (isset($_GET['id'])) {

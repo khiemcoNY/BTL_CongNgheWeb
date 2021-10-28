@@ -20,7 +20,7 @@
             <form action="processgiaovien.php" method="POST">
                     <div class="mb-3">
                         <label for="exampleInputMaGV" >Mã giáo viên</label>
-                        <input type="text" name="Up_MaGV" class="form-control" id="exampleInputMaGV" aria-describedby=""  placeholder="Nhập vào Mã giáo viên" >
+                        <input type="text" name="Up_MaGV" class="form-control" id="exampleInputMaGV"readonly  aria-describedby="" value="<?php echo $_GET['idsua'] ?>" placeholder="Nhập vào Mã giáo viên" >
                     </div>
                     <div class="mb-3">
                         <label for="exampleInputTenGV" >Tên giáo viên</label>

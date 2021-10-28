@@ -19,7 +19,7 @@ if(isset($_POST['btngiaovien']))
       } else {
         echo "Error: " . $sql . "<br>" . mysqli_error($conn);
       }
-     header("Location:addgiaovien.php");
+      header("Location:admin.php");
      mysqli_close($conn);
 }
 //Xử lý cập nhật giáo viên

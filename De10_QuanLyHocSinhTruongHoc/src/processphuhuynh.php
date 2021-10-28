@@ -23,7 +23,7 @@ if(isset($_POST['btnPhuHuynh']))
     else {
     echo "Error: " . $sql . "<br>" . mysqli_error($conn);
     }
-    header("Location:addphuhuynh.php");
+    header("Location:admin.php");
     mysqli_close($conn);
 }
 //xử lý update

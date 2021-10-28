@@ -24,7 +24,7 @@ if(isset($_POST['btnHocSinh']))
     else {
     echo "Error: " . $sql . "<br>" . mysqli_error($conn);
     }
-    header("Location:addhocsinh.php");
+    header("Location:admin.php");
     mysqli_close($conn);
 }
 //xử lý update
@@ -47,7 +47,7 @@ if(isset($_POST['btnUpHS']))
 
     if (mysqli_query($conn, $sql)) 
     {
-        header("Location:addhocsinh.php");
+        header("Location:admin.php");
     echo "New record created successfully";
     }
     else {

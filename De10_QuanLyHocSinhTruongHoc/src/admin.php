@@ -18,7 +18,7 @@
     <div class="container">
         <h1>Admin </h1>
         <h3>Hi, <?php echo "admin" ?></h3>
-                use Componere\Value;
+               
         <div class="row">
             <div class="col-md-12">
 
@@ -51,9 +51,8 @@
                                 <td><?php echo $row["A_PASS"]; ?></td>
                                 <td><?php echo $row["A_Date"]; ?></td>
 
-                                <td><a href=""><i class="bi bi-gear-wide-connected"></i>Sửa</a></td>
-                                <td><a href="processadmin.php?id=<?php echo $row["A_Email"]; ?>"><i
-                                            class="bi bi-trash-fill"></i>Xóa</a></td>
+                                <td><a href="updateadmin.php?idsua=<?php echo $row["A_Email"]; ?>" ><i class="bi bi-gear-wide-connected"></i>Sửa</a></td>
+                                <td><a href="processadmin.php?id=<?php echo $row["A_Email"]; ?>"><i class="bi bi-trash-fill"></i>Xóa</a></td>
 
 
                             </tr>
@@ -108,10 +107,10 @@
                                 <td><?php echo $row["NgaySinh"]; ?></td>
                                 <td><?php echo $row["DiaChi"]; ?></td>
                                 <td><?php echo $row["SDT"]; ?></td>
-                                <td><a href="updategiaovien.php?idsua=<?php echo $row["MaGV"]; ?>"><i
-                                            class="bi bi-gear-wide-connected"></i>Sửa</a></td>
-                            <td><a href="processgiaovien.php?id=<?php echo $row["MaGV"]; ?>"><i
-                                            class="bi bi-trash-fill"></i>Xóa</a></td>
+                                <td><a href="updategiaovien.php?idsua=<?php echo $row["MaGV"]; ?>">
+                                <i class="bi bi-gear-wide-connected"></i>Sửa</a></td>
+                            <td><a href="processgiaovien.php?id=<?php echo $row["MaGV"]; ?>">
+                            <i class="bi bi-trash-fill"></i>Xóa</a></td>
 
 
 

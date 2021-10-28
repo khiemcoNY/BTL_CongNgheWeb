@@ -19,7 +19,7 @@
             <h2 align="center">Update Kết Quả</h2>
                 <form action="processketqua.php" method="POST">
                     <div class="form-group">
-                        <label for="exampleInputMaHS">Ma Học Sinh</label>
+                        <label for="exampleInputMaHS">Mã Học Sinh</label>
                         <input type="text" name="Up_MaHS" class="form-control" id="exampleInputMaHS"  readonly aria-describedby=""  value ="<?php echo $_GET["idsua"]; ?>" placeholder="Enter Mã Học Sinh">
                     </div>
                     <div class="form-group">
