@@ -8,6 +8,7 @@
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.0/font/bootstrap-icons.css" integrity="sha384-7ynz3n3tAGNUYFZD3cWe5PDcE36xj85vyFkawcF6tIwxvIecqKvfwLiaFdizhPpN" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <title>Tra Cứu!</title>
 </head>
@@ -181,159 +182,58 @@
                 <!-- Section: Social media -->
                 <section class="mb-4">
                     <!-- Facebook -->
-                    <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="bi bi-facebook"></i></a>
 
                     <!-- Twitter -->
-                    <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-twitter"></i></a>
+                    <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="bi bi-twitter"></i></a>
 
                     <!-- Google -->
-                    <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-google"></i></a>
+                    <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="bi bi-google"></i></a>
 
                     <!-- Instagram -->
-                    <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-instagram"></i></a>
+                    <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="bi bi-instagram"></i></a>
 
-                    <!-- Linkedin -->
-                    <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-linkedin-in"></i></a>
 
-                    <!-- Github -->
-                    <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-github"></i></a>
-                </section>
-                <!-- Section: Social media -->
 
-                <!-- Section: Form -->
-                <section class="">
-                    <form action="">
-                        <!--Grid row-->
-                        <div class="row d-flex justify-content-center">
-                            <!--Grid column-->
-                            <div class="col-auto">
-                                <p class="pt-2">
-                                    <strong>Sign up for our newsletter</strong>
-                                </p>
-                            </div>
-                            <!--Grid column-->
 
-                            <!--Grid column-->
-                            <div class="col-md-5 col-12">
-                                <!-- Email input -->
-                                <div class="form-outline form-white mb-4">
-                                    <input type="email" id="form5Example21" class="form-control" />
-                                    <label class="form-label" for="form5Example21">Email address</label>
-                                </div>
-                            </div>
-                            <!--Grid column-->
-
-                            <!--Grid column-->
-                            <div class="col-auto">
-                                <!-- Submit button -->
-                                <button type="submit" class="btn btn-outline-light mb-4">
-                                    Subscribe
-                                </button>
-                            </div>
-                            <!--Grid column-->
-                        </div>
-                        <!--Grid row-->
-                    </form>
                 </section>
                 <!-- Section: Form -->
 
-                <!-- Section: Text -->
-                <section class="mb-4">
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt distinctio earum
-                        repellat quaerat voluptatibus placeat nam, commodi optio pariatur est quia magnam
-                        eum harum corrupti dicta, aliquam sequi voluptate quas.
-                    </p>
-                </section>
+
                 <!-- Section: Text -->
 
                 <!-- Section: Links -->
                 <section class="">
                     <!--Grid row-->
                     <div class="row">
-                        <!--Grid column-->
-                        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-                            <h5 class="text-uppercase">Links</h5>
+                        <div class="col-md-4">
+                            <img src="../img/TLU-map.png" alt="">
+                        </div>
+                        <div class="col-md-4">
+                            <br>
+                            <ul class="foot-link">
+                                
+                                <li><a href=""><i class="bi bi-geo-alt-fill"></i>  Tây Sơn,Đông Đa</a></li>
+                                <li><a href=""><i class="bi bi-telephone-fill"></i>  +84 39699879666</a></li>
+                                <li><a href=""><i class="bi bi-envelope-open-fill"></i>  ThLoi@gmail.com</a></li>
+                                <li><hr><hr></li>
 
-                            <ul class="list-unstyled mb-0">
-                                <li>
-                                    <a href="#!" class="text-white">Link 1</a>
-                                </li>
-                                <li>
-                                    <a href="#!" class="text-white">Link 2</a>
-                                </li>
-                                <li>
-                                    <a href="#!" class="text-white">Link 3</a>
-                                </li>
-                                <li>
-                                    <a href="#!" class="text-white">Link 4</a>
-                                </li>
+
                             </ul>
                         </div>
-                        <!--Grid column-->
-
-                        <!--Grid column-->
-                        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-                            <h5 class="text-uppercase">Links</h5>
-
-                            <ul class="list-unstyled mb-0">
-                                <li>
-                                    <a href="#!" class="text-white">Link 1</a>
-                                </li>
-                                <li>
-                                    <a href="#!" class="text-white">Link 2</a>
-                                </li>
-                                <li>
-                                    <a href="#!" class="text-white">Link 3</a>
-                                </li>
-                                <li>
-                                    <a href="#!" class="text-white">Link 4</a>
-                                </li>
-                            </ul>
+                        <div class="col-md-4">
+                            <br>
+                            <p>
+                            VIỆN ĐÀO TẠO  MIỀN Bắc <br>
+                            Địa chỉ: Số 115 Trần Phú <br>
+                            Điện thoại: (0259) 3823027<br>
+                            <hr>
+                            <hr>
+                            </p>
                         </div>
-                        <!--Grid column-->
 
-                        <!--Grid column-->
-                        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-                            <h5 class="text-uppercase">Links</h5>
+                        
 
-                            <ul class="list-unstyled mb-0">
-                                <li>
-                                    <a href="#!" class="text-white">Link 1</a>
-                                </li>
-                                <li>
-                                    <a href="#!" class="text-white">Link 2</a>
-                                </li>
-                                <li>
-                                    <a href="#!" class="text-white">Link 3</a>
-                                </li>
-                                <li>
-                                    <a href="#!" class="text-white">Link 4</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <!--Grid column-->
-
-                        <!--Grid column-->
-                        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-                            <h5 class="text-uppercase">Links</h5>
-
-                            <ul class="list-unstyled mb-0">
-                                <li>
-                                    <a href="#!" class="text-white">Link 1</a>
-                                </li>
-                                <li>
-                                    <a href="#!" class="text-white">Link 2</a>
-                                </li>
-                                <li>
-                                    <a href="#!" class="text-white">Link 3</a>
-                                </li>
-                                <li>
-                                    <a href="#!" class="text-white">Link 4</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <!--Grid column-->
                     </div>
                     <!--Grid row-->
                 </section>
@@ -343,8 +243,8 @@
 
             <!-- Copyright -->
             <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-                © 2020 Copyright:
-                <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+                © 2021 :
+                <a class="text-white" href="https://mdbootstrap.com/">Trường THPT Thủy Lợi</a>
             </div>
             <!-- Copyright -->
         </div>

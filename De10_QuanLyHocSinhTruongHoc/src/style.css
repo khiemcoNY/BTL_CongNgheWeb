@@ -3,10 +3,22 @@
     height: 50px;
 }
 
+ul {
+    list-style-type: none !important;
+}
+
+a {
+    text-decoration: none !important;
+}
+
 .slider img {
     display: block;
     max-width: 2000px;
-    max-height: 500px;
+    max-height: 400px;
     width: auto;
     height: auto;
+}
+
+.foot-link a {
+    color: #fff;
 }
