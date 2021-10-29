@@ -13,14 +13,44 @@
         integrity="sha384-7ynz3n3tAGNUYFZD3cWe5PDcE36xj85vyFkawcF6tIwxvIecqKvfwLiaFdizhPpN" crossorigin="anonymous">
     <title>admin</title>
 </head>
+<style>
+.style1 {
+    border: 2px solid black;
+    padding: 50px;
+    margin-top: 50px;
+    border-radius: 15px;
+    background-color:white;
+}
+.style1 from label{
+    margin-bottom: 10px;
+}
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
 
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+h4{
+    text-align: center;
+}
+
+</style>
 <body>
     <div class="container">
         <h1>Admin </h1>
         <h3>Hi, <?php echo "admin" ?></h3>
                
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-12 style1">
 
                 <div class="Admin">
                     <h4>Thông Tin Admin</h4>
@@ -70,7 +100,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-12 style1">
 
                 <div class="giaovien">
                     <h4>Thông Tin Giáo Viên</h4>
@@ -129,7 +159,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-12  style1">
                 <div class="hocsinh">
                     <h4>Thông Tin Hoc Sinh</h4>
                     <a href="addhocsinh.php"><i class="bi bi-person-plus-fill"></i>Thêm Hoc Sinh</a>
@@ -175,7 +205,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-12 style1">
                 <h4>Thông Tin Ket Qua Hoc Sinh</h4>
                 <a href="addketqua.php"><i class="bi bi-person-plus-fill"></i>Thêm Kết Quả Hoc Sinh</a>
                 <div class="ketqua">
@@ -233,7 +263,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-12 style1">
                 <h4>Thông Tin Phụ Huynh Hoc Sinh</h4>
                 <a href="addphuhuynh.php"><i class="bi bi-person-plus-fill"></i>Thêm Phụ Huynh Hoc Sinh</a>
                 <div class="phuhuynh">

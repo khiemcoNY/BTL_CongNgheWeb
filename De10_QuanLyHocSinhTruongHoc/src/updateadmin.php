@@ -11,7 +11,19 @@
 
     <title>Update ADMIN</title>
 </head>
+<style>
+.style1 {
+    border: 2px solid black;
+    padding: 50px;
+    margin-top: 50px;
+    border-radius: 15px;
+    background-color: #ccc;
+}
+.style1 from label{
+    margin-bottom: 10px;
+}
 
+</style>
 <body>
     <?php
         $A_Name= "";
@@ -33,7 +45,7 @@
     ?>
     <div class="container">
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-12 style1">
             <h2 align="center">Update ADMIN</h2>
             <form action="processadmin.php" method="POST">
                 

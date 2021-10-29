@@ -12,7 +12,19 @@
 
     <title>Update GIAOVIEN</title>
 </head>
+<style>
+.style1 {
+    border: 2px solid black;
+    padding: 50px;
+    margin-top: 50px;
+    border-radius: 15px;
+    background-color: #ccc;
+}
+.style1 from label{
+    margin-bottom: 10px;
+}
 
+</style>
 <body>
     <?php
        $TenGV= "";
@@ -42,9 +54,15 @@
 
     <div class="container">
         <div class="row">
+<<<<<<< HEAD
             <div class="col-md-12">
                 <h2 align="center">Update Giáo Viên</h2>
                 <form action="processgiaovien.php" method="POST">
+=======
+            <div class="col-md-12 style1">
+            <h2 align="center">Update Giáo Viên</h2>
+            <form action="processgiaovien.php" method="POST">
+>>>>>>> nhanh6
                     <div class="mb-3">
                         <label for="exampleInputMaGV">Mã giáo viên</label>
                         <input type="text" name="Up_MaGV" class="form-control" id="exampleInputMaGV" readonly
