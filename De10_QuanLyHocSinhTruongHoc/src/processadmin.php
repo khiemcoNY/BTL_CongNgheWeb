@@ -13,8 +13,8 @@ if(isset($_POST['btnadmin']))
     VALUES ('$A_Name','$A_Email','$pass_hash')";
     
     if (mysqli_query($conn, $sql )) {
-        // header("Location:admin.php");
-        echo $pass_hash;
+        header("Location:admin.php");
+       
       } else {
         echo "Error: " . $sql . "<br>" . mysqli_error($conn);
       }

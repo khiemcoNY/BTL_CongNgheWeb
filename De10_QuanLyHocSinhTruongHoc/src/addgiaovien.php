@@ -12,13 +12,40 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>Addgiaovien</title>
 </head>
+<style>
+.style1 {
+    border: 2px solid black;
+    padding: 50px;
+    margin-top: 50px;
+    border-radius: 15px;
+    background-color: #ccc;
+}
+.style1 from label{
+    margin-bottom: 10px;
+}
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
 
 <body>
 
     <div class="container">
 
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-12 style1">
 
 
                 <h2 align="center">Giáo Viên</h2>
@@ -39,28 +66,34 @@
                 <br /><br /><br />
                 <form action="processgiaovien.php" method="POST">
                     <div class="mb-3">
-                        <label for="exampleInputMaGV" >Mã giáo viên</label>
-                        <input type="text" name="MaGV" class="form-control" id="exampleInputMaGV" aria-describedby=""  placeholder="Nhập vào Mã giáo viên" >
+                        <label for="exampleInputMaGV">Mã giáo viên</label>
+                        <input type="text" name="MaGV" class="form-control" id="exampleInputMaGV" aria-describedby=""
+                            placeholder="Nhập vào Mã giáo viên">
                     </div>
                     <div class="mb-3">
-                        <label for="exampleInputTenGV" >Tên giáo viên</label>
-                        <input type="text" name="TenGV" class="form-control" id="exampleInputTenGV" aria-describedby=""  placeholder="Nhập vào tên giáo viên">
+                        <label for="exampleInputTenGV">Tên giáo viên</label>
+                        <input type="text" name="TenGV" class="form-control" id="exampleInputTenGV" aria-describedby=""
+                            placeholder="Nhập vào tên giáo viên">
                     </div>
                     <div class="mb-3">
-                        <label for="exampleInputGioiTinh" >Giới tính</label>
-                        <input type="text" name="GioiTinh" class="form-control" id="exampleInputGioiTinh" aria-describedby=""  placeholder="Nhập vào giới tính">
+                        <label for="exampleInputGioiTinh">Giới tính</label>
+                        <input type="text" name="GioiTinh" class="form-control" id="exampleInputGioiTinh"
+                            aria-describedby="" placeholder="Nhập vào giới tính">
                     </div>
                     <div class="mb-3">
-                        <label for="exampleInputNgaySinh" >Ngày sinh</label>
-                        <input type="text" name="NgaySinh" class="form-control" id="exampleInputNgaySinh" aria-describedby=""  placeholder="Nhập vào ngày sinh">
+                        <label for="exampleInputNgaySinh">Ngày sinh</label>
+                        <input type="text" name="NgaySinh" class="form-control" id="exampleInputNgaySinh"
+                            aria-describedby="" placeholder="Nhập vào ngày sinh">
                     </div>
                     <div class="mb-3">
-                        <label for="exampleInputDiaChi" >Địa chỉ</label>
-                        <input type="text" name="DiaChi" class="form-control" id="exampleInputDiaChi" aria-describedby=""  placeholder="Nhập vào địa chỉ">
+                        <label for="exampleInputDiaChi">Địa chỉ</label>
+                        <input type="text" name="DiaChi" class="form-control" id="exampleInputDiaChi"
+                            aria-describedby="" placeholder="Nhập vào địa chỉ">
                     </div>
                     <div class="mb-3">
-                        <label for="exampleInputSDT" >Số điện thoại</label>
-                        <input type="text" name="SDT" class="form-control" id="exampleInputSDT" aria-describedby="" placeholder="Nhập vào số điện thoại" >
+                        <label for="exampleInputSDT">Số điện thoại</label>
+                        <input type="text" name="SDT" class="form-control" id="exampleInputSDT" aria-describedby=""
+                            placeholder="Nhập vào số điện thoại">
                     </div>
                     <button type="submit" name="btngiaovien" class="btn btn-primary">Thêm giáo viên</button>
                 </form>
@@ -129,17 +162,19 @@
                 });
                 </script>
 
+            </div>
+        </div>
+    </div>
 
+    <!-- Optional JavaScript; choose one of the two! -->
 
-                <!-- Optional JavaScript; choose one of the two! -->
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    </script>
 
-                <!-- Option 1: Bootstrap Bundle with Popper -->
-                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-                    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-                    crossorigin="anonymous"></script>
-
-                <!-- Option 2: Separate Popper and Bootstrap JS -->
-                <!--
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
 -->

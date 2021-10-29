@@ -3,7 +3,7 @@
     $Email      = $_POST['A_Email'];
     $pass      = $_POST['A_PASS'];
    
-    
+   
     include('connect.php');
     $sql = "SELECT * FROM ADMIN WHERE A_Email='$Email'";
     $result = mysqli_query($conn,$sql);

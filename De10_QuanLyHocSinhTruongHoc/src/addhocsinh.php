@@ -12,12 +12,38 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>addhocsinh</title>
 </head>
+<style>
+.style1 {
+    border: 2px solid black;
+    padding: 50px;
+    margin-top: 50px;
+    border-radius: 15px;
+    background-color: #ccc;
+}
+.style1 from label{
+    margin-bottom: 10px;
+}
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
 
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
 <body>
     <div class="container">
 
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-12 style1">
 
 
                 <h2 align="center">Import hoc sinh</h2>
