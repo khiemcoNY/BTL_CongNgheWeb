@@ -12,35 +12,54 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>Addadmin</title>
 </head>
+<style>
+    .style1{
+        border: 2px solid black;
+        padding:40px;
+        margin-top:70px;
+        border-radius: 15px;
+        background-color: #ccc;
+
+    }
+    .style1 h2{
+        color: white;
+    text-shadow: 1px 1px 2px black, 0 0 40px rgb(34, 34, 36), 0 0 13px rgb(32, 32, 34);
+    }
+    .style1 form label{
+        margin-bottom: 10px;
+
+    }
+</style>
 
 <body>
 
     <div class="container">
 
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-12 style1">
 
-
-                <h2 align="center">Add Admin</h2>
+                <h2 align="center">Thêm Tài Khoản Admin</h2>
                 <br /><br /><br />
                 <form action="processadmin.php" method="POST">
-                <div class="mb-3">
-                        <label for="exampleInputTenGV" >A_Email</label>
-                        <input type="email" name="A_Email" class="form-control" id="exampleInputA_Email" aria-describedby=""  placeholder="Enter A_Email">
+                    <div class="mb-3">
+                        <label for="exampleInputTenGV" >Your Email</label>
+                        <input type="email" name="A_Email" class="form-control" id="exampleInputA_Email" aria-describedby=""  placeholder="Enter Your Email">
                     </div>
                     <div class="mb-3">
-                        <label for="exampleInputMaGV" >A_Name</label>
-                        <input type="text" name="A_Name" class="form-control" id="exampleInputA_Name" aria-describedby=""  placeholder="Enter A_Name" >
+                        <label for="exampleInputMaGV" >Your Name</label>
+                        <input type="text" name="A_Name" class="form-control" id="exampleInputA_Name" aria-describedby=""  placeholder="Enter Your Name" >
                     </div>
                    
                     <div class="mb-3">
-                        <label for="exampleInputGioiTinh" >A_PASS</label>
-                        <input type="text" name="A_PASS" class="form-control" id="exampleInputA_PASS" aria-describedby=""  placeholder="Enter A_PASS">
+                        <label for="exampleInputGioiTinh" >Your PASS</label>
+                        <input type="text" name="A_PASS" class="form-control" id="exampleInputA_PASS" aria-describedby=""  placeholder="Enter Your PASS">
                     </div>
                     
                     <button type="submit" name="btnadmin" class="btn btn-primary">Thêm Admin</button>
                 </form>
-               
+            </div>
+         </div>
+    </div>
 
                 <!-- Optional JavaScript; choose one of the two! -->
 
