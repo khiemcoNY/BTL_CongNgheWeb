@@ -12,7 +12,23 @@
 
     <title>admin</title>
 </head>
+<style>
+.style1 {
+    border: 2px solid black;
+    padding: 40px;
+    margin-top: 70px;
+    border-radius: 15px;
+    background-color: #ccc;
 
+}
+
+.style1 h2 {
+    color: white;
+    text-shadow: 1px 1px 2px black, 0 0 40px rgb(34, 34, 36), 0 0 13px rgb(32, 32, 34);
+}
+
+
+</style>
 <body>
     <?php
         $TenHS= "";
@@ -45,7 +61,7 @@
     ?>
     <div class="container">
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-12 style1">
                 <h2 align="center">Update hoc sinh</h2>
                 <form action="processhocsinh.php" method="POST">
                     <div class="form-group">
@@ -87,7 +103,7 @@
                         <input type="text" name="Up_SDT" class="form-control" id="exampleInputSDT" aria-describedby=""
                             value="<?php echo $SDT?>" placeholder="Enter SDT">
                     </div>
-                    <button type="submit" name="btnUpHS" class="btn btn-primary">Cập Nhật Thông Tin</button>
+                    <button type="submit" style="margin-top:10px;" name="btnUpHS" class="btn btn-primary">Cập Nhật Thông Tin</button>
                 </form>
                 <br /><br /><br />
             </div>

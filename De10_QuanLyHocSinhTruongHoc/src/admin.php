@@ -207,6 +207,7 @@ h4{
         <div class="row">
             <div class="col-md-12 style1">
                 <h4>Thông Tin Ket Qua Hoc Sinh</h4>
+                <a href="process-SendMailKQ.php"></a>
                 <a href="addketqua.php"><i class="bi bi-person-plus-fill"></i>Thêm Kết Quả Hoc Sinh</a>
                 <div class="ketqua">
                     <div class="table-responsive" id="employee_table">
