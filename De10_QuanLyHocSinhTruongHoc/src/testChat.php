@@ -19,6 +19,8 @@
         max-height: 450px;
         max-width: 350px;
         z-index: 5;
+        /* //abccccc */
+        position: relative;
 
     }
 </style>
