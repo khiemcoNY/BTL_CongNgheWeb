@@ -17,7 +17,7 @@ if(isset($_POST['btnKetQua'])){
     $sql= "  
     INSERT INTO KETQUA  
          (MaHS, TenHS, GioiTinh,TenLop, DiemVan,DiemToan,DiemAnh,DiemLy,DiemHoa,DiemSinh)  
-         VALUES ('$MaHS', '$TenHS', ' $GioiTinh', '$TenLop', '$DiemVan','$DiemToan', '$DiemAnh', '$DiemLy', '$DiemHoa', '$DiemSinh')  
+         VALUES ('$MaHS', '$TenHS', '$GioiTinh', '$TenLop', '$DiemVan','$DiemToan', '$DiemAnh', '$DiemLy', '$DiemHoa', '$DiemSinh')  
     ";  
     if (mysqli_query($conn, $sql)) {
         echo "New record created successfully";

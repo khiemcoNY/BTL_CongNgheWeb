@@ -13,14 +13,47 @@
     <title>addphuhuynh</title>
 </head>
 
+<style>
+.style1 {
+    border: 2px solid black;
+    padding: 40px;
+    margin-top: 70px;
+    border-radius: 15px;
+    background-color: #ccc;
+
+}
+
+.style1 h2 {
+    color: white;
+    text-shadow: 1px 1px 2px black, 0 0 40px rgb(34, 34, 36), 0 0 13px rgb(32, 32, 34);
+}
+
+.style2 {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td,
+th {
+    border: 1px solid black;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+</style>
+
 <body>
     <div class="container">
 
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-12 style1">
 
 
-                <h2 align="center">Import Phụ Huynh</h2>
+                <h2 align="center">Thêm thông tin phụ huynh</h2>
                 <br>
                 <form id="upload_csv" method="post" enctype="multipart/form-data">
                     <div class="col-md-3">
@@ -40,48 +73,53 @@
                 <form action="processphuhuynh.php" method="POST">
                     <div class="form-group">
                         <label for="exampleInputMaHS">MaHS </label>
-                        <input type="text" name="MaHS" class="form-control" id="exampleInputMaHS" aria-describedby="">
+                        <input type="text" name="MaHS" class="form-control" id="exampleInputMaHS" aria-describedby=""
+                            placeholder="Enter Ma Hoc Sinh">
 
                     </div>
 
                     <div class="form-group">
-                        <label for="exampleInputGioiTinh">Tên Học sinh </label>
+                        <label for="exampleInputTenHS">Tên Học sinh </label>
                         <input type="text" name="TenHS" class="form-control" id="exampleInputGioiTinh"
-                            aria-describedby="">
+                            aria-describedby="" placeholder="Enter Ten Hoc Sinh">
 
                     </div>
                     <div class="form-group">
                         <label for="exampleInputTenLop">Tên lớp </label>
                         <input type="Text" name="TenLop" class="form-control" id="exampleInputTenLop"
-                            aria-describedby="">
+                            aria-describedby="" placeholder="Enter Ten Lop">
 
                     </div>
                     <div class="form-group">
                         <label for="exampleInputNgaySinh">Tên Bố </label>
-                        <input type="Text" name="TenBo" class="form-control" id="exampleInputTenBo" aria-describedby="">
+                        <input type="Text" name="TenBo" class="form-control" id="exampleInputTenBo" aria-describedby=""
+                            placeholder="Enter Ten Bo">
                     </div>
                     <div class="form-group">
                         <label for="exampleInputDiaChi">Tên mẹ</label>
-                        <input type="Text" name="TenMe" class="form-control" id="exampleInputTenMe" aria-describedby="">
+                        <input type="Text" name="TenMe" class="form-control" id="exampleInputTenMe" aria-describedby=""
+                            placeholder="Enter Ten Me">
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputDiaChi">Email</label>
-                        <input type="Text" name="Email" class="form-control" id="exampleInputDiaChi"
-                            aria-describedby="">
+                        <label for="exampleInputEmail">Email</label>
+                        <input type="Text" name="Email" class="form-control" id="exampleInputEmail" aria-describedby=""
+                            placeholder="Enter Dia chi Email">
                     </div>
                     <div class="form-group">
                         <label for="exampleInputSDT">SDT</label>
-                        <input type="text" name="SDT" class="form-control" id="exampleInputSDT" aria-describedby="">
+                        <input type="text" name="SDT" class="form-control" id="exampleInputSDT" aria-describedby=""
+                            placeholder="SDT">
                     </div>
                     <div class="form-group">
                         <label for="exampleInputSDT">Địa chỉ</label>
-                        <input type="text" name="Diachi" class="form-control" id="exampleInputSDT" aria-describedby="">
+                        <input type="text" name="Diachi" class="form-control" id="exampleInputSDT" aria-describedby=""
+                            placeholder="Dia chi">
                     </div>
-                    <button type="submit" name="btnPhuHuynh" class="btn btn-primary">Thêm Phụ Huynh</button>
+                    <button type="submit" style="margin-top:10px;" name="btnPhuHuynh" class="btn btn-primary">Thêm Phụ Huynh</button>
                 </form>
                 <br /><br /><br />
                 <div class="table-responsive" id="employee_table">
-                    <table class="table table-bordered">
+                    <table class="table table-bordered style2">
                         <tr>
                             <th width="">STT</th>
                             <th width="">MaHS</th>

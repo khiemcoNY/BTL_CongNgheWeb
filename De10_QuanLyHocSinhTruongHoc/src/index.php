@@ -9,13 +9,14 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.0/font/bootstrap-icons.css" integrity="sha384-7ynz3n3tAGNUYFZD3cWe5PDcE36xj85vyFkawcF6tIwxvIecqKvfwLiaFdizhPpN" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="style.css">
     <title>Tra Cứu!</title>
 </head>
 
 <body>
     <!-- header -->
-    <div class="container-fluid header">
+    <div id="home" class="container-fluid header">
         <div class="row ">
             <div class="col-md-12">
                 <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -28,10 +29,10 @@
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                                 <li class="nav-item">
-                                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                                    <a class="nav-link active" aria-current="page" href="#home">Home</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">Contact</a>
+                                    <a class="nav-link" href="#contact">Contact</a>
                                 </li>
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -48,8 +49,8 @@
                                 </li>
 
                             </ul>
-                           <div class="login"> 
-                               <a href="loginadmin.php">Đăng Nhập</a>
+                            <div class="login">
+                                <a href="loginadmin.php">Đăng Nhập</a>
                             </div>
 
                         </div>
@@ -61,7 +62,7 @@
         </div>
     </div>
     <!-- slideshow -->
-    <div class="container">
+    <div class="container slideshow">
         <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-indicators">
                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -96,7 +97,7 @@
             <div class="col-md"></div>
             <div class="col-md-8">
 
-                <form action ="index.php"class="d-flex" method="POST">
+                <form action="index.php" class="d-flex" method="POST">
                     <input name="MaHS" class="form-control me-2" type="search" placeholder="Mã Học Sinh" aria-label="Search">
                     <button name="search" class="btn btn-outline-success" type="submit">Search</button>
                 </form>
@@ -122,7 +123,7 @@
                         if (mysqli_num_rows($result1) > 0) {
                             // output data of each row
                             while ($row1 = mysqli_fetch_assoc($result1)) {
-                                echo ' <li><a class="dropdown-item" href="index.php?TenLop='.$row1["TenLop"].'">';
+                                echo ' <li><a class="dropdown-item" href="index.php?TenLop=' . $row1["TenLop"] . '">';
                                 echo $row1["TenLop"];
                                 echo '</a></li>';
                             }
@@ -141,7 +142,7 @@
                     </button>
                     <ul class="dropdown-menu dropdown-menu-dark HocKy" aria-labelledby="dropdownMenuButton2">
                         <li><a class="dropdown-item active" href="#">Học Kỳ I</a></li>
-                        
+
                         <li>
                             <hr class="dropdown-divider">
                         </li>
@@ -152,51 +153,53 @@
             <div class="col-md-10">
                 <div class="table-responsive" id="employee_table" style="margin:25px 25px 25px 0">
                     <table class="table table-bordered">
-                    <?php 
-                       echo "<tr>";
-                       echo "<th>STT</th>";
-                       echo "<th>MaHS</th>";
-                       echo "<th>TenHS</th>";
-                       echo "<th>Gioi Tinh</th>";
-                       echo "<th>Ten Lop</th>";
-                       echo "<th>Diem Van</th>";
-                       echo "<th>Diem Toan</th>";
-                       echo "<th>Diem Anh</th>";
-                       echo "<th>Diem Ly</th>";
-                       echo "<th>Diem Hoa</th>";
-                       echo "<th>Diem Sinh</th>";
+                        <?php
+                        echo "<tr>";
+                        echo "<th>STT</th>";
+                        echo "<th>MaHS</th>";
+                        echo "<th>TenHS</th>";
+                        echo "<th>Gioi Tinh</th>";
+                        echo "<th>Ten Lop</th>";
+                        echo "<th>Diem Van</th>";
+                        echo "<th>Diem Toan</th>";
+                        echo "<th>Diem Anh</th>";
+                        echo "<th>Diem Ly</th>";
+                        echo "<th>Diem Hoa</th>";
+                        echo "<th>Diem Sinh</th>";
 
-                       echo "</tr>";
-                        
-                            
-                            
-                            if(isset($_POST["search"])){
-                                $MaHS=$_POST["MaHS"];
-                                
-                                $sql="SELECT * FROM KETQUA WHERE MaHS='$MaHS'";
-                                include('process-Search.php');
-                                
-                            }
-                            elseif(isset($_GET["TenLop"])){
-                                $TenLop=$_GET["TenLop"];
-                                $sql="SELECT * FROM KETQUA WHERE TenLop='$TenLop'";
-                                include('process-Search.php');
-                            }
-                            else{
-                                
-                                $sql = "SELECT * FROM KETQUA";
-                                include('process-Search.php');
-                            }
+                        echo "</tr>";
+
+
+
+                        if (isset($_POST["search"])) {
+                            $MaHS = $_POST["MaHS"];
+
+                            $sql = "SELECT * FROM KETQUA WHERE MaHS='$MaHS'";
+                            include('process-Search.php');
+                        } elseif (isset($_GET["TenLop"])) {
+                            $TenLop = $_GET["TenLop"];
+                            $sql = "SELECT * FROM KETQUA WHERE TenLop='$TenLop'";
+                            include('process-Search.php');
+                        } else {
+
+                            $sql = "SELECT * FROM KETQUA";
+                            include('process-Search.php');
+                        }
                         echo "</table>";
                         ?>
-                    
+
                 </div>
             </div>
         </div>
 
     </div>
+    <!-- message -->
+  
+    <?php
+    include('message.php');
+    ?>
     <!-- footer -->
-    <div class="container-fluid">
+    <div id="contact" class="container-fluid">
         <div class="bg-dark text-center text-white">
             <!-- Grid container -->
             <div class="container p-4">
