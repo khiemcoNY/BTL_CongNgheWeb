@@ -7,11 +7,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
     <title>admin</title>
 </head>
+<style>
+.style1 {
+    border: 2px solid black;
+    padding: 40px;
+    margin-top: 70px;
+    border-radius: 15px;
+    background-color: #ccc;
 
+}
+
+.style1 h2 {
+    color: white;
+    text-shadow: 1px 1px 2px black, 0 0 40px rgb(34, 34, 36), 0 0 13px rgb(32, 32, 34);
+}
+
+
+</style>
 <body>
 <?php
         $Ten= "";
@@ -47,12 +64,14 @@
     ?>
     <div class="container">
         <div class="row">
-            <div class="col-md-12">
-            <h2 align="center">Update Kết Quả</h2>
+            <div class="col-md-12 style1">
+                <h2 align="center">Update Kết Quả</h2>
                 <form action="processketqua.php" method="POST">
                     <div class="form-group">
                         <label for="exampleInputMaHS">Mã Học Sinh</label>
-                        <input type="text" name="Up_MaHS" class="form-control" id="exampleInputMaHS"  readonly aria-describedby=""  value ="<?php echo $_GET["idsua"]; ?>" placeholder="Enter Mã Học Sinh">
+                        <input type="text" name="Up_MaHS" class="form-control" id="exampleInputMaHS" readonly
+                            aria-describedby="" value="<?php echo $_GET["idsua"]; ?>" placeholder="Enter Mã Học Sinh"
+                           >
                     </div>
                     <div class="form-group">
                         <label for="exampleInputTenHS">Tên Học Sinh</label>
@@ -70,11 +89,11 @@
                         <label for="exampleInputDiemVan">Điểm Văn</label>
                         <input type="text" name="Up_DiemVan" class="form-control" id="exampleInputDiemVan" value="<?php echo $DiemVan?>"aria-describedby="" placeholder="Enter Diem">
                     </div>
-                     <div class="form-group">
+                    <div class="form-group">
                         <label for="exampleInputDiemToan">Điểm Toán</label>
                         <input type="text" name="Up_DiemToan" class="form-control" id="exampleInputDiemToan"value="<?php echo $DiemToan?>" aria-describedby="" placeholder="Enter Diem Toan">
                     </div>
-                     <div class="form-group">
+                    <div class="form-group">
                         <label for="exampleInputDiemAnh">Điểm Anh</label>
                         <input type="text" name="Up_DiemAnh" class="form-control" id="exampleInputDiemAnh"value="<?php echo $DiemAnh?>" aria-describedby="" placeholder="Enter Diem Anh">
                     </div>
@@ -91,9 +110,9 @@
                         <label for="exampleInputDiemSinh">Điểm Sinh</label>
                         <input type="text" name="Up_DiemSinh" class="form-control" id="exampleInputDiemSinh" value="<?php echo $DiemSinh?> "aria-describedby="" placeholder="Enter Diem Sinh">
                     </div>
-                   
-                    
-                    <button type="submit" name="btnUpKQ" class="btn btn-primary">Cập Nhật Kết Quả</button>
+
+
+                    <button style="margin-top:10px;" type="submit" name="btnUpKQ" class="btn btn-primary">Cập Nhật Kết Quả</button>
                 </form>
                 <br /><br /><br />
             </div>
@@ -103,7 +122,9 @@
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    </script>
 
     <!-- Option 2: Separate Popper and Bootstrap JS -->
     <!--
