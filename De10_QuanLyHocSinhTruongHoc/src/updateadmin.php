@@ -49,7 +49,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="exampleInputGioiTinh" >PASS</label>
-                        <input type="text" value="<?php echo $A_PASS?>" name="Up_A_PASS" class="form-control" id="exampleInputA_PASS" aria-describedby=""  placeholder="Nhập vào A_PASS">
+                        <input type="text"  name="Up_A_PASS" class="form-control" id="exampleInputA_PASS" aria-describedby=""  placeholder="Nhập vào A_PASS">
                     </div>
                     
                     <button type="submit" name="btnUpAD" class="btn btn-primary">Cập nhật thông tin</button>
