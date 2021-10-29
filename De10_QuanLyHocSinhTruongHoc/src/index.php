@@ -193,25 +193,9 @@
 
     </div>
     <!-- message -->
-    <!-- <div class="container">
-        <div id="message" style ="border: 1px sold blue !important ;">
-
-            <form action="" method="POST" class="message">
-                <div class="mb-3">
-
-                    <label for="exampleFormControlInput1" class="form-label">Email address</label>
-                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="YourMail@example.com">
-                </div>
-                <div class="mb-3">
-                    <label for="exampleFormControlTextarea1" class="form-label" placeholder="Type a message to Thủy Lợi...">Message</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="4"></textarea>
-                </div>
-                <button type="submit">Gửi</button>
-            </form>
-        </div>
-    </div> -->
+  
     <?php
-    include('tchat.php');
+    include('message.php');
     ?>
     <!-- footer -->
     <div class="container-fluid">

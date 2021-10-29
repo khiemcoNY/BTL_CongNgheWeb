@@ -1,16 +1,5 @@
-<!doctype html>
-<html lang="en">
-
-<head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.0/font/bootstrap-icons.css" integrity="sha384-7ynz3n3tAGNUYFZD3cWe5PDcE36xj85vyFkawcF6tIwxvIecqKvfwLiaFdizhPpN" crossorigin="anonymous">
-    <title>Hello, world!</title>
-</head>
+<?php 
+echo '
 <style>
     .message form{
         padding:20px 15px;
@@ -23,6 +12,7 @@
         position:absolute;
         right: 20px;
         bottom: 20px;
+        visibility: hidden;
         
 
     }
@@ -45,14 +35,60 @@
         border-radius: 5px;
         font-size: 18px;
     }
+   .icon{
+       
+        width: 80px;
+        height:80px;
+        position: absolute;
+        border-radius: 50%;
+        background-color: #ccc;
+        z-index: 90;
+        right: 70px;
+        bottom: 100px;
+        visibility: visible;
+
+    }
+    .icon p{
+        position: absolute;
+        top:5px;
+        
+        font-size: 20px;
+        font-weight: 900;
+        color:#fff;
+        background-color: red;
+        width: 25px;
+        height:25px;
+        margin:0;
+        border-radius:50%;
+        text-align: center;
+        line-height: 25px;
+
+
+    }
+   
+    .icon i{
+        color: #0774ff;
+        font-size: 60px;
+        margin:0;
+       
+        
+
+    }
 </style>
 
 <body>
     <div class="message">
+        <div class="icon">
+            
+            <a href="#">
+                <p>1</p>
+                <i class="bi bi-messenger"></i>
+            </a>
+        </div>
        
-        <form action="process-message.php" method="POST">
+        <form id="f_message" action="process-message.php" method="POST">
             <div class="mb-3">
-                <a href=""><i class="bi bi-x-circle-fill"></i></a>
+                <a id="exit" href=""><i class="bi bi-x-circle-fill"></i></a>
                 <br>
                 <label for="exampleFormControlInput1" class="form-label">Email address</label>
                 <input type="email" name="txtEmail" class="form-control" id="exampleFormControlInput1" placeholder="YourMail@example.com">
@@ -64,17 +100,23 @@
             <button name="btnMess"type="submit">Gửi</button>
         </form>
     </div>
-
+    
     <!-- Optional JavaScript; choose one of the two! -->
-
-    <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-
-    <!-- Option 2: Separate Popper and Bootstrap JS -->
-    <!--
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
-    -->
-</body>
-
-</html>
+    <script>
+        $(document).ready(function(){
+            $(".icon").click(function(){
+             
+              $(this).hide();
+             $("#f_message").css({"visibility": "visible"});
+             
+            });
+        });
+        $(document).ready(function(){
+            $(".exit").click(function(){
+                $("#f_message").hide();
+                $(".icon").css({"visibility": "visible"});
+            });
+        });
+    </script>
+ ';
+ ?>
