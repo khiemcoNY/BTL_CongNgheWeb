@@ -48,8 +48,8 @@
                                 </li>
 
                             </ul>
-                           <div class="login"> 
-                               <a href="loginadmin.php">Đăng Nhập</a>
+                            <div class="login">
+                                <a href="loginadmin.php">Đăng Nhập</a>
                             </div>
 
                         </div>
@@ -96,7 +96,7 @@
             <div class="col-md"></div>
             <div class="col-md-8">
 
-                <form action ="index.php"class="d-flex" method="POST">
+                <form action="index.php" class="d-flex" method="POST">
                     <input name="MaHS" class="form-control me-2" type="search" placeholder="Mã Học Sinh" aria-label="Search">
                     <button name="search" class="btn btn-outline-success" type="submit">Search</button>
                 </form>
@@ -122,7 +122,7 @@
                         if (mysqli_num_rows($result1) > 0) {
                             // output data of each row
                             while ($row1 = mysqli_fetch_assoc($result1)) {
-                                echo ' <li><a class="dropdown-item" href="index.php?TenLop='.$row1["TenLop"].'">';
+                                echo ' <li><a class="dropdown-item" href="index.php?TenLop=' . $row1["TenLop"] . '">';
                                 echo $row1["TenLop"];
                                 echo '</a></li>';
                             }
@@ -141,7 +141,7 @@
                     </button>
                     <ul class="dropdown-menu dropdown-menu-dark HocKy" aria-labelledby="dropdownMenuButton2">
                         <li><a class="dropdown-item active" href="#">Học Kỳ I</a></li>
-                        
+
                         <li>
                             <hr class="dropdown-divider">
                         </li>
@@ -152,49 +152,67 @@
             <div class="col-md-10">
                 <div class="table-responsive" id="employee_table" style="margin:25px 25px 25px 0">
                     <table class="table table-bordered">
-                    <?php 
-                       echo "<tr>";
-                       echo "<th>STT</th>";
-                       echo "<th>MaHS</th>";
-                       echo "<th>TenHS</th>";
-                       echo "<th>Gioi Tinh</th>";
-                       echo "<th>Ten Lop</th>";
-                       echo "<th>Diem Van</th>";
-                       echo "<th>Diem Toan</th>";
-                       echo "<th>Diem Anh</th>";
-                       echo "<th>Diem Ly</th>";
-                       echo "<th>Diem Hoa</th>";
-                       echo "<th>Diem Sinh</th>";
+                        <?php
+                        echo "<tr>";
+                        echo "<th>STT</th>";
+                        echo "<th>MaHS</th>";
+                        echo "<th>TenHS</th>";
+                        echo "<th>Gioi Tinh</th>";
+                        echo "<th>Ten Lop</th>";
+                        echo "<th>Diem Van</th>";
+                        echo "<th>Diem Toan</th>";
+                        echo "<th>Diem Anh</th>";
+                        echo "<th>Diem Ly</th>";
+                        echo "<th>Diem Hoa</th>";
+                        echo "<th>Diem Sinh</th>";
 
-                       echo "</tr>";
-                        
-                            
-                            
-                            if(isset($_POST["search"])){
-                                $MaHS=$_POST["MaHS"];
-                                
-                                $sql="SELECT * FROM KETQUA WHERE MaHS='$MaHS'";
-                                include('process-Search.php');
-                                
-                            }
-                            elseif(isset($_GET["TenLop"])){
-                                $TenLop=$_GET["TenLop"];
-                                $sql="SELECT * FROM KETQUA WHERE TenLop='$TenLop'";
-                                include('process-Search.php');
-                            }
-                            else{
-                                
-                                $sql = "SELECT * FROM KETQUA";
-                                include('process-Search.php');
-                            }
+                        echo "</tr>";
+
+
+
+                        if (isset($_POST["search"])) {
+                            $MaHS = $_POST["MaHS"];
+
+                            $sql = "SELECT * FROM KETQUA WHERE MaHS='$MaHS'";
+                            include('process-Search.php');
+                        } elseif (isset($_GET["TenLop"])) {
+                            $TenLop = $_GET["TenLop"];
+                            $sql = "SELECT * FROM KETQUA WHERE TenLop='$TenLop'";
+                            include('process-Search.php');
+                        } else {
+
+                            $sql = "SELECT * FROM KETQUA";
+                            include('process-Search.php');
+                        }
                         echo "</table>";
                         ?>
-                    
+
                 </div>
             </div>
         </div>
 
     </div>
+    <!-- message -->
+    <!-- <div class="container">
+        <div id="message" style ="border: 1px sold blue !important ;">
+
+            <form action="" method="POST" class="message">
+                <div class="mb-3">
+
+                    <label for="exampleFormControlInput1" class="form-label">Email address</label>
+                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="YourMail@example.com">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label" placeholder="Type a message to Thủy Lợi...">Message</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="4"></textarea>
+                </div>
+                <button type="submit">Gửi</button>
+            </form>
+        </div>
+    </div> -->
+    <?php
+    include('tchat.php');
+    ?>
     <!-- footer -->
     <div class="container-fluid">
         <div class="bg-dark text-center text-white">

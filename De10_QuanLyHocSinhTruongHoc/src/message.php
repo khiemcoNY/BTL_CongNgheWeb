@@ -8,37 +8,60 @@
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.0/font/bootstrap-icons.css" integrity="sha384-7ynz3n3tAGNUYFZD3cWe5PDcE36xj85vyFkawcF6tIwxvIecqKvfwLiaFdizhPpN" crossorigin="anonymous">
     <title>Hello, world!</title>
 </head>
 <style>
     .message form{
-        padding:10px;
-        border: 1px sold blue;
+        padding:20px 15px;
+        border: 1px solid blue;
         background-color: #ccc;
-        max-height: 450px;
+        max-height: 550px;
         max-width: 350px;
-        z-index: 5;
-        /* //abccccc */
-        position: relative;
+        z-index:50;
+        border-radius:5px;
+        position:absolute;
+        right: 20px;
+        bottom: 20px;
+        
 
+    }
+    .message form a{
+        font-size: 30px;
+        float: right;
+        margin-bottom: 20px;
+        padding :5px;
+        color:black;
+    }
+    .message form a:hover{
+        
+        color:blue;
+    }
+    
+    .message form button{
+        color:#fff;
+        background-color: red;
+        padding:8px;
+        border-radius: 5px;
+        font-size: 18px;
     }
 </style>
 
 <body>
     <div class="message">
-        <form action="" method="POST">
+       
+        <form action="process-message.php" method="POST">
             <div class="mb-3">
-                <p>Trường Thủy Lợi</p>
-                <Hr>
+                <a href=""><i class="bi bi-x-circle-fill"></i></a>
+                <br>
                 <label for="exampleFormControlInput1" class="form-label">Email address</label>
-                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="YourMail@example.com">
+                <input type="email" name="txtEmail" class="form-control" id="exampleFormControlInput1" placeholder="YourMail@example.com">
             </div>
             <div class="mb-3">
                 <label for="exampleFormControlTextarea1" class="form-label" placeholder="Type a message to Thủy Lợi...">Message</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="4"></textarea>
+                <textarea name ="txtMess"class="form-control" id="exampleFormControlTextarea1" rows="4"></textarea>
             </div>
-            <button type="submit">Gửi</button>
+            <button name="btnMess"type="submit">Gửi</button>
         </form>
     </div>
 
