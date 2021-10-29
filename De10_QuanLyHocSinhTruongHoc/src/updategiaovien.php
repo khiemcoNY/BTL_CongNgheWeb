@@ -55,8 +55,13 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12 style1">
+<<<<<<< HEAD
                 <h2 align="center">Update Giáo Viên</h2>
                 <form action="processgiaovien.php" method="POST">
+=======
+            <h2 align="center">Update Giáo Viên</h2>
+            <form action="processgiaovien.php" method="POST">
+>>>>>>> eeb3c7197691b79d040ec1bde91e2561ad2325ed
                     <div class="mb-3">
                         <label for="exampleInputMaGV">Mã giáo viên</label>
                         <input type="text" name="Up_MaGV" class="form-control" id="exampleInputMaGV" readonly
