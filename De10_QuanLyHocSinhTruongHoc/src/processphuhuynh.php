@@ -7,7 +7,7 @@ if(isset($_POST['btnPhuHuynh']))
     $TenLop=$_POST['TenLop'];
     $TenBo=$_POST['TenBo'];
     $TenMe=$_POST['TenMe'];
-    $Emai=$_POST['Email'];
+    $Email=$_POST['Email'];
     $SDT=$_POST['SDT'];
     $DiaChi=$_POST['Diachi'];
     include('connect.php');

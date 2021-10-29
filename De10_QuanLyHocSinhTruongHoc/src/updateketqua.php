@@ -13,6 +13,38 @@
 </head>
 
 <body>
+<?php
+        $Ten= "";
+        $GioiTinh= "";
+        $TenLop= "";
+        $DiemVan= "";
+        $DiemToan= "";
+        $DiemAnh= "";
+        $DiemLy= "";
+        $DiemHoa= "";
+        $DiemSinh= "";
+       
+
+    if(isset($_GET['idsua'])){
+        include('connect.php');
+        $E= $_GET['idsua'];
+        $sql = "SELECT * FROM KETQUA where MaHS='$E'";
+        $result = mysqli_query($conn, $sql);
+        if(mysqli_num_rows($result) >0){
+            $row = mysqli_fetch_assoc($result);
+            $Ten= $row["TenHS"];
+            $GioiTinh= $row["GioiTinh"];
+            $TenLop= $row["TenLop"];
+            $DiemVan= $row["DiemVan"];
+            $DiemToan= $row["DiemToan"];
+            $DiemAnh= $row["DiemAnh"];
+            $DiemLy= $row["DiemLy"];
+            $DiemHoa= $row["DiemHoa"];
+            $DiemSinh= $row["DiemSinh"];
+            
+        }   
+    }
+    ?>
     <div class="container">
         <div class="row">
             <div class="col-md-12">
@@ -24,40 +56,40 @@
                     </div>
                     <div class="form-group">
                         <label for="exampleInputTenHS">Tên Học Sinh</label>
-                        <input type="text" name="Up_TenHS" class="form-control" id="exampleInputTenHS" aria-describedby="" placeholder="Enter Ten Học Sinh">
+                        <input type="text" name="Up_TenHS" class="form-control" id="exampleInputTenHS" value="<?php echo $Ten?>" aria-describedby="" placeholder="Enter Ten Học Sinh">
                     </div>
                     <div class="form-group">
                         <label for="exampleInputGioiTinh">Giới Tính</label>
-                        <input type="text" name="Up_GioiTinh" class="form-control" id="exampleInputGioiTinh" aria-describedby="" placeholder="Enter Gioi Tinh">
+                        <input type="text" name="Up_GioiTinh" class="form-control" id="exampleInputGioiTinh" value="<?php echo $GioiTinh?>"aria-describedby="" placeholder="Enter Gioi Tinh">
                     </div>
                     <div class="form-group">
                         <label for="exampleInputTenLop">Tên Lớp</label>
-                        <input type="text" name="Up_TenLop" class="form-control" id="exampleInputTenLop" aria-describedby="" placeholder="Enter Tên Lớp">
+                        <input type="text" name="Up_TenLop" class="form-control" id="exampleInputTenLop" value="<?php echo $TenLop?>"aria-describedby="" placeholder="Enter Tên Lớp">
                     </div> 
                     <div class="form-group">
                         <label for="exampleInputDiemVan">Điểm Văn</label>
-                        <input type="text" name="Up_DiemVan" class="form-control" id="exampleInputDiemVan" aria-describedby="" placeholder="Enter Diem">
+                        <input type="text" name="Up_DiemVan" class="form-control" id="exampleInputDiemVan" value="<?php echo $DiemVan?>"aria-describedby="" placeholder="Enter Diem">
                     </div>
                      <div class="form-group">
                         <label for="exampleInputDiemToan">Điểm Toán</label>
-                        <input type="text" name="Up_DiemToan" class="form-control" id="exampleInputDiemToan" aria-describedby="" placeholder="Enter Diem Toan">
+                        <input type="text" name="Up_DiemToan" class="form-control" id="exampleInputDiemToan"value="<?php echo $DiemToan?>" aria-describedby="" placeholder="Enter Diem Toan">
                     </div>
                      <div class="form-group">
                         <label for="exampleInputDiemAnh">Điểm Anh</label>
-                        <input type="text" name="Up_DiemAnh" class="form-control" id="exampleInputDiemAnh" aria-describedby="" placeholder="Enter Diem Anh">
+                        <input type="text" name="Up_DiemAnh" class="form-control" id="exampleInputDiemAnh"value="<?php echo $DiemAnh?>" aria-describedby="" placeholder="Enter Diem Anh">
                     </div>
                     <div class="form-group">
               
                     <label for="exampleInputDiemLy">Điểm Lý</label>
-                        <input type="text" name="Up_DiemLy" class="form-control" id="exampleInputDiemLy" aria-describedby="" placeholder="Enter Diem Ly">
+                        <input type="text" name="Up_DiemLy" class="form-control" id="exampleInputDiemLy" value="<?php echo $DiemLy?>"aria-describedby="" placeholder="Enter Diem Ly">
                     </div>
                     <div class="form-group">
                         <label for="exampleInputDiemHoa">Điểm Hóa</label>
-                        <input type="text" name="Up_DiemHoa" class="form-control" id="exampleInputDiemHoa" aria-describedby="" placeholder="Enter Diem Hoa">
+                        <input type="text" name="Up_DiemHoa" class="form-control" id="exampleInputDiemHoa" value="<?php echo $DiemHoa?>"aria-describedby="" placeholder="Enter Diem Hoa">
                     </div>
                     <div class="form-group">
                         <label for="exampleInputDiemSinh">Điểm Sinh</label>
-                        <input type="text" name="Up_DiemSinh" class="form-control" id="exampleInputDiemSinh" aria-describedby="" placeholder="Enter Diem Sinh">
+                        <input type="text" name="Up_DiemSinh" class="form-control" id="exampleInputDiemSinh" value="<?php echo $DiemSinh?> "aria-describedby="" placeholder="Enter Diem Sinh">
                     </div>
                    
                     
