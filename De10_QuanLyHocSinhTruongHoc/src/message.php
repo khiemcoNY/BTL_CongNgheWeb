@@ -9,7 +9,7 @@ echo '
         max-width: 350px;
         z-index:50;
         border-radius:5px;
-        position:absolute;
+        position:fixed;
         right: 20px;
         bottom: 20px;
         visibility: hidden;
@@ -39,12 +39,12 @@ echo '
        
         width: 80px;
         height:80px;
-        position: absolute;
+        position: fixed;
         border-radius: 50%;
-        background-color: #ccc;
+        background-color: #fff;
         z-index: 90;
-        right: 70px;
-        bottom: 100px;
+        right: 50px;
+        bottom: 70px;
         visibility: visible;
 
     }
