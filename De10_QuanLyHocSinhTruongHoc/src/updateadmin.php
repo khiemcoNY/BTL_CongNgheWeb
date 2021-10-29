@@ -22,8 +22,8 @@
         $E= $_GET['idsua'];
         $sql = "SELECT * FROM ADMIN where A_Email='$E'";
         $result = mysqli_query($conn, $sql);
-        if($result>0){
-            $row = mysqli_fetch_array($result);
+        if(mysqli_num_rows($result) >0){
+            $row = mysqli_fetch_assoc($result);
             $A_Name= $row["A_Name"];
             $A_PASS= $row["A_PASS"];
             
