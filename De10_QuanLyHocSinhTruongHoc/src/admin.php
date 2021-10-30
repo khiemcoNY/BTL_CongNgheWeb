@@ -64,6 +64,7 @@
 </style>
 
 <body>
+<<<<<<< HEAD
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container header">
             <a class="navbar-brand" href="#"></a>
@@ -97,6 +98,15 @@
             </div>
         </div>
     </nav>
+=======
+    <?php
+        if(!isset($_SESSION['login_ok'])){
+            // header("Location:loginadmin.php");
+            // unset($_SESSION['login_ok']);
+        }
+        
+    ?>
+>>>>>>> 1c6c49d6900487e4edc7aed791e80fa9d87d0083
     <div class="container">
         <h1>Admin </h1>
         <h3>Hi, <?php echo $_GET['name'] ?></h3>
