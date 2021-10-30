@@ -45,6 +45,13 @@ h4{
 
 </style>
 <body>
+    <?php
+        if(!isset($_SESSION['login_ok'])){
+            // header("Location:loginadmin.php");
+            // unset($_SESSION['login_ok']);
+        }
+        
+    ?>
     <div class="container">
         <h1>Admin </h1>
         <h3>Hi, <?php echo $_GET['name'] ?></h3>

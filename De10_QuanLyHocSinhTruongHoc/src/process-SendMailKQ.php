@@ -24,7 +24,8 @@ if (mysqli_num_rows($result) > 0) {
                      "Điểm Hoa: ".$row['DiemHoa']."  -  ".
                      "Điểm Sinh: ".$row['DiemSinh'];
                      echo $NoiDung;
-                     
+                     include('send-mailKQ.php');
+                     sendKQ($Email,$NoiDung);
       }
     }
 } else {

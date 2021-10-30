@@ -1,5 +1,5 @@
 <?php
-    //session_start();
+    session_start();
     if(isset($_POST['btnlogin'])){
         $Email= $_POST['A_Email'];
         $pass= $_POST['A_PASS'];
@@ -15,16 +15,17 @@
             $name=$row['A_Name'];
         
             if(password_verify($pass,$pass_hash)){
-               // $_SESSION['login_ok'] = $Email;
-                echo "login tc";
+               $_SESSION['login_ok'] = $Email;
                 header("Location:admin.php?name=$name");
             }else{
-                echo "Kiểm tra lại Mật khẩu";
+                header("Location:loginadmin.php");
+
             }
         }else{
             echo "Email không tồn tại";
         }
     }
+    
     
 
 ?>
