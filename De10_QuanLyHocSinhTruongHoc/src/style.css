@@ -49,6 +49,14 @@ a {
     font-size: 18px;
 }
 
+.header ul li a:hover {
+    border-width: 2px;
+    border-style: solid;
+    border-color: red green blue yellow;
+    border-radius: 7px;
+    text-shadow: 0 0 25px rgba(4, 253, 87, 0.986), 0 0 7px rgb(253, 249, 7);
+}
+
 .header img {
     border-radius: 3px;
 }
@@ -60,18 +68,20 @@ a {
 .login a {
     padding: 12px;
 }
+
 table {
-  font-family: arial, sans-serif;
-  border-collapse: collapse;
-  width: 100%;
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
 }
 
-td, th {
-  border: 1px solid #dddddd;
-  text-align: left;
-  padding: 8px;
+td,
+th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
 }
 
 tr:nth-child(even) {
-  background-color: #dddddd;
+    background-color: #dddddd;
 }
