@@ -82,7 +82,7 @@
                         <input type="checkbox" class="form-check-input">
                         <label class="form-check-label" for="exampleCheck1">Nhớ mật khẩu</label>
                     </div>
-                    <button type="submit"  name ="" class="btn btn-primary">Đăng nhập</button>
+                    <button type="submit"  name ="btnlogin" class="btn btn-primary">Đăng nhập</button>
                    
 
 

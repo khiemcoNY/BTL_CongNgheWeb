@@ -47,8 +47,9 @@ h4{
 <body>
     <div class="container">
         <h1>Admin </h1>
-        <h3>Hi, <?php echo "admin" ?></h3>
-               
+        <h3>Hi, <?php echo $_GET['name'] ?></h3>
+            <a href="process-SendMailKQ.php">Mail</a>
+            <a href="">Đăng Xuất</a>   
         <div class="row">
             <div class="col-md-12 style1">
 
@@ -81,7 +82,7 @@ h4{
                                 <td><?php echo $row["A_PASS"]; ?></td>
                                 <td><?php echo $row["A_Date"]; ?></td>
 
-                                <td><a href="updateadmin.php?idsua=<?php echo $row["A_Email"]; ?>" ><i class="bi bi-gear-wide-connected"></i>Sửa</a></td>
+                                <td><a href="updateadmin.php?idsua=<?php echo $row["A_Email"]; ?>"><i class="bi bi-gear-wide-connected"></i>Sửa</a></td>
                                 <td><a href="processadmin.php?id=<?php echo $row["A_Email"]; ?>"><i class="bi bi-trash-fill"></i>Xóa</a></td>
 
 
@@ -263,7 +264,7 @@ h4{
                 </div>
             </div>
         </div>
-        <div class="row">
+        <div class="row" style="margin-bottom:50px">
             <div class="col-md-12 style1">
                 <h4>Thông Tin Phụ Huynh Hoc Sinh</h4>
                 <a href="addphuhuynh.php"><i class="bi bi-person-plus-fill"></i>Thêm Phụ Huynh Hoc Sinh</a>
