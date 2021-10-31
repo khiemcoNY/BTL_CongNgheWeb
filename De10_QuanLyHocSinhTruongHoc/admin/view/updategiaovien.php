@@ -26,6 +26,13 @@
 
 </style>
 <body>
+<?php
+      session_start();
+        if(!isset($_SESSION['login_ok'])){
+             header("Location:../../site/view/loginadmin.php");
+        }
+        
+?>
     <?php
        $TenGV= "";
        $GioiTinh= "";
@@ -34,7 +41,7 @@
        $SDT= "";
         
     if(isset($_GET['idsua'])){
-        include('connect.php');
+        include('../../configs/connect.php');
         $E= $_GET['idsua'];
         $sql = "SELECT * FROM GIAOVIEN where MaGV='$E'";
         $result = mysqli_query($conn, $sql);
@@ -55,13 +62,8 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12 style1">
-<<<<<<< HEAD
-                <h2 align="center">Update Giáo Viên</h2>
-                <form action="processgiaovien.php" method="POST">
-=======
             <h2 align="center">Update Giáo Viên</h2>
-            <form action="processgiaovien.php" method="POST">
->>>>>>> eeb3c7197691b79d040ec1bde91e2561ad2325ed
+            <form action="../controller/processgiaovien.php" method="POST">
                     <div class="mb-3">
                         <label for="exampleInputMaGV">Mã giáo viên</label>
                         <input type="text" name="Up_MaGV" class="form-control" id="exampleInputMaGV" readonly

@@ -3,9 +3,9 @@
     use PHPMailer\PHPMailer\SMTP;   
     use PHPMailer\PHPMailer\Exception;
     // Chỉnh đường dẫn phù hợp với phần Tổ chức thư mục của BẠN
-    require 'phpmailer/Exception.php';
-    require 'phpmailer/PHPMailer.php';
-    require 'phpmailer/SMTP.php';
+    require '../../phpmailer/Exception.php';
+    require '../../phpmailer/PHPMailer.php';
+    require '../../phpmailer/SMTP.php';
     function sendMess($txtEmail,$txtMess){
         // 1. Cài đặt môi trường sử dụng phpmailer
         // 2. Tạo ra đối tượng PHPMailer
@@ -45,7 +45,7 @@
             // Gửi thư
             if($mail->send()){
                 echo 'Thư đã gửi đi thành công!';
-                header("Location:index.php");
+                header("Location:../../index.php");
             }
 
         }catch(Exception $e){

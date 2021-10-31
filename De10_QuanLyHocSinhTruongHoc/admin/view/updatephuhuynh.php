@@ -30,6 +30,13 @@
 </style>
 <body>
 <?php
+      session_start();
+        if(!isset($_SESSION['login_ok'])){
+             header("Location:../../site/viewloginadmin.php");
+        }
+        
+?>
+<?php
         $TenHS= "";
         $TenLop= "";
         $TenBo= "";
@@ -41,7 +48,7 @@
        
 
     if(isset($_GET['idsua'])){
-        include('connect.php');
+        include('../../configs/connect.php');
         $E= $_GET['idsua'];
         $sql = "SELECT * FROM PHUHUYNH where MaHS='$E'";
         $result = mysqli_query($conn, $sql);
@@ -63,7 +70,7 @@
         <div class="row">
             <div class="col-md-12 style1">
             <h2 align="center">Update Phụ huynh</h2>
-                <form action="processphuhuynh.php" method="POST">
+                <form action="../controller/processphuhuynh.php" method="POST">
                     <div class="form-group">
                         <label for="exampleInputMaHS">Mã Học Sinh </label>
                         <input type="text" name ="Up_MaHS" class="form-control" id="exampleInputMaHS"  readonly aria-describedby=""

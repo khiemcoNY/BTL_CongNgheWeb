@@ -30,6 +30,13 @@
 
 </style>
 <body>
+<?php
+      session_start();
+        if(!isset($_SESSION['login_ok'])){
+             header("Location:../../site/view/loginadmin.php");
+        }
+        
+?>
     <?php
         $TenHS= "";
         $GioiTinh= "";
@@ -41,7 +48,7 @@
 
         
     if(isset($_GET['idsua'])){
-        include('connect.php');
+        include('../../configs/connect.php');
         $E= $_GET['idsua'];
         $sql = "SELECT * FROM HOCSINH where MaHS='$E'";
         $result = mysqli_query($conn, $sql);
@@ -63,7 +70,7 @@
         <div class="row">
             <div class="col-md-12 style1">
                 <h2 align="center">Update hoc sinh</h2>
-                <form action="processhocsinh.php" method="POST">
+                <form action="../controller/processhocsinh.php" method="POST">
                     <div class="form-group">
                         <label for="exampleInputMaHS">MaHS </label>
                         <input type="text" name="Up_MaHS" class="form-control" id="exampleInputMaHS" readonly

@@ -40,6 +40,13 @@ tr:nth-child(even) {
 }
 </style>
 <body>
+<?php
+      session_start();
+        if(!isset($_SESSION['login_ok'])){
+             header("Location:../../site/view/loginadmin.php");
+        }
+        
+?>
     <div class="container">
 
         <div class="row">
@@ -63,7 +70,7 @@ tr:nth-child(even) {
                     <div style="clear:both"></div>
                 </form>
                 <br /><br /><br />
-                <form action="processhocsinh.php" method="POST">
+                <form action="../controller/processhocsinh.php" method="POST">
                     <div class="form-group">
                         <label for="exampleInputMaHS">MaHS </label>
                         <input type="text" name ="MaHS" class="form-control" id="exampleInputMaHS" aria-describedby=""
@@ -119,7 +126,7 @@ tr:nth-child(even) {
                             <th width="">SDT</th>
                         </tr>
                         <?php
-                            include('connect.php');
+                            include('../../configs/connect.php');
                             $sql = "SELECT * FROM HOCSINH";
                             $result = mysqli_query($conn, $sql);
                             while ($row = mysqli_fetch_array($result)) {
@@ -149,7 +156,7 @@ tr:nth-child(even) {
         $('#upload_csv').on("submit", function(e) {
             e.preventDefault(); //form will not submitted  
             $.ajax({
-                url: "importhocsinh.php",
+                url: "../controller/importhocsinh.php",
                 method: "POST",
                 data: new FormData(this),
                 contentType: false, // The content type used when sending data to the server.  

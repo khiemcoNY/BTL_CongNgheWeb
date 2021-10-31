@@ -1,5 +1,5 @@
 <?php 
-    include('connect.php');
+    include('../../configs/connect.php');
     if(isset($_POST["search"])){
         $MaHS=$_POST["MaHS"];
         $sql="SELECT * FROM KET QUA WHERE MaHS='$MaHS'";

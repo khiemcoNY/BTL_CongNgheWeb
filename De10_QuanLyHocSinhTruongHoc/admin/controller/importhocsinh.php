@@ -1,7 +1,7 @@
 <?php  
  if(!empty($_FILES["employee_file"]["name"]))  
  {  
-      include('connect.php');
+      include('../../configs/connect.php');
       $output = '';  
       $allowed_ext = array("csv");  
       $extension = end(explode(".", $_FILES["employee_file"]["name"]));  

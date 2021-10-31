@@ -25,12 +25,19 @@
 
 </style>
 <body>
+<?php
+      session_start();
+        if(!isset($_SESSION['login_ok'])){
+             header("Location:../../site/view/loginadmin.php");
+        }
+        
+?>
     <?php
         $A_Name= "";
         $A_PASS= "";
         
     if(isset($_GET['idsua'])){
-        include('connect.php');
+        include('../../configs/connect.php');
         $E= $_GET['idsua'];
         $sql = "SELECT * FROM ADMIN where A_Email='$E'";
         $result = mysqli_query($conn, $sql);
@@ -47,7 +54,7 @@
         <div class="row">
             <div class="col-md-12 style1">
             <h2 align="center">Update ADMIN</h2>
-            <form action="processadmin.php" method="POST">
+            <form action="../controller/processadmin.php" method="POST">
                 
                     <div class="mb-3">
                         <label for="exampleInputMaGV" >Email</label>

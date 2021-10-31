@@ -32,7 +32,13 @@
 </style>
 
 <body>
-
+<?php
+      session_start();
+        if(!isset($_SESSION['login_ok'])){
+             header("Location:../../site/view/loginadmin.php");
+        }
+        
+?>
     <div class="container">
 
         <div class="row">
@@ -40,7 +46,7 @@
 
                 <h2 align="center">Thêm Tài Khoản Admin</h2>
                 <br /><br /><br />
-                <form action="processadmin.php" method="POST">
+                <form action="../controller/processadmin.php" method="POST">
                     <div class="mb-3">
                         <label for="exampleInputTenGV" >Your Email</label>
                         <input type="email" name="A_Email" class="form-control" id="exampleInputA_Email" aria-describedby=""  placeholder="Enter Your Email">

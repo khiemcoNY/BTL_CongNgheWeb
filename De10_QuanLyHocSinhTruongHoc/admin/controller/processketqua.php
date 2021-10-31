@@ -13,18 +13,28 @@ if(isset($_POST['btnKetQua'])){
     $DiemHoa=$_POST['DiemHoa'];
     $DiemSinh=$_POST['DiemSinh'];
     echo $DiemAnh;
-    include('connect.php');
-    $sql= "  
-    INSERT INTO KETQUA  
-         (MaHS, TenHS, GioiTinh,TenLop, DiemVan,DiemToan,DiemAnh,DiemLy,DiemHoa,DiemSinh)  
-         VALUES ('$MaHS', '$TenHS', '$GioiTinh', '$TenLop', '$DiemVan','$DiemToan', '$DiemAnh', '$DiemLy', '$DiemHoa', '$DiemSinh')  
-    ";  
-    if (mysqli_query($conn, $sql)) {
-        echo "New record created successfully";
-        header("Location:admin.php");
+    include('../../configs/connect.php');
+
+    $sql1 = "SELECT * FROM KETQUA WHERE MAHS='$MaHS'";
+    $result1 = mysqli_query($conn, $sql1);
+
+    if (mysqli_num_rows($result1) > 0) {
+      header("Location:../../admin.php");
     } else {
-        echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+      $sql= "  
+      INSERT INTO KETQUA  
+           (MaHS, TenHS, GioiTinh,TenLop, DiemVan,DiemToan,DiemAnh,DiemLy,DiemHoa,DiemSinh)  
+           VALUES ('$MaHS', '$TenHS', '$GioiTinh', '$TenLop', '$DiemVan','$DiemToan', '$DiemAnh', '$DiemLy', '$DiemHoa', '$DiemSinh')  
+      ";  
+      if (mysqli_query($conn, $sql)) {
+          echo "New record created successfully";
+          header("Location:../../admin.php");
+      } else {
+          echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+      }
     }
+
+  
     mysqli_close($conn);
 }
 
@@ -41,7 +51,7 @@ if(isset($_POST['btnUpKQ']))
     $Up_DiemHoa=$_POST['Up_DiemHoa'];
     $Up_DiemSinh=$_POST['Up_DiemSinh'];
 
-    include('connect.php');
+    include('../../configs/connect.php');
     $sql = "UPDATE KETQUA SET TenHS='$Up_TenHS',GioiTinh='$Up_GioiTinh',TenLop='$Up_TenLop',DiemVan='$Up_DiemVan',DiemToan='$Up_DiemToan', 
     DiemAnh='$Up_DiemAnh', DiemLy='$Up_DiemLy', DiemHoa='$Up_DiemHoa', DiemSinh='$Up_DiemSinh' WHERE MaHS='$Up_MaHS'";
 
@@ -50,20 +60,22 @@ if(isset($_POST['btnUpKQ']))
     } else {
       echo "Error updating record: " . mysqli_error($conn);
     }
-    header("Location:admin.php");
+    header("Location:../../admin.php");
     mysqli_close($conn);
 }
 if (isset($_GET['id'])) {
-  include('connect.php');
+  include('../../configs/connect.php');
   $id=$_GET['id'];
-  $sql = "DELETE FROM KETQUA WHERE MaHS='$id'";
+  $sql = "DELETE FROM KETQUA WHERE MaHS='$id';";
 
-  if (mysqli_query($conn, $sql)) {
+  $sql.="ALTER TABLE KETQUA AUTO_INCREMENT = 1;";
+
+  if (mysqli_multi_query($conn, $sql)) {
       echo "Record deleted successfully";
   } else {
       echo "Error deleting record: " . mysqli_error($conn);
   }
-  header("Location:admin.php");
+  header("Location:../../admin.php");
 
 
   mysqli_close($conn);

@@ -10,16 +10,26 @@ if(isset($_POST['btngiaovien']))
     $SDT=$_POST['SDT'];
     
     
-    include('connect.php');
-    $sql = "INSERT INTO GIAOVIEN (MaGV,TenGV,GioiTinh,NgaySinh,DiaChi,SDT)
-    VALUES ('$MaGV','$TenGV','$GioiTinh','$Ngaysinh','$DiaChi','$SDT')";
+    include('../../configs/connect.php');
+
+    $sql1 = "SELECT * FROM GIAOVIEN WHERE MAGV='$MaGV'";
+    $result1 = mysqli_query($conn, $sql1);
+
+    if (mysqli_num_rows($result1) > 0) {
+      header("Location:../../admin.php");
+    } else {
+      $sql = "INSERT INTO GIAOVIEN (MaGV,TenGV,GioiTinh,NgaySinh,DiaChi,SDT)
+      VALUES ('$MaGV','$TenGV','$GioiTinh','$Ngaysinh','$DiaChi','$SDT')";
+      
+      if (mysqli_query($conn, $sql)) {
+          echo "New record created successfully";
+        } else {
+          echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+        }
+        header("Location:../../admin.php");
+    }
+
     
-    if (mysqli_query($conn, $sql)) {
-        echo "New record created successfully";
-      } else {
-        echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-      }
-      header("Location:admin.php");
      mysqli_close($conn);
 }
 //Xử lý cập nhật giáo viên
@@ -32,12 +42,12 @@ if(isset($_POST['btnUpGV']))
     $Up_DiaChi=$_POST['Up_DiaChi'];
     $Up_SDT=$_POST['Up_SDT'];
 
-    include('connect.php');
+    include('../../configs/connect.php');
     $sql = "UPDATE GIAOVIEN SET TenGV='$Up_TenGV',GioiTinh='$Up_GioiTinh',NgaySinh='$Up_Ngaysinh',DiaChi='$Up_DiaChi',SDT='$Up_SDT' WHERE MaGV='$Up_MaGV'";
 
     if (mysqli_query($conn, $sql)) {
       echo "Record updated successfully";
-      header("Location:admin.php");
+      header("Location:../../admin.php");
     } else {
       echo "Error updating record: " . mysqli_error($conn);
     }
@@ -46,16 +56,18 @@ if(isset($_POST['btnUpGV']))
 }
 // Xử lý xóa giáo viên
 if (isset($_GET['id'])) {
-    include('connect.php');
+    include('../../configs/connect.php');
     $DelMaGV=$_GET['id'];
-    $sql = "DELETE FROM GIAOVIEN WHERE MaGV='$DelMaGV'";
+    $sql = "DELETE FROM GIAOVIEN WHERE MaGV='$DelMaGV';";
 
-    if (mysqli_query($conn, $sql)) {
+    $sql.="ALTER TABLE GIAOVIEN AUTO_INCREMENT = 1;";
+
+  if (mysqli_multi_query($conn, $sql)) {
         echo "Record deleted successfully";
     } else {
         echo "Error deleting record: " . mysqli_error($conn);
     }
-    header("Location:admin.php");
+    header("Location:../../admin.php");
 
 
     mysqli_close($conn);

@@ -10,9 +10,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <title>addphuhuynh</title>
+    <title>addketqua</title>
 </head>
-
 <style>
 .style1 {
     border: 2px solid black;
@@ -47,13 +46,20 @@ tr:nth-child(even) {
 </style>
 
 <body>
+<?php
+      session_start();
+        if(!isset($_SESSION['login_ok'])){
+             header("Location:../../site/view/loginadmin.php");
+        }
+        
+?>
     <div class="container">
 
         <div class="row">
-            <div class="col-md-12 style1">
+            <div class="col-md-12 style1 ">
 
 
-                <h2 align="center">Thêm thông tin phụ huynh</h2>
+                <h2 align="center">Thêm kết quả</h2>
                 <br>
                 <form id="upload_csv" method="post" enctype="multipart/form-data">
                     <div class="col-md-3">
@@ -69,53 +75,63 @@ tr:nth-child(even) {
                     </div>
                     <div style="clear:both"></div>
                 </form>
+
                 <br /><br /><br />
-                <form action="processphuhuynh.php" method="POST">
+                <form action="../controller/processketqua.php" method="POST">
                     <div class="form-group">
-                        <label for="exampleInputMaHS">MaHS </label>
+                        <label for="exampleInputMaHS">Mã Học Sinh</label>
                         <input type="text" name="MaHS" class="form-control" id="exampleInputMaHS" aria-describedby=""
                             placeholder="Enter Ma Hoc Sinh">
-
-                    </div>
-
-                    <div class="form-group">
-                        <label for="exampleInputTenHS">Tên Học sinh </label>
-                        <input type="text" name="TenHS" class="form-control" id="exampleInputGioiTinh"
-                            aria-describedby="" placeholder="Enter Ten Hoc Sinh">
-
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputTenLop">Tên lớp </label>
-                        <input type="Text" name="TenLop" class="form-control" id="exampleInputTenLop"
+                        <label for="exampleInputTenHS">Tên Học Sinh</label>
+                        <input type="text" name="TenHS" class="form-control" id="exampleInputTenHS" aria-describedby=""
+                            placeholder="Enter Ten Hoc Sinh">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputGioiTinh">Giới Tính</label>
+                        <input type="text" name="GioiTinh" class="form-control" id="exampleInputGioiTinh"
+                            aria-describedby="" placeholder="Enter Gioi Tinh">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputTenLop">Tên Lớp</label>
+                        <input type="text" name="TenLop" class="form-control" id="exampleInputTenLop"
                             aria-describedby="" placeholder="Enter Ten Lop">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputDiemVan">Điểm Văn</label>
+                        <input type="text" name="DiemVan" class="form-control" id="exampleInputDiemVan"
+                            aria-describedby="" placeholder="Enter Diem">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputDiemToan">Điểm Toán</label>
+                        <input type="text" name="DiemToan" class="form-control" id="exampleInputDiemToan"
+                            aria-describedby="" placeholder="Enter Diem Toan">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputDiemAnh">Điểm Anh</label>
+                        <input type="text" name="DiemAnh" class="form-control" id="exampleInputDiemAnh"
+                            aria-describedby="" placeholder="Enter Diem Anh">
+                    </div>
+                    <div class="form-group">
 
+                        <label for="exampleInputDiemLy">Điểm Lý</label>
+                        <input type="text" name="DiemLy" class="form-control" id="exampleInputDiemLy"
+                            aria-describedby="" placeholder="Enter Diem Ly">
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputNgaySinh">Tên Bố </label>
-                        <input type="Text" name="TenBo" class="form-control" id="exampleInputTenBo" aria-describedby=""
-                            placeholder="Enter Ten Bo">
+                        <label for="exampleInputDiemHoa">Điểm Hóa</label>
+                        <input type="text" name="DiemHoa" class="form-control" id="exampleInputDiemHoa"
+                            aria-describedby="" placeholder="Enter Diem Hoa">
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputDiaChi">Tên mẹ</label>
-                        <input type="Text" name="TenMe" class="form-control" id="exampleInputTenMe" aria-describedby=""
-                            placeholder="Enter Ten Me">
+                        <label for="exampleInputDiemSinh">Điểm Sinh</label>
+                        <input type="text" name="DiemSinh" class="form-control" id="exampleInputDiemSinh"
+                            aria-describedby="" placeholder="Enter Diem Sinh">
                     </div>
-                    <div class="form-group">
-                        <label for="exampleInputEmail">Email</label>
-                        <input type="Text" name="Email" class="form-control" id="exampleInputEmail" aria-describedby=""
-                            placeholder="Enter Dia chi Email">
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInputSDT">SDT</label>
-                        <input type="text" name="SDT" class="form-control" id="exampleInputSDT" aria-describedby=""
-                            placeholder="SDT">
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInputSDT">Địa chỉ</label>
-                        <input type="text" name="Diachi" class="form-control" id="exampleInputSDT" aria-describedby=""
-                            placeholder="Dia chi">
-                    </div>
-                    <button type="submit" style="margin-top:10px;" name="btnPhuHuynh" class="btn btn-primary">Thêm Phụ Huynh</button>
+
+
+                    <button style="margin-top:10px;" type="submit" name="btnKetQua" class="btn btn-primary">Thêm Kết Quả</button>
                 </form>
                 <br /><br /><br />
                 <div class="table-responsive" id="employee_table">
@@ -123,37 +139,40 @@ tr:nth-child(even) {
                         <tr>
                             <th width="">STT</th>
                             <th width="">MaHS</th>
-                            <th width="">TenHs</th>
-                            <th width="">TenLop</th>
-                            <th width="">TenBo</th>
-                            <th width="">TenMe</th>
-                            <th width="">Email</th>
-                            <th width="">SDT</th>
-                            <th width="">DiaChi</th>
+                            <th width="">TenHS</th>
+                            <th width="">Gioi Tinh</th>
+                            <th width="">Ten Lop</th>
+                            <th width="">Diem Van</th>
+                            <th width="">Diem Toan</th>
+                            <th width="">Diem Anh</th>
+                            <th width="">Diem Ly</th>
+                            <th width="">Diem Hoa</th>
+                            <th width="">Diem Sinh</th>
 
                         </tr>
                         <?php
-                            include('connect.php');
-                            $sql = "SELECT * FROM PHUHUYNH";
-                            $result = mysqli_query($conn, $sql);
-                            while ($row = mysqli_fetch_array($result)) {
-                            ?>
+                        include('../../configs/connect.php');
+                        $sql = "SELECT * FROM KETQUA";
+                        $result = mysqli_query($conn, $sql);
+                        while ($row = mysqli_fetch_array($result)) {
+                        ?>
                         <tr>
                             <td><?php echo $row["STT"]; ?></td>
                             <td><?php echo $row["MaHS"]; ?></td>
                             <td><?php echo $row["TenHS"]; ?></td>
+                            <td><?php echo $row["GioiTinh"]; ?></td>
                             <td><?php echo $row["TenLop"]; ?></td>
-                            <td><?php echo $row["TenBo"]; ?></td>
-                            <td><?php echo $row["TenMe"]; ?></td>
-                            <td><?php echo $row["Email"]; ?></td>
-                            <td><?php echo $row["SDT"]; ?></td>
-                            <td><?php echo $row["DiaChi"]; ?></td>
-
+                            <td><?php echo $row["DiemVan"]; ?></td>
+                            <td><?php echo $row["DiemToan"]; ?></td>
+                            <td><?php echo $row["DiemAnh"]; ?></td>
+                            <td><?php echo $row["DiemLy"]; ?></td>
+                            <td><?php echo $row["DiemHoa"]; ?></td>
+                            <td><?php echo $row["DiemSinh"]; ?></td>
 
                         </tr>
                         <?php
-                            }
-                            ?>
+                        }
+                        ?>
                     </table>
                 </div>
 
@@ -165,7 +184,7 @@ tr:nth-child(even) {
         $('#upload_csv').on("submit", function(e) {
             e.preventDefault(); //form will not submitted  
             $.ajax({
-                url: "importphuhuynh.php",
+                url: "../controller/importketqua.php",
                 method: "POST",
                 data: new FormData(this),
                 contentType: false, // The content type used when sending data to the server.  

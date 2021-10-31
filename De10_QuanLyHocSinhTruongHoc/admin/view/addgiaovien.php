@@ -41,7 +41,13 @@ tr:nth-child(even) {
 </style>
 
 <body>
-
+<?php
+      session_start();
+        if(!isset($_SESSION['login_ok'])){
+             header("Location:../../site/view/loginadmin.php");
+        }
+        
+?>
     <div class="container">
 
         <div class="row">
@@ -64,7 +70,7 @@ tr:nth-child(even) {
                     <div style="clear:both"></div>
                 </form>
                 <br /><br /><br />
-                <form action="processgiaovien.php" method="POST">
+                <form action="../controller/processgiaovien.php" method="POST">
                     <div class="mb-3">
                         <label for="exampleInputMaGV">Mã giáo viên</label>
                         <input type="text" name="MaGV" class="form-control" id="exampleInputMaGV" aria-describedby=""
@@ -112,7 +118,7 @@ tr:nth-child(even) {
 
                         </tr>
                         <?php  
-                                include('connect.php');
+                                include('../../configs/connect.php');
                                 $sql = "SELECT * FROM GIAOVIEN";
                                 $result = mysqli_query($conn, $sql);
 
@@ -142,7 +148,7 @@ tr:nth-child(even) {
                     $('#upload_csv').on("submit", function(e) {
                         e.preventDefault(); //form will not submitted  
                         $.ajax({
-                            url: "importgiaovien.php",
+                            url: "../controller/importgiaovien.php",
                             method: "POST",
                             data: new FormData(this),
                             contentType: false, // The content type used when sending data to the server.  

@@ -10,18 +10,28 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.0/font/bootstrap-icons.css" integrity="sha384-7ynz3n3tAGNUYFZD3cWe5PDcE36xj85vyFkawcF6tIwxvIecqKvfwLiaFdizhPpN" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
     <title>Tra Cứu!</title>
 </head>
-
+<style>
+    .header ul a:hover,
+    .login a:hover {
+    border-width: 2px;
+    border-style: solid;
+    border-color: red green blue yellow;
+    border-radius: 7px;
+    text-shadow: 0 0 25px rgba(4, 253, 87, 0.986), 0 0 7px rgb(253, 249, 7);
+}
+</style>
 <body>
+    
     <!-- header -->
     <div id="home" class="container-fluid header">
         <div class="row ">
             <div class="col-md-12">
                 <nav class="navbar navbar-expand-lg navbar-light bg-light">
                     <div class="container-fluid">
-                        <a class="navbar-brand" href="#"><img src="../img/logo.jpeg" class="logo" alt=""></a>
+                        <a class="navbar-brand" href="#"><img src="img/logo.jpeg" class="logo" alt=""></a>
 
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
@@ -50,7 +60,7 @@
 
                             </ul>
                             <div class="login">
-                                <a href="loginadmin.php">Đăng Nhập</a>
+                                <a href="site/view/loginadmin.php">Đăng Nhập</a>
                             </div>
 
                         </div>
@@ -71,13 +81,13 @@
             </div>
             <div class="carousel-inner">
                 <div class="carousel-item active slider">
-                    <img src="../img/slide1.jpg" class="d-block w-100 " alt="...">
+                    <img src="img/slide1.jpg" class="d-block w-100 " alt="...">
                 </div>
                 <div class="carousel-item slider">
-                    <img src="../img/slide2.jpg" class="d-block w-100 " alt="...">
+                    <img src="img/slide2.jpg" class="d-block w-100 " alt="...">
                 </div>
                 <div class="carousel-item slider">
-                    <img src="../img/slide3.jpg" class="d-block w-100 " alt="...">
+                    <img src="img/slide3.jpg" class="d-block w-100 " alt="...">
                 </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -117,7 +127,7 @@
                     </button>
                     <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton1">
                         <?php
-                        include('connect.php');
+                        include('configs/connect.php');
                         $sql1 = "SELECT TenLop FROM LOP";
                         $result1 = mysqli_query($conn, $sql1);
                         if (mysqli_num_rows($result1) > 0) {
@@ -175,15 +185,15 @@
                             $MaHS = $_POST["MaHS"];
 
                             $sql = "SELECT * FROM KETQUA WHERE MaHS='$MaHS'";
-                            include('process-Search.php');
+                            include('site/controller/process-Search.php');
                         } elseif (isset($_GET["TenLop"])) {
                             $TenLop = $_GET["TenLop"];
                             $sql = "SELECT * FROM KETQUA WHERE TenLop='$TenLop'";
-                            include('process-Search.php');
+                            include('site/controller/process-Search.php');
                         } else {
 
                             $sql = "SELECT * FROM KETQUA";
-                            include('process-Search.php');
+                            include('site/controller/process-Search.php');
                         }
                         echo "</table>";
                         ?>
@@ -196,7 +206,7 @@
     <!-- message -->
   
     <?php
-    include('message.php');
+    include('site/view/message.php');
     ?>
     <!-- footer -->
     <div id="contact" class="container-fluid">
@@ -231,7 +241,7 @@
                     <!--Grid row-->
                     <div class="row">
                         <div class="col-md-4">
-                            <img src="../img/TLU-map.png" alt="">
+                            <img src="img/TLU-map.png" alt="">
                         </div>
                         <div class="col-md-4">
                             <br>

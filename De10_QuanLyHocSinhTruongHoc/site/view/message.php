@@ -86,7 +86,7 @@ echo '
             </a>
         </div>
        
-        <form id="f_message" action="process-message.php" method="POST">
+        <form id="f_message" action="site/controller/process-message.php" method="POST">
             <div class="mb-3">
                 <a id="exit" href=""><i class="bi bi-x-circle-fill"></i></a>
                 <br>

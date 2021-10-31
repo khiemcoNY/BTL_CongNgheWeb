@@ -1,5 +1,5 @@
 <?php
-    include('connect.php');
+    include('configs/connect.php');
      $result = mysqli_query($conn, $sql);
     if($result>0){
     $i=1;

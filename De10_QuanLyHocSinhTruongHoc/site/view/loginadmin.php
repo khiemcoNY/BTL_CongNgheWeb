@@ -13,8 +13,8 @@
 </head>
 <style>
     body {
-        background-color: gray;
-        background-image: url(img/nen.webp);
+        background-color: black;
+        
         background-position: center;
         background-size: cover;
 
@@ -24,7 +24,7 @@
         border: 2px solid black;
         padding: 40px;
         border-radius: 10px;
-        background-image: linear-gradient(rgba(255, 255, 255, .3), rgba(255, 255, 255, .3)), url('img/login0.jpg');
+        background-image: linear-gradient(rgba(255, 255, 255, .3), rgba(255, 255, 255, .3)), url('../../img/login0.jpg');
         color: black;
 
     }
@@ -57,18 +57,33 @@
     .btn {
         padding: 5px 25px;
     }
+    #back{
+        border-width: 2px;
+        border-style: solid;
+        border-color: red green blue yellow;
+        border-radius: 7px;
+        padding:10px;
+        float:right;
+        text-decoration: none;
+        text-shadow: 0 0 25px rgba(4, 253, 87, 0.986), 0 0 7px rgb(253, 249, 7);
+    }
 </style>
 
 
 <body>
     <?php
     include('connect.php');
+    session_start();
+    if(isset($_POST['xacnhan'])){
+        unset($_SESSION['login_ok']);
+       //session_destroy();
+     }
     ?>
     <div class="container">
         <div class="row justify-content-center" style="margin-top:40px">
             <div class="col-md-5 login">
                 <h1>Đăng nhập Admin</h1>
-                <form action="processlogin.php" method="POST">
+                <form action="../controller/processlogin.php" method="POST">
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Email</label>
                         <input type="email" name ="A_Email"class="form-control" aria-describedby="emailHelp" placeholder="Nhập Email">
@@ -87,6 +102,7 @@
 
 
                 </form>
+                <a id="back" href="../../index.php">Quay Trở Lại</a>
             </div>
         </div>
     </div>

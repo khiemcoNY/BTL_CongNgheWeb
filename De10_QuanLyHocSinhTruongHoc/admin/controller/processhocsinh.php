@@ -10,21 +10,30 @@ if(isset($_POST['btnHocSinh']))
     $DiaChi=$_POST['DiaChi'];
     $SDT=$_POST['SDT'];
    
-    include('connect.php');
+    include('../../configs/connect.php');
     
-    $sql = "INSERT INTO HOCSINH  
-    (MaHS, TenHS, GioiTinh, TenLop, NgaySinh, DiaChi, SDT)  
-    VALUES ('$MaHS', '$TenHS', '$GioiTinh', '$TenLop', '$NgaySinh',
-     '$DiaChi', '$SDT');";
+    $sql1 = "SELECT * FROM HOCSINH WHERE MAHS='$MaHS'";
+    $result1 = mysqli_query($conn, $sql1);
 
-    if (mysqli_query($conn, $sql)) 
-    {
-    echo "New record created successfully";
+    if (mysqli_num_rows($result1) > 0) {
+      header("Location:../../admin.php");
+    } else {
+        $sql = "INSERT INTO HOCSINH  
+        (MaHS, TenHS, GioiTinh, TenLop, NgaySinh, DiaChi, SDT)  
+        VALUES ('$MaHS', '$TenHS', '$GioiTinh', '$TenLop', '$NgaySinh',
+         '$DiaChi', '$SDT');";
+    
+        if (mysqli_query($conn, $sql)) 
+        {
+            echo "New record created successfully";
+        }
+        else {
+             echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+        }
+        header("Location:../../admin.php");
     }
-    else {
-    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-    }
-    header("Location:admin.php");
+
+    
     mysqli_close($conn);
 }
 //xử lý update
@@ -38,7 +47,7 @@ if(isset($_POST['btnUpHS']))
     $Up_DiaChi=$_POST['Up_DiaChi'];
     $Up_SDT=$_POST['Up_SDT'];
    
-    include('connect.php');
+    include('../../configs/connect.php');
     
     $sql = "UPDATE HOCSINH SET 
     TenHS='$Up_TenHS',GioiTinh='$Up_GioiTinh',TenLop='$Up_TenLop',
@@ -47,7 +56,7 @@ if(isset($_POST['btnUpHS']))
 
     if (mysqli_query($conn, $sql)) 
     {
-        header("Location:admin.php");
+        header("Location:../../admin.php");
     echo "New record created successfully";
     }
     else {
@@ -58,16 +67,18 @@ if(isset($_POST['btnUpHS']))
 }
 
 if (isset($_GET['id'])) {
-    include('connect.php');
+    include('../../configs/connect.php');
     $id=$_GET['id'];
-    $sql = "DELETE FROM HOCSINH WHERE MaHS='$id'";
+    $sql = "DELETE FROM HOCSINH WHERE MaHS='$id';";
 
-    if (mysqli_query($conn, $sql)) {
+    $sql.="ALTER TABLE HOCSINH AUTO_INCREMENT = 1;";
+
+  if (mysqli_multi_query($conn, $sql)) {
         echo "Record deleted successfully";
     } else {
         echo "Error deleting record: " . mysqli_error($conn);
     }
-    header("Location:admin.php");
+    header("Location:../../admin.php");
     mysqli_close($conn);
 }
 ?>

@@ -31,6 +31,13 @@
 </style>
 <body>
 <?php
+      session_start();
+        if(!isset($_SESSION['login_ok'])){
+             header("Location:../../site/view/loginadmin.php");
+        }
+        
+?>
+<?php
         $Ten= "";
         $GioiTinh= "";
         $TenLop= "";
@@ -43,7 +50,7 @@
        
 
     if(isset($_GET['idsua'])){
-        include('connect.php');
+        include('../../configs/connect.php');
         $E= $_GET['idsua'];
         $sql = "SELECT * FROM KETQUA where MaHS='$E'";
         $result = mysqli_query($conn, $sql);
@@ -66,7 +73,7 @@
         <div class="row">
             <div class="col-md-12 style1">
                 <h2 align="center">Update Kết Quả</h2>
-                <form action="processketqua.php" method="POST">
+                <form action="../controller/processketqua.php" method="POST">
                     <div class="form-group">
                         <label for="exampleInputMaHS">Mã Học Sinh</label>
                         <input type="text" name="Up_MaHS" class="form-control" id="exampleInputMaHS" readonly
