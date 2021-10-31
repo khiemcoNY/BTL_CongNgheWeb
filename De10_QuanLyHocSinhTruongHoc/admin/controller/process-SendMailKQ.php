@@ -1,0 +1,96 @@
+<?php
+ use PHPMailer\PHPMailer\PHPMailer;
+ use PHPMailer\PHPMailer\SMTP;   
+ use PHPMailer\PHPMailer\Exception;
+ // Chỉnh đường dẫn phù hợp với phần Tổ chức thư mục của BẠN
+ require '../../phpmailer/Exception.php';
+ require '../../phpmailer/PHPMailer.php';
+ require '../../phpmailer/SMTP.php';
+include('../../configs/connect.php');
+$sql = "SELECT  * FROM KETQUA";
+$result = mysqli_query($conn, $sql);
+
+if (mysqli_num_rows($result) > 0) {
+  // output data of each row
+ 
+  while($row = mysqli_fetch_assoc($result)) {
+        $Ma=$row['MaHS'];
+        $sql1 = "SELECT  * FROM PHUHUYNH where MaHS='$Ma'";
+        $result1 = mysqli_query($conn, $sql1);
+        
+          if (mysqli_num_rows($result1) > 0) {
+              // output data of each row
+            $row1 = mysqli_fetch_assoc($result1) ;
+           
+            $Email= $row1['Email'];
+            $NoiDung="Mã Học Sinh: ".$row['MaHS']."  -  ".
+                     "Tên Học Sinh: ".$row['TenHS']."  -  ".
+                     "Lớp: ".$row['TenLop']."  -  ".
+                     "Điểm Toán: ".$row['DiemToan']."  -  ".
+                     "Điểm Văn: ".$row['DiemVan']."  -  ".
+                     "Điểm Anh: ".$row['DiemAnh']."  -  ".
+                     "Điểm Lý: ".$row['DiemLy']."  -  ".
+                     "Điểm Hoa: ".$row['DiemHoa']."  -  ".
+                     "Điểm Sinh: ".$row['DiemSinh'];
+                    
+                     
+                     
+                      // 1. Cài đặt môi trường sử dụng phpmailer
+                      // 2. Tạo ra đối tượng PHPMailer
+                      $mail = new PHPMailer(true); //Biến $mail đang là 1 object
+              
+                      // 3. Xử lý gửi Email thông qua đối tượng $mail
+                      // Quá trình này có thể có lỗi phát sinh, dừng thực thi chương trình.
+                      try{
+                          // Cấu hình tài khoản (Server) để gửi Email
+                          $mail->SMTPDebug = 0;// Enable verbose debug output
+                          $mail->isSMTP();// gửi mail SMTP
+                          $mail->Host = 'smtp.gmail.com';// Set the SMTP server to send through
+                          $mail->SMTPAuth = true;// Enable SMTP authentication
+                          $mail->Username = 'quoctienx10@gmail.com';// SMTP username
+                          // Thay bằng tài khoản của các bạn
+                          $mail->Password = 'pxyodqkhgyjhwztc'; // SMTP password bqicengzsrdwtrdf
+                          $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;// Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` also accepted
+                          $mail->Port = 587; // TCP port to connect to
+                          $mail->CharSet = 'UTF-8';
+              
+                          // Cấu hình thuộc tính hiển thị của người gửi - người nhận
+                          $mail->setFrom('quoctienx10@gmail.com', 'Trường Thủy Lợi');
+                          // Tên hiển thị: TÊN CÁC BẠN, ví dụ: Nguyễn Sơn Lâm
+              
+                          $mail->addReplyTo('quoctienx10@gmail.com', 'Trường Thủy Lợi');
+              
+                          $mail->addAddress($Email); // Đây là địa chỉ Email người nhận > sau này sẽ là BIẾN
+                          // Gửi tới: kitudu99@gmail.com
+                          // Tiêu đề Email là gì?
+                          $mail->isHTML(true);   // Set email format to HTML
+                          $mail->Subject = '[localhost] Thông báo kết quả học tập';
+                          // Nội dung Email
+                          $mail->Body = $NoiDung;
+                          // Tệp tên đính kèm Email gửi đi
+                         // $mail->addAttachment(''); // Nếu bạn muốn đính kèm tệp tin gửi đi
+              
+                          // Gửi thư
+                          if($mail->send()){
+                              echo 'Thư đã gửi đi thành công!';
+                              
+              
+                              // header("Location:admin.php");
+                          }
+              
+                      }catch(Exception $e){
+                          echo "Lỗi ".$e->getMessage();
+                      }
+              
+                  
+                     
+      }
+    }
+    header("Location:../../admin.php");
+} else {
+  echo "0 results";
+}
+
+  
+mysqli_close($conn);
+?>
