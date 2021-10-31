@@ -4,7 +4,8 @@
       include('../../configs/connect.php');
       $output = '';  
       $allowed_ext = array("csv");  
-      $extension = end(explode(".", $_FILES["employee_file"]["name"]));  
+      $tmp = explode(".", $_FILES["employee_file"]["name"]);
+      $extension = end($tmp);  
       if(in_array($extension, $allowed_ext))  
       {  
            $file_data = fopen($_FILES["employee_file"]["tmp_name"], 'r');  
