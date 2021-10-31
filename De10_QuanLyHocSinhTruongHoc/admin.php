@@ -89,6 +89,7 @@
     if (!isset($_SESSION['login_ok'])) {
         header("Location:site/view/loginadmin.php");
     }
+    
 
     ?>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -132,7 +133,7 @@
     <div class="container" id="home">
 
         <h1>Quản Trị Viên </h1>
-        <h3>Xin Chào Sếp, <?php echo $_GET['name'] ?></h3>
+        <h3>Xin Chào Sếp</h3>
         <div class="row process">
             <div class="col-md-12">
                 <a href="admin/controller/process-SendMailKQ.php">Gửi Mail TB Kết Quả</a>
