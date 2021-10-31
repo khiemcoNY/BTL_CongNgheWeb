@@ -7,80 +7,84 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.0/font/bootstrap-icons.css" integrity="sha384-7ynz3n3tAGNUYFZD3cWe5PDcE36xj85vyFkawcF6tIwxvIecqKvfwLiaFdizhPpN" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.0/font/bootstrap-icons.css"
+        integrity="sha384-7ynz3n3tAGNUYFZD3cWe5PDcE36xj85vyFkawcF6tIwxvIecqKvfwLiaFdizhPpN" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>admin</title>
 </head>
 <style>
-    .style1 {
-        border: 2px solid black;
-        padding: 50px;
-        margin-top: 50px;
-        border-radius: 15px;
-        background-color: white;
-    }
+.style1 {
+    border: 2px solid black;
+    padding: 50px;
+    margin-top: 50px;
+    border-radius: 15px;
+    background-color: white;
+}
 
-    .style1 from label {
-        margin-bottom: 10px;
-    }
+.style1 from label {
+    margin-bottom: 10px;
+}
 
-    table {
-        font-family: arial, sans-serif;
-        border-collapse: collapse;
-        width: 100%;
-        margin-top: 20px;
-    }
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 20px;
+}
 
-    td,
-    th {
-        border: 1px solid #dddddd;
-        text-align: left;
-        padding: 8px;
-    }
+td,
+th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
 
-    tr:nth-child(even) {
-        background-color: #dddddd;
-    }
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
 
-    h4 {
-        text-align: center;
-    }
+h4 {
+    text-align: center;
+}
 
-    .header li a,
-    .process a ,
-    .them{
+.header li a,
+.process a,
+.them {
 
-        color: black !important;
-        border: 1px solid red;
-        margin: 0 5px;
-        border-radius: 3px;
-        text-align: center;
-        font-size: 18px;
-    }
+    color: black !important;
+    border: 1px solid red;
+    margin: 0 5px;
+    border-radius: 3px;
+    text-align: center;
+    font-size: 18px;
+}
 
-    .header li a:hover,
-    .process a:hover ,
-    .them:hover{
-        border-width: 2px;
-        border-style: solid;
-        border-color: red green blue yellow;
-        border-radius: 7px;
-        text-shadow: 0 0 25px rgba(4, 253, 87, 0.986), 0 0 7px rgb(253, 249, 7);
-    }
+.header li a:hover,
+.process a:hover,
+.them:hover {
+    border-width: 2px;
+    border-style: solid;
+    border-color: red green blue yellow;
+    border-radius: 7px;
+    text-shadow: 0 0 25px rgba(4, 253, 87, 0.986), 0 0 7px rgb(253, 249, 7);
+}
 
-    .process a,.them {
-        text-decoration: none;
-        padding: 10px;
-    }
+.process a,
+.them {
+    text-decoration: none;
+    padding: 10px;
+}
 
-    #home h3,h1{
-        text-align: center !important;
-        margin: 30px 0;
-        color: white;
-        text-shadow: 1px 1px 2px black, 0 0 40px rgb(34, 34, 36), 0 0 13px rgb(32, 32, 34);
-        font-size: 35px;
-    }
+#home h3,
+h1 {
+    text-align: center !important;
+    margin: 30px 0;
+    color: white;
+    text-shadow: 1px 1px 2px black, 0 0 40px rgb(34, 34, 36), 0 0 13px rgb(32, 32, 34);
+    font-size: 35px;
+}
 </style>
 
 <body>
@@ -95,7 +99,9 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container header">
             <a class="navbar-brand" href="#"></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -165,18 +171,20 @@
 
                             while ($row = mysqli_fetch_array($result)) {
                             ?>
-                                <tr>
-                                    <td><?php echo $row["A_STT"]; ?></td>
-                                    <td><?php echo $row["A_Name"]; ?></td>
-                                    <td><?php echo $row["A_Email"]; ?></td>
-                                    <td><?php echo $row["A_PASS"]; ?></td>
-                                    <td><?php echo $row["A_Date"]; ?></td>
+                            <tr>
+                                <td><?php echo $row["A_STT"]; ?></td>
+                                <td><?php echo $row["A_Name"]; ?></td>
+                                <td><?php echo $row["A_Email"]; ?></td>
+                                <td><?php echo $row["A_PASS"]; ?></td>
+                                <td><?php echo $row["A_Date"]; ?></td>
 
-                                    <td><a href="admin/view/updateadmin.php?idsua=<?php echo $row["A_Email"]; ?>"><i class="bi bi-gear-wide-connected"></i>Sửa</a></td>
-                                    <td><a href="admin/controller/processadmin.php?id=<?php echo $row["A_Email"]; ?>"><i class="bi bi-trash-fill"></i>Xóa</a></td>
+                                <td><a href="admin/view/updateadmin.php?idsua=<?php echo $row["A_Email"]; ?>"><i
+                                            class="bi bi-gear-wide-connected"></i>Sửa</a></td>
+                                <td><a href="admin/controller/processadmin.php?id=<?php echo $row["A_Email"]; ?>"><i
+                                            class="bi bi-trash-fill"></i>Xóa</a></td>
 
 
-                                </tr>
+                            </tr>
                             <?php
                             }
                             mysqli_close($conn);
@@ -192,7 +200,8 @@
 
                 <div class="giaovien">
                     <h4>Thông Tin Giáo Viên</h4>
-                    <a class="them" href="admin/view/addgiaovien.php"><i class="bi bi-person-plus-fill"></i>Thêm Giáo Viên</a>
+                    <a class="them" href="admin/view/addgiaovien.php"><i class="bi bi-person-plus-fill"></i>Thêm Giáo
+                        Viên</a>
                     <div class="table-responsive" id="employee_table">
                         <table class="table table-bordered">
 
@@ -217,22 +226,22 @@
 
                             while ($row = mysqli_fetch_array($result)) {
                             ?>
-                                <tr>
-                                    <td><?php echo $row["STT"]; ?></td>
-                                    <td><?php echo $row["MaGV"]; ?></td>
-                                    <td><?php echo $row["TenGV"]; ?></td>
-                                    <td><?php echo $row["GioiTinh"]; ?></td>
-                                    <td><?php echo $row["NgaySinh"]; ?></td>
-                                    <td><?php echo $row["DiaChi"]; ?></td>
-                                    <td><?php echo $row["SDT"]; ?></td>
-                                    <td><a href="admin/view/updategiaovien.php?idsua=<?php echo $row["MaGV"]; ?>">
-                                            <i class="bi bi-gear-wide-connected"></i>Sửa</a></td>
-                                    <td><a href="admin/controller/processgiaovien.php?id=<?php echo $row["MaGV"]; ?>">
-                                            <i class="bi bi-trash-fill"></i>Xóa</a></td>
+                            <tr>
+                                <td><?php echo $row["STT"]; ?></td>
+                                <td><?php echo $row["MaGV"]; ?></td>
+                                <td><?php echo $row["TenGV"]; ?></td>
+                                <td><?php echo $row["GioiTinh"]; ?></td>
+                                <td><?php echo $row["NgaySinh"]; ?></td>
+                                <td><?php echo $row["DiaChi"]; ?></td>
+                                <td><?php echo $row["SDT"]; ?></td>
+                                <td><a href="admin/view/updategiaovien.php?idsua=<?php echo $row["MaGV"]; ?>">
+                                        <i class="bi bi-gear-wide-connected"></i>Sửa</a></td>
+                                <td><a href="admin/controller/processgiaovien.php?id=<?php echo $row["MaGV"]; ?>">
+                                        <i class="bi bi-trash-fill"></i>Xóa</a></td>
 
 
 
-                                </tr>
+                            </tr>
                             <?php
                             }
                             mysqli_close($conn);
@@ -247,21 +256,23 @@
             <div class="col-md-12  style1">
                 <div class="hocsinh">
                     <h4>Thông Tin Hoc Sinh</h4>
-                    <a class="them" href="admin/view/addhocsinh.php"><i class="bi bi-person-plus-fill"></i>Thêm Hoc Sinh</a>
-                    <table class="table table-bordered">
-                        <tr>
-                            <th width="">STT</th>
-                            <th width="">MaHS</th>
-                            <th width="">TenHs</th>
-                            <th width="">GioiTinh</th>
-                            <th width="">TenLop</th>
-                            <th width="">Ngaysinh</th>
-                            <th width="">DiaChi</th>
-                            <th width="">SDT</th>
-                            <th width="">Sửa Thông Tin</th>
-                            <th width="">Xóa Thông Tin</th>
-                        </tr>
-                        <?php
+                    <a class="them" href="admin/view/addhocsinh.php"><i class="bi bi-person-plus-fill"></i>Thêm Hoc
+                        Sinh</a>
+                    <div class="table-responsive" id="employee_table">
+                        <table class="table table-bordered">
+                            <tr>
+                                <th width="">STT</th>
+                                <th width="">MaHS</th>
+                                <th width="">TenHs</th>
+                                <th width="">GioiTinh</th>
+                                <th width="">TenLop</th>
+                                <th width="">Ngaysinh</th>
+                                <th width="">DiaChi</th>
+                                <th width="">SDT</th>
+                                <th width="">Sửa Thông Tin</th>
+                                <th width="">Xóa Thông Tin</th>
+                            </tr>
+                            <?php
                         include('configs/connect.php');
                         $sql = "SELECT * FROM HOCSINH";
                         $result = mysqli_query($conn, $sql);
@@ -276,14 +287,18 @@
                                 <td><?php echo $row["NgaySinh"]; ?></td>
                                 <td><?php echo $row["DiaChi"]; ?></td>
                                 <td><?php echo $row["SDT"]; ?></td>
-                                <td><a href="admin/view/updatehocsinh.php?idsua=<?php echo $row["MaHS"]; ?>"><i class="bi bi-gear-wide-connected"></i>Sửa</a></td>
-                                <td><a href="admin/controller/processhocsinh.php?id=<?php echo $row["MaHS"]; ?>"><i class="bi bi-trash-fill"></i>Xóa</a></td>
+                                <td><a href="admin/view/updatehocsinh.php?idsua=<?php echo $row["MaHS"]; ?>"><i
+                                            class="bi bi-gear-wide-connected"></i>Sửa</a></td>
+                                <td><a href="admin/controller/processhocsinh.php?id=<?php echo $row["MaHS"]; ?>"><i
+                                            class="bi bi-trash-fill"></i>Xóa</a></td>
 
                             </tr>
-                        <?php
+                            <?php
                         }
                         ?>
-                    </table>
+                        </table>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -291,8 +306,9 @@
         <div class="row" id="kq">
             <div class="col-md-12 style1">
                 <h4>Thông Tin Ket Qua Hoc Sinh</h4>
-                
-                <a class="them" href="admin/view/addketqua.php"><i class="bi bi-person-plus-fill"></i>Thêm Kết Quả Hoc Sinh</a>
+
+                <a class="them" href="admin/view/addketqua.php"><i class="bi bi-person-plus-fill"></i>Thêm Kết Quả Hoc
+                    Sinh</a>
                 <div class="ketqua">
                     <div class="table-responsive" id="employee_table">
                         <table class="table table-bordered">
@@ -318,24 +334,26 @@
                             $result = mysqli_query($conn, $sql);
                             while ($row = mysqli_fetch_array($result)) {
                             ?>
-                                <tr>
-                                    <td><?php echo $row["STT"]; ?></td>
-                                    <td><?php echo $row["MaHS"]; ?></td>
-                                    <td><?php echo $row["TenHS"]; ?></td>
-                                    <td><?php echo $row["GioiTinh"]; ?></td>
-                                    <td><?php echo $row["TenLop"]; ?></td>
-                                    <td><?php echo $row["DiemVan"]; ?></td>
-                                    <td><?php echo $row["DiemToan"]; ?></td>
-                                    <td><?php echo $row["DiemAnh"]; ?></td>
-                                    <td><?php echo $row["DiemLy"]; ?></td>
-                                    <td><?php echo $row["DiemHoa"]; ?></td>
-                                    <td><?php echo $row["DiemSinh"]; ?></td>
-                                    <td><a href="admin/view/updateketqua.php?idsua=<?php echo $row["MaHS"]; ?>"><i class="bi bi-gear-wide-connected"></i>Sửa</a></td>
-                                    <td><a href="admin/controller/processketqua.php?id=<?php echo $row["MaHS"]; ?>"><i class="bi bi-trash-fill"></i>Xóa</a></td>
+                            <tr>
+                                <td><?php echo $row["STT"]; ?></td>
+                                <td><?php echo $row["MaHS"]; ?></td>
+                                <td><?php echo $row["TenHS"]; ?></td>
+                                <td><?php echo $row["GioiTinh"]; ?></td>
+                                <td><?php echo $row["TenLop"]; ?></td>
+                                <td><?php echo $row["DiemVan"]; ?></td>
+                                <td><?php echo $row["DiemToan"]; ?></td>
+                                <td><?php echo $row["DiemAnh"]; ?></td>
+                                <td><?php echo $row["DiemLy"]; ?></td>
+                                <td><?php echo $row["DiemHoa"]; ?></td>
+                                <td><?php echo $row["DiemSinh"]; ?></td>
+                                <td><a href="admin/view/updateketqua.php?idsua=<?php echo $row["MaHS"]; ?>"><i
+                                            class="bi bi-gear-wide-connected"></i>Sửa</a></td>
+                                <td><a href="admin/controller/processketqua.php?id=<?php echo $row["MaHS"]; ?>"><i
+                                            class="bi bi-trash-fill"></i>Xóa</a></td>
 
 
 
-                                </tr>
+                            </tr>
                             <?php
                             }
                             ?>
@@ -349,7 +367,8 @@
         <div class="row" id="ph" style="margin-bottom:50px">
             <div class="col-md-12 style1">
                 <h4>Thông Tin Phụ Huynh Hoc Sinh</h4>
-                <a class="them" href="admin/view/addphuhuynh.php"><i class="bi bi-person-plus-fill"></i>Thêm Phụ Huynh Hoc Sinh</a>
+                <a class="them" href="admin/view/addphuhuynh.php"><i class="bi bi-person-plus-fill"></i>Thêm Phụ Huynh
+                    Hoc Sinh</a>
                 <div class="phuhuynh">
                     <div class="table-responsive" id="employee_table">
                         <table class="table table-bordered">
@@ -373,22 +392,24 @@
                             $result = mysqli_query($conn, $sql);
                             while ($row = mysqli_fetch_array($result)) {
                             ?>
-                                <tr>
-                                    <td><?php echo $row["STT"]; ?></td>
-                                    <td><?php echo $row["MaHS"]; ?></td>
-                                    <td><?php echo $row["TenHS"]; ?></td>
-                                    <td><?php echo $row["TenLop"]; ?></td>
-                                    <td><?php echo $row["TenBo"]; ?></td>
-                                    <td><?php echo $row["TenMe"]; ?></td>
-                                    <td><?php echo $row["Email"]; ?></td>
-                                    <td><?php echo $row["SDT"]; ?></td>
-                                    <td><?php echo $row["DiaChi"]; ?></td>
-                                    <td><a href="admin/view/updatephuhuynh.php?idsua=<?php echo $row["MaHS"]; ?>" ; ?><i class="bi bi-gear-wide-connected"></i>Sửa</a></td>
-                                    <td><a href="admin/controller/processphuhuynh.php?id=<?php echo $row["MaHS"]; ?>"><i class="bi bi-trash-fill"></i>Xóa</a></td>
+                            <tr>
+                                <td><?php echo $row["STT"]; ?></td>
+                                <td><?php echo $row["MaHS"]; ?></td>
+                                <td><?php echo $row["TenHS"]; ?></td>
+                                <td><?php echo $row["TenLop"]; ?></td>
+                                <td><?php echo $row["TenBo"]; ?></td>
+                                <td><?php echo $row["TenMe"]; ?></td>
+                                <td><?php echo $row["Email"]; ?></td>
+                                <td><?php echo $row["SDT"]; ?></td>
+                                <td><?php echo $row["DiaChi"]; ?></td>
+                                <td><a href="admin/view/updatephuhuynh.php?idsua=<?php echo $row["MaHS"]; ?>" ; ?><i
+                                            class="bi bi-gear-wide-connected"></i>Sửa</a></td>
+                                <td><a href="admin/controller/processphuhuynh.php?id=<?php echo $row["MaHS"]; ?>"><i
+                                            class="bi bi-trash-fill"></i>Xóa</a></td>
 
 
 
-                                </tr>
+                            </tr>
                             <?php
                             }
                             ?>
@@ -403,25 +424,26 @@
     <!-- Optional JavaScript; choose one of the two! -->
 
     <script>
-        $(document).ready(function() {
-            $(".dangxuat").click(function() {
-                // $("#img-src").attr('src', 'images/' + $("#txtFruit").val() + '.jpg');
-                var DX = 'dx';
-                $.ajax({
-                    url: 'site/view/loginadmin.php',
-                    type: 'POST',
-                    data: {
-                        xacnhan: DX
-                    },
-                    success: function() {
+    $(document).ready(function() {
+        $(".dangxuat").click(function() {
+            // $("#img-src").attr('src', 'images/' + $("#txtFruit").val() + '.jpg');
+            var DX = 'dx';
+            $.ajax({
+                url: 'site/view/loginadmin.php',
+                type: 'POST',
+                data: {
+                    xacnhan: DX
+                },
+                success: function() {
 
-                    }
-                })
-            });
-        })
+                }
+            })
+        });
+    })
     </script>
     <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
     </script>
 
     <!-- Option 2: Separate Popper and Bootstrap JS -->
