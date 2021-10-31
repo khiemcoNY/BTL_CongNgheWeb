@@ -72,7 +72,7 @@
 
 <body>
     <?php
-    include('connect.php');
+    include('../../configs/connect.php');
     session_start();
     if(isset($_POST['xacnhan'])){
         unset($_SESSION['login_ok']);
