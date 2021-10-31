@@ -53,7 +53,7 @@ tr:nth-child(even) {
             <div class="col-md-12 style1">
 
 
-                <h2 align="center">Import hoc sinh</h2>
+                <h2 align="center">Thêm học sinh</h2>
                 <br>
                 <form id="upload_csv" method="post" enctype="multipart/form-data">
                     <div class="col-md-3">

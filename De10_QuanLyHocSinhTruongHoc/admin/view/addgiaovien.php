@@ -54,7 +54,7 @@ tr:nth-child(even) {
             <div class="col-md-12 style1">
 
 
-                <h2 align="center">Giáo Viên</h2>
+                <h2 align="center">Thêm Giáo Viên</h2>
                 <form id="upload_csv" method="post" enctype="multipart/form-data">
                     <div class="col-md-3">
 
